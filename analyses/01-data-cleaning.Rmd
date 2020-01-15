@@ -70,4 +70,59 @@ NHM <- droplevels(subset(NHM, county != "Wales"))
 NHM <- droplevels(NHM)
 ```
 
+The iCollections’ collection site coordinates are given in decimal degrees and the NHM's georefrencing guidelines also requires coordinates to be recorded in decimal degrees, whilst we use OSNG grid references in analyses. Therefore, we covert the decimal degrees into OSNG grid references using the package "BRCmap". We also used a dataset indicating in which country all UK 10x10 OS grid cells are located. This dataset can be found in the auxiliaryData folder within the data folder. 
+```{r NHMclean-gridref ,eval=TRUE, message=FALSE, warning=FALSE}
+# Use the function "gps_latlon2gr" to convert decimal degrees to gridreferences at a 1x1 m^2 square precision and call the dataframe "OSNG"
+NHM$OSNG <- gps_latlon2gr(NHM$latitude_decimal, NHM$longitude_decimal, out_projection = "OSGB", return_type = "both")
+
+# Reformat the 1x1 m^2 grid references to 1 km^2, 2 km^2, 5 km^2, 10 km^2 precision using BRCmap function reformat_gr
+NHM$km1grid <- BRCmap::reformat_gr(NHM$OSNG$GRIDREF, prec_out = 1000, precision = NULL, pad_gr = FALSE)
+
+# A few specimens have collection site entered as OSNG grid references, enter these to the km1grid column
+for (i in 1:nrow(NHM)){
+  if (is.na(NHM[i,6])==FALSE){
+    NHM[i,15] <- as.character(NHM[i,6])}
+  }
+
+# Continue reformatting all to 2 km^2, 5 km^2, 10 km^2 precision
+NHM$km2grid <- BRCmap::reformat_gr(NHM$km1grid, prec_out = 2000, precision = NULL, pad_gr = FALSE)
+NHM$km5grid <- BRCmap::reformat_gr(NHM$km1grid, prec_out = 5000, precision = NULL, pad_gr = FALSE)
+NHM$km10grid <- BRCmap::reformat_gr(NHM$km1grid, prec_out = 10000, precision = NULL, pad_gr = FALSE)
+
+
+# Make these columns factors
+NHM$km1grid <- as.factor(NHM$km1grid)
+NHM$km2grid <- as.factor(NHM$km2grid)
+NHM$km5grid <- as.factor(NHM$km5grid)
+NHM$km10grid <- as.factor(NHM$km10grid)
+
+
+# Remove records that don't have 1x1 km precision
+NHM <- NHM[!is.na(NHM$km1grid),]
+
+# Again, check that records are from England
+# Load csv file specifying which country each 10x10 grid cell is in
+country_ID <- read.csv('../data/auxiliaryData/SQ_10km_CN_ID.csv', header=TRUE) 
+
+# As country names are coded from 1 to 7, rename with informative names
+cn_names <- data.frame(CN_ID = 1:7,
+                       CN_NAME = c('ENGLAND','WALES','SCOTLAND','CHANNEL ISLES',
+                                   'NORTHERN IRELAND','REPUBLIC OF IRELAND','ISLE OF MAN'))
+country_ID <- merge(x = country_ID, y = cn_names, all.x = TRUE, all.y = FALSE)
+
+# Rename 10x10 grid cell column
+colnames(country_ID)[2] <- "km10grid"
+
+# Merge country names with NHM data indicating which country each record is from
+NHM <- merge(NHM, country_ID[, c("km10grid", "CN_NAME")], by="km10grid")
+
+# Can now remove the OSNG data frame
+NHM <- NHM[ , !(names(NHM) %in% c("OSNG"))]
+
+# Get rid of records with a location error radius greater than 10 km, but first change all NA error radii (these are all from specimens with locations given as grid cells at 1x1 km precision to 0.5)
+require(tidyr)
+NHM$error_radius <- NHM$error_radius %>% replace_na(0.5)
+NHM <- subset(NHM, error_radius <= 10)
+```
+
 
