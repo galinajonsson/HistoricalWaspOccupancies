@@ -1,6 +1,3 @@
-# BWARS data files
-/data/rawData/BWARSraw.csv
-
 # History files
 .Rhistory
 .Rapp.history
