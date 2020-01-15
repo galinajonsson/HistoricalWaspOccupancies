@@ -1,30 +1,52 @@
 ---
 title: "Data Cleaning and Standardisation"
 author: "Galina M. Jönsson"
-date: "15/01/2020"
+date: "18/12/2019"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+First of all, I need to load R packages that will be required.
+```{r installPackages, eval=TRUE, warning=FALSE, message=FALSE}
+## Load sparta package and dependencies
+require(devtools)
+list.of.packages <- c("minqa", "lme4", "gtools", "gtable", "scales",
+                      "assertthat", "magrittr", "tibble", "stringr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+install_github('BiologicalRecordsCentre/sparta')
+library(sparta)
+
+# Load BRCmap
+download.file("https://sites.google.com/site/kitenetter/files/BRCmap_0.10.3.3.zip?attredirects=0&d=1",
+        destfile=paste(getwd(),"/BRCmap_0.10.3.3.zip",sep=""))
+untar(paste(getwd(),"/BRCmap_0.10.3.3.zip",sep=""), compressed = "xz")
+source(paste(getwd(),"/BRCmap",sep=""))
+library(BRCmap)
+# Load other required packages
+require(dplyr)
+require(reshape2)
 ```
 
-## R Markdown
+# Data standardisation
+## NHM records
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+###Load and tidy the NHM dataset
+We digitised the label information of all UK Vespula vulgaris, Vespula germania and Vespa crabro specimens held by the Natural History Museum London (NHM) and assigned each specimen a barcode number. The full dataset for specimens from UK and other countries can be found via https://doi.org/10.5519/qd.tdi9zagc, whilst the dataset for UK specimens only can be found via: XXXXX.  For each specimen, we recorded as many of the following pieces of information as possible: species name, collection location, collection date, any additional notes on labels (e.g. if the specimen was bred), location in the NHM (drawer number), aqusition number, sex, collector and caste. All specimens whose collection date was specified to day-level precision (i.e. not only collection year or month) were georeferenced by assigning point coordinates to all collection locations and estimating associated error radii (for protocol, see Blagoderov et al., 2017, DOI: 10.3897/BDJ.5.e19893). Note that some collection locations were given as OSNG grid cells and that these specimes were not georeferenced. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Here, we provide a subset of the full dataset that includes all specimens whose collection date was specified to day-level precision with the following data for each specimen: barcode number, species name, collection date (to and from if collected over a number of days), collection location (town, county, decimal latitude and longitude, and error radius (in km) or OSNG grid reference) and any flagged additional information found on labels (e.g. if the specimen was bred or if the collection location was specified to county only). 
 
-```{r cars}
-summary(cars)
+Firstly, we load the data, change some data classes, and show its structure.
+```{r loadNHM, eval=TRUE, message=FALSE, warning=FALSE, tidy=TRUE}
+# Load NHM data 
+NHM <- read.csv('../data/rawData/NHMraw.csv', header=T, as.is = TRUE, na.strings=c("","NA")) #NOTE that the file path and file name will be different for someone wishing to reproduce this code
+
+# Change the class of some columns
+NHM$species <- as.factor(NHM$species)
+NHM$county <- as.factor(NHM$county)
+NHM$town <- as.factor(NHM$town)
+NHM$flag <- as.factor(NHM$flag)
+NHM$from_date <- as.Date(NHM$from_date, "%Y-%m-%d")
+NHM$to_date <- as.Date(NHM$to_date, "%Y-%m-%d")
+
+str(NHM)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

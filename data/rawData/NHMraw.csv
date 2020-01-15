@@ -1,0 +1,1652 @@
+barcode_no,species,county,town,gridref_original,gridref_1km,gridref_10km,flag,latitude_decimal,longitude_decimal,error_radius,date
+10883873,Vespula vulgaris,I. o. W.,Sandown,NA,NA,NA,NA,50.6591,-1.1494,1.6,1927-08-01
+10884268,Vespa crabro,Herts.,Hitchin,NA,NA,NA,NA,51.9492,-0.2834,2.6,1884-05-12
+10884175,Vespa crabro,Norfolk,Merton,NA,NA,NA,NA,52.5483,0.8048,2,1885-09-29
+10884395,Vespa crabro,London,Richmond,NA,NA,NA,NA,51.4427,-0.2837,2.6,1897-09-07
+10883920,Vespula vulgaris,I. o. W.,St. Helens,NA,NA,NA,NA,50.698,-1.1138,1.2,1897-07-25
+10883922,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1898-09-11
+10883921,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1898-09-04
+10883919,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1898-08-21
+10882760,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1898-09-04
+10882606,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1898-08-21
+10882602,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1898-09-04
+10882601,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1898-08-21
+10882600,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1898-08-21
+10884033,Vespa crabro,Glos.,Little Rissington,NA,NA,NA,NA,51.8767,-1.7247,1,1899-08-14
+10883918,Vespula vulgaris,Devon,Dawlish,NA,NA,NA,NA,50.5823,-3.4644,1.5,1899-08-09
+10883917,Vespula vulgaris,Devon,Dawlish,NA,NA,NA,NA,50.5823,-3.4644,1.5,1899-08-09
+10883310,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1899-04-27
+10883308,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1899-05-28
+10882605,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1899-09-16
+10882577,Vespula germanica,Devon,Dawlish,NA,NA,NA,NA,50.5823,-3.4644,1.5,1899-08-09
+10881574,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1899-05-14
+10881570,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1899-06-11
+10881569,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1899-06-11
+10881564,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1899-05-08
+10881555,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1899-05-14
+10881469,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1899-07-30
+10883916,Vespula vulgaris,Hants.,Basingstoke,NA,NA,NA,NA,51.2665,-1.0924,7.2,1900-08-07
+10883913,Vespula vulgaris,Berks.,Crowthorne/Wellington College,NA,NA,NA,NA,51.3644,-0.8064,0.7,1900-08-08
+10883912,Vespula vulgaris,Berks.,Crowthorne/Wellington College,NA,NA,NA,NA,51.3644,-0.8064,0.7,1900-08-08
+10883910,Vespula vulgaris,Berks.,Crowthorne/Wellington College,NA,NA,NA,NA,51.3644,-0.8064,0.7,1900-08-08
+10883859,Vespula vulgaris,Berks.,Crowthorne/Wellington College,NA,NA,NA,NA,51.3644,-0.8064,0.7,1900-08-08
+10883858,Vespula vulgaris,Berks.,Crowthorne/Wellington College,NA,NA,NA,NA,51.3644,-0.8064,0.7,1900-08-08
+10883120,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1900-04-24
+10881601,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1900-05-20
+10881599,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1900-04-19
+10881578,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1900-04-17
+10881575,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1900-05-05
+10881572,Vespula germanica,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1900-04-22
+10881568,Vespula germanica,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1900-04-22
+10881567,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1900-05-05
+10884394,Vespa crabro,Surrey,Epsom Common,NA,NA,NA,NA,51.3316,-0.2959,0.4,1901-09-28
+10884393,Vespa crabro,Surrey,Epsom Common,NA,NA,NA,NA,51.3316,-0.2959,0.4,1901-09-28
+10884392,Vespa crabro,Surrey,Epsom Common,NA,NA,NA,NA,51.3316,-0.2959,0.4,1901-09-28
+10884154,Vespa crabro,NA,NA,NA,NA,NA,NA,NA,NA,NA,1901-08-27
+10883139,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1901-04-19
+10883119,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.685082,-1.366626,2.68,1901-05-19
+10883118,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.685082,-1.366626,2.68,1901-05-19
+10881598,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1901-04-19
+10881583,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.7156,-1.2911,1.3,1901-10-28
+10881571,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.74900055,-1.182899952,1.29999995,1901-05-19
+10884062,Vespa crabro,Herefordshire,Hereford,NA,NA,NA,NA,52.0564,-2.716,3.8,1902-10-21
+10884058,Vespa crabro,Cambs.,Huntingdon,NA,NA,NA,NA,52.3315,-0.1826,2.9,1902-05-26
+10884057,Vespa crabro,Cambs.,Huntingdon,NA,NA,NA,NA,52.3315,-0.1826,2.9,1902-05-26
+10883915,Vespula vulgaris,Berks.,Wokingham,NA,NA,NA,NA,51.4105,-0.8339,2,1902-08-05
+10883911,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1902-08-03
+10883909,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1902-08-03
+10883908,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1902-08-03
+10883907,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1902-08-03
+10883862,Vespula vulgaris,Berks.,Wokingham,NA,NA,NA,NA,51.4105,-0.8339,2,1902-08-03
+10883861,Vespula vulgaris,Berks.,Wokingham,NA,NA,NA,NA,51.4105,-0.8339,2,1902-08-03
+10883860,Vespula vulgaris,Berks.,Wokingham,NA,NA,NA,NA,51.4105,-0.8339,2,1902-08-03
+10883123,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1902-10-19
+10882588,Vespula germanica,Northamptonshire,Brigstock,NA,NA,NA,NA,52.4583,-0.6086,1.5,1902-08-01
+10882578,Vespula germanica,Berks.,Reading,NA,NA,NA,NA,51.4543,-0.9781,6,1902-08-05
+10882114,Vespula germanica,Oxon,Wokingham,NA,NA,NA,NA,51.4105,-0.8339,2,1902-08-03
+10884434,Vespa crabro,Devon,NA,NA,NA,NA,OC,50.7772,-3.9995,67.2,1905-04-21
+10884398,Vespa crabro,Cambs.,Cambridge,NA,NA,NA,NA,52.2053,0.1218,5.2,1905-04-08
+10884396,Vespa crabro,Norfolk,NA,NA,NA,NA,OC,52.614,0.8864,61,1905-04-30
+10884345,Vespa crabro,Suffolk,Colchester,NA,NA,NA,NA,51.969865,1.018276,0.4,1905-06-22
+10884328,Vespa crabro,Devon,NA,NA,NA,NA,OC,50.7772,-3.9995,67.2,1905-05-01
+10884321,Vespa crabro,Surrey,NA,NA,NA,NA,OC,51.2689,-0.3718,42.2,1905-04-17
+10884320,Vespa crabro,Surrey,NA,NA,NA,NA,OC,51.2689,-0.3718,42.2,1905-04-17
+10884287,Vespa crabro,Hants.,Basingstoke,NA,NA,NA,NA,51.2665,-1.0924,7.2,1905-02-20
+10884286,Vespa crabro,Hants.,Basingstoke,NA,NA,NA,NA,51.2665,-1.0924,7.2,1905-02-20
+10884281,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1905-04-13
+10884251,Vespa crabro,Notts.,Newton,NA,NA,NA,NA,52.968703,-0.97589,1.2,1905-04-13
+10884233,Vespa crabro,Hants.,Chandlers Ford,NA,NA,NA,NA,50.984,-1.3793,3,1905-05-24
+10884222,Vespa crabro,Essex,Braintree,NA,NA,NA,NA,51.8801,0.5509,3.6,1905-04-13
+10884205,Vespa crabro,Hants.,Basingstoke,NA,NA,NA,NA,51.2665,-1.0924,7.2,1905-02-20
+10884168,Vespa crabro,Essex,Loughton,NA,NA,NA,NA,51.6559,0.0682,2.6,1905-05-02
+10884127,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1905-05-14
+10884109,Vespa crabro,Hants.,Hartley Row,NA,NA,NA,NA,51.302065,-0.895964,0.28,1905-03-05
+10884100,Vespa crabro,Surrey,NA,NA,NA,NA,OC,51.2689,-0.3718,42.2,1905-04-17
+10884079,Vespa crabro,Essex,Loughton,NA,NA,NA,NA,51.6559,0.0682,2.6,1905-05-02
+10884078,Vespa crabro,Essex,Loughton,NA,NA,NA,NA,51.6559,0.0682,2.6,1905-05-02
+10884077,Vespa crabro,Suffolk,Sudbury,NA,NA,NA,NA,52.041,0.7267,3,1905-04-17
+10884024,Vespa crabro,Suffolk,Sudbury,NA,NA,NA,NA,52.041,0.7267,3,1905-04-01
+10882802,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1905-04-21
+10882799,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1905-04-15
+10882777,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1905-04-15
+10882726,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882725,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882724,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882723,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882722,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882721,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882720,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882699,Vespula germanica,Jersey,NA,NA,NA,NA,NA,NA,NA,NA,1905-04-12
+10881825,Vespula germanica,Devon,Plymouth,NA,NA,NA,NA,50.369625,-4.157169,1.58,1905-05-30
+10881773,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881582,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881577,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.751778,-1.253628,0.07,1905-04-12
+10881474,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1905-04-23
+10881458,Vespula germanica,Cheshire,Crewe,NA,NA,NA,NA,53.1004,-2.4438,5.3,1905-03-13
+10881356,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881337,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1905-04-16
+10881322,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881321,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881319,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10881313,Vespula germanica,London,Norwood,NA,NA,NA,NA,51.4214,-0.0921,1.8,1905-04-09
+10882834,Vespula germanica,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1906-05-14
+10881349,Vespula germanica,Surrey,Holmwood,NA,NA,NA,NA,51.1922,-0.3259,0.9,1906-09-01
+10884272,Vespa crabro,NA,NA,NA,NA,NA,NA,NA,NA,NA,1907-05-01
+10884203,Vespa crabro,Hants.,"New Forest, Matley",NA,NA,NA,NA,50.867956,-1.527093,1.46,1908-08-14
+10884141,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1908-08-13
+10884098,Vespa crabro,Hants.,"New Forest, Matley",NA,NA,NA,NA,50.867956,-1.527093,1.46,1908-08-14
+10884122,Vespa crabro,Hants.,Southampton,NA,NA,NA,NA,50.9097,-1.4044,5,1909-05-04
+10883976,Vespula vulgaris,West Midlands,Birmingham,NA,NA,NA,NA,52.4862,-1.8904,3.2,1909-05-01
+10883864,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1909-05-25
+10883793,Vespula vulgaris,Scotland,Raasay,NA,NA,NA,NA,NA,NA,NA,1909-04-19
+10883749,Vespula vulgaris,Scotland,Raasay,NA,NA,NA,NA,NA,NA,NA,1909-04-19
+10883748,Vespula vulgaris,Scotland,Raasay,NA,NA,NA,NA,NA,NA,NA,1909-04-19
+10883674,Vespula vulgaris,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.80201,-1.202306,3.09,1909-05-25
+10883673,Vespula vulgaris,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.80201,-1.202306,3.09,1909-05-25
+10883554,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1909-04-06
+10883532,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1909-05-25
+10883403,Vespula vulgaris,London,Mill Hill,NA,NA,NA,NA,51.6165,-0.2204,3,1909-04-20
+10883254,Vespula vulgaris,Herts.,Potters Bar,NA,NA,NA,NA,51.6976,-0.1881,1.8,1909-04-20
+10883192,Vespula vulgaris,Hants.,Catisfield,NA,NA,NA,NA,50.852973,-1.224749,0.6,1909-05-24
+10883003,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1909-04-17
+10884382,Vespa crabro,Suffolk,NA,NA,NA,NA,"OC, Bred",52.1999,0.6604,29.8,1910-10-01
+10884381,Vespa crabro,Suffolk,Timwoth,NA,NA,NA,NA,52.2904,0.7367,0.8,1910-08-16
+10884034,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1911-10-14
+10884030,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1911-10-14
+10882805,Vespula germanica,Suffolk,Tuddenham,NA,NA,NA,NA,52.3123,0.5487,1.3,1911-08-14
+10882612,Vespula germanica,Kent,Monkton,NA,NA,NA,NA,51.338653,1.280961,1.11,1911-09-20
+10884207,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-08-21
+10884170,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-08-21
+10884056,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-10-14
+10884055,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-10-14
+10884054,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-09-18
+10884049,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-10-14
+10884048,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1912-10-14
+10883631,Vespula vulgaris,Glos.,Little Rissington,NA,NA,NA,NA,51.8767,-1.7247,1,1912-11-07
+10883630,Vespula vulgaris,Glos.,Little Rissington,NA,NA,NA,NA,51.8767,-1.7247,1,1912-11-07
+10883629,Vespula vulgaris,Glos.,Little Rissington,NA,NA,NA,NA,51.8767,-1.7247,1,1912-11-07
+10883553,Vespula vulgaris,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1912-09-06
+10883418,Vespula vulgaris,Devon,Dartmeet,NA,NA,NA,NA,50.5428,-3.8753,2.7,1912-07-06
+10884455,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1913-08-29
+10884454,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1913-08-30
+10883661,Vespula vulgaris,Kent,Bearsted,NA,NA,NA,NA,51.2744,0.579,1.3,1913-10-06
+10883555,Vespula vulgaris,Essex,Steeple,NA,NA,NA,NA,50.6301,-2.1282,1.4,1913-08-22
+10883525,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1913-08-30
+10883150,Vespula vulgaris,Kent,Bearsted,NA,NA,NA,NA,51.2744,0.579,1.3,1913-05-20
+10883145,Vespula vulgaris,Kent,Bearsted,NA,NA,NA,NA,51.2744,0.579,1.3,1913-06-14
+10881547,Vespula germanica,Surrey,Guildford,NA,NA,NA,NA,51.2362,-0.5704,3.9,1913-09-27
+10881545,Vespula germanica,Kent,Bearsted,NA,NA,NA,NA,51.2744,0.579,1.3,1913-04-28
+10881494,Vespula germanica,Essex,Westcliff,NA,NA,NA,NA,51.5359,0.697,5,1913-06-01
+10883624,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1914-08-03
+10883623,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1914-09-13
+10883622,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1914-09-03
+10883530,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1914-07-28
+10883302,Vespula vulgaris,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1914-04-04
+10881771,Vespula germanica,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1914-04-29
+10884397,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1915-07-30
+10883019,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1915-09-24
+10884427,Vespa crabro,Suffolk,Bures,NA,NA,NA,NA,51.973333,0.777193,1.16,1916-09-14
+10884388,Vespa crabro,Surrey,Staines,NA,NA,NA,NA,51.4315,-0.5155,2.7,1916-08-01
+10884001,Vespula vulgaris,London,Greenwich,NA,NA,NA,NA,NA,NA,NA,1916-08-29
+10883745,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1916-10-09
+10883743,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1916-10-09
+10883297,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.747117,-1.227221,0.33,1916-02-06
+10883285,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1916-03-31
+10882676,Vespula germanica,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1916-09-08
+10881822,Vespula germanica,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1916-04-25
+10881549,Vespula germanica,London,W. Wickham,NA,NA,NA,NA,51.3758,-0.0149,2.1,1916-04-28
+10881543,Vespula germanica,London,W. Wickham,NA,NA,NA,NA,51.3758,-0.0149,2.1,1916-04-30
+10881537,Vespula germanica,Dorset,Parkstone,NA,NA,NA,NA,50.7233,-1.9519,1.4,1916-05-21
+10881312,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1916-10-09
+10884361,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884355,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884354,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884353,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884351,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884343,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10884337,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1917-09-01
+10881311,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752555,-1.226502,0.4,1917-10-14
+10881299,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.751821,-1.222498,0.2,1917-10-20
+10884230,Vespa crabro,Wilts.,Westbury,NA,NA,NA,NA,51.25669861,-2.185800076,1.79999995,1918-09-14
+10884224,Vespa crabro,Wilts.,Westbury,NA,NA,NA,NA,51.25669861,-2.185800076,1.79999995,1918-09-14
+10884028,Vespa crabro,Suffolk,Bury St. Edmunds,NA,NA,NA,NA,52.2444,0.7164,3.7,1918-10-22
+10884026,Vespa crabro,Essex,Colchester,NA,NA,NA,NA,51.8959,0.8919,4.9,1918-12-19
+10883552,Vespula vulgaris,Wilts.,Dilton,NA,NA,NA,NA,51.246861,-2.217164,1.37,1918-09-09
+10883551,Vespula vulgaris,Wilts.,Dilton,NA,NA,NA,NA,51.246861,-2.217164,1.37,1918-09-09
+10883266,Vespula vulgaris,Surrey,Leatherhead,NA,NA,NA,NA,51.2964,-0.3311,3.1,1918-05-04
+10883260,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1918-05-19
+10882755,Vespula germanica,Surrey,Chobham,NA,NA,NA,NA,51.3481,-0.6039,0.8,1918-07-01
+10882752,Vespula germanica,Surrey,Chobham,NA,NA,NA,NA,51.3481,-0.6039,0.8,1918-07-01
+10882677,Vespula germanica,London,Wimbledon,NA,NA,NA,NA,51.4183,-0.2206,2.6,1918-08-21
+10882550,Vespula germanica,London,Wimbledon,NA,NA,NA,NA,51.4183,-0.2206,2.6,1918-08-22
+10882543,Vespula germanica,London,Croydon,NA,NA,NA,NA,51.3762,-0.0982,4.8,1918-09-01
+10881563,Vespula germanica,London,Croydon,NA,NA,NA,NA,51.3762,-0.0982,4.8,1918-09-01
+10881546,Vespula germanica,Essex,Colchester,NA,NA,NA,NA,51.8959,0.8919,4.9,1918-10-19
+10881495,Vespula germanica,London,S. Kensington,NA,NA,NA,NA,51.494467,-0.181444,0.03,1918-05-19
+10881468,Vespula germanica,London,Hampstead,NA,NA,NA,NA,51.5557,-0.1762,1,1918-06-02
+10881346,Vespula germanica,Wilts.,Dilton,NA,NA,NA,NA,51.246861,-2.217164,1.37,1918-09-13
+10881345,Vespula germanica,Wilts.,Dilton,NA,NA,NA,NA,51.246861,-2.217164,1.37,1918-09-13
+10881310,Vespula germanica,Essex,Colchester,NA,NA,NA,NA,51.8959,0.8919,4.9,1918-10-19
+10884273,Vespa crabro,Hants.,Brockenhurst,NA,NA,NA,NA,50.8189,-1.5757,2.5,1919-06-18
+10884266,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1919-06-19
+10884249,Vespa crabro,Suffolk,Wrentham,NA,NA,NA,NA,52.385548,1.671548,1.2,1919-08-01
+10884235,Vespa crabro,Suffolk,Wrentham,NA,NA,NA,NA,52.385548,1.671548,1.2,1919-08-01
+10884104,Vespa crabro,Berks.,Uffington White Horse,NA,NA,NA,NA,51.57770157,-1.566599965,1,1919-10-02
+10883010,Vespula vulgaris,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.357666,-2.973502,1.2,1919-09-17
+10883009,Vespula vulgaris,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.357666,-2.973502,1.2,1919-09-18
+10882972,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.494972,-0.18411,1.65,1919-10-16
+10882756,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1919-08-01
+10882754,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1919-08-08
+10882753,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1919-08-01
+10882751,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1919-07-01
+10881335,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.754873,-1.257574,0.49,1919-10-16
+10884448,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1920-09-05
+10884116,Vespa crabro,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1920-08-21
+10883549,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1920-08-29
+10883541,Vespula vulgaris,Cumbria,Arnside,NA,NA,NA,NA,54.2038002,-2.832799911,1.5,1920-08-21
+10883301,Vespula vulgaris,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1920-04-17
+10883295,Vespula vulgaris,W. Yorkshire,Leeds,NA,NA,NA,NA,53.850784,-1.587353,1.58,1920-05-16
+10883286,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1920-06-09
+10883155,Vespula vulgaris,Norfolk,Runton,NA,NA,NA,NA,52.9385,1.2442,1.2,1920-10-11
+10882681,Vespula germanica,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1920-08-28
+10882680,Vespula germanica,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1920-08-25
+10882679,Vespula germanica,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1920-08-26
+10882581,Vespula germanica,Hants.,Beaulieu,NA,NA,NA,NA,50.82,-1.45,1.4,1920-08-28
+10881457,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1920-06-15
+10881456,Vespula germanica,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1920-06-15
+10881336,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.750968,-1.245674,0.06,1920-11-01
+10884453,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-07-31
+10884385,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884384,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884356,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884171,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884144,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884137,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884136,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884133,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884132,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884125,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884121,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884108,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884081,Vespa crabro,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1921-10-09
+10884080,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884047,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884046,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884045,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884044,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884043,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884039,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884038,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884037,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10884036,Vespa crabro,Suffolk,Little Cornard,NA,NA,NA,NA,52.0179,0.7687,0.9,1921-09-01
+10883621,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883620,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883619,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883618,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883617,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883616,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883615,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883614,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883613,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883612,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-07-19
+10883542,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-08
+10883540,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-07-24
+10883539,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-29
+10883538,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-07-24
+10883138,Vespula vulgaris,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1921-03-25
+10883108,Vespula vulgaris,Cumbria,Meathop Moss,NA,NA,NA,NA,54.227,-2.8576,0.8,1921-05-16
+10883007,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-28
+10883006,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-29
+10883004,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-29
+10883002,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-09
+10883001,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-28
+10882999,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1921-10-28
+10882905,Vespula germanica,Surrey,Bookham,NA,NA,NA,NA,51.2784,-0.3734,2,1921-10-02
+10882889,Vespula germanica,Surrey,Bookham,NA,NA,NA,NA,51.2784,-0.3734,2,1921-10-02
+10882877,Vespula germanica,Surrey,Black Pond,NA,NA,NA,NA,51.348,-0.3816,0.2,1921-06-26
+10882876,Vespula germanica,Surrey,Black Pond,NA,NA,NA,NA,51.348,-0.3816,0.2,1921-06-26
+10882870,Vespula germanica,Surrey,Black Pond,NA,NA,NA,NA,51.348,-0.3816,0.2,1921-06-26
+10882843,Vespula germanica,London,Wimbledon,NA,NA,NA,NA,51.4183,-0.2206,2.6,1921-05-04
+10882772,Vespula germanica,Lancashire,Morecambe,NA,NA,NA,NA,54.07419968,-2.86500001,5,1921-09-18
+10882675,Vespula germanica,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.357666,-2.973502,1.2,1921-09-16
+10882674,Vespula germanica,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.3474,-2.9773,6,1921-08-21
+10882673,Vespula germanica,Somerset,Weston-super-Mare,NA,NA,NA,NA,51.357666,-2.973502,1.2,1921-09-16
+10882658,Vespula germanica,Glos.,Woodchester,NA,NA,NA,NA,51.7241,-2.2323,0.7,1921-08-01
+10882657,Vespula germanica,Glos.,Woodchester,NA,NA,NA,NA,51.7241,-2.2323,0.7,1921-08-01
+10882655,Vespula germanica,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1921-10-15
+10882576,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1921-09-01
+10881541,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1921-10-30
+10881466,Vespula germanica,Somerset,Portishead,NA,NA,NA,NA,51.4852,-2.7679,4.8,1921-09-24
+10881461,Vespula germanica,Somerset,Portishead,NA,NA,NA,NA,51.4852,-2.7679,4.8,1921-09-14
+10881460,Vespula germanica,Somerset,Portishead,NA,NA,NA,NA,51.4852,-2.7679,4.8,1921-09-24
+10884449,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1922-08-13
+10884107,Vespa crabro,Oxon,Headington,NA,NA,NA,NA,51.7626,-1.1986,3.5,1922-10-02
+10883942,Vespula vulgaris,S. Yorkshire,Sheffield,NA,NA,NA,NA,53.3811,-1.4701,7,1922-09-17
+10883550,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1922-08-20
+10883296,Vespula vulgaris,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1922-05-31
+10883005,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1922-09-29
+10882792,Vespula germanica,Notts.,NA,NA,NA,NA,OC,53.13,-1.0098,46.6,1922-02-02
+10882613,Vespula germanica,Kent,Westerham,NA,NA,NA,NA,51.267,0.0718,1.1,1922-08-01
+10882549,Vespula germanica,Kent,Westerham,NA,NA,NA,NA,51.267,0.0718,1.1,1922-08-01
+10881785,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1922-06-03
+10881750,Vespula germanica,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1922-06-01
+10881748,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1922-02-24
+10881747,Vespula germanica,Surrey,Walton-on-the-hill,NA,NA,NA,NA,51.28,-0.247,1.9,1922-04-11
+10881727,Vespula germanica,Surrey,Oxshott,NA,NA,NA,NA,51.3345,-0.3584,1.7,1922-10-06
+10881540,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1922-05-06
+10881539,Vespula germanica,Surrey,Homwood,NA,NA,NA,NA,51.1922,-0.3259,0.9,1922-05-01
+10881488,Vespula germanica,Surrey,Homwood,NA,NA,NA,NA,51.1922,-0.3259,0.9,1922-05-01
+10881487,Vespula germanica,Surrey,Homwood,NA,NA,NA,NA,51.1922,-0.3259,0.9,1922-05-01
+10881486,Vespula germanica,Surrey,Homwood,NA,NA,NA,OM,51.1922,-0.3259,0.9,1922-06-01
+10881348,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1922-08-20
+10884416,Vespa crabro,Oxon,Oxford,NA,NA,NA,NA,51.750899,-1.247698,0.15,1923-10-11
+10884264,Vespa crabro,Norfolk,Cromer,NA,NA,NA,NA,52.9314003,1.301900029,2,1923-05-07
+10884208,Vespa crabro,Suffolk,Assington,NA,NA,NA,NA,52.0074,0.8165,1,1923-06-01
+10883872,Vespula vulgaris,Middx.,Colnbrook,NA,NA,NA,NA,51.483707,-0.525181,0.67,1923-07-21
+10883520,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1923-09-06
+10883148,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1923-05-06
+10883117,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1923-02-03
+10881579,Vespula germanica,Surrey,Virginia Water,NA,NA,NA,NA,51.406,-0.5786,2.7,1923-09-30
+10883940,Vespula vulgaris,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1924-09-21
+10883905,Vespula vulgaris,Oxon,Wolvercote,NA,NA,NA,NA,51.783524,-1.29165,0.9,1924-10-19
+10883543,Vespula vulgaris,W. Yorkshire,Roundhay,NA,NA,NA,NA,53.83100128,-1.496999979,0.89999997,1924-09-13
+10883190,Vespula vulgaris,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1924-05-21
+10883189,Vespula vulgaris,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1924-05-17
+10883008,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1924-10-12
+10883000,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1924-10-05
+10882682,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1924-09-20
+10882604,Vespula germanica,Oxon,Wolvercote,NA,NA,NA,NA,51.783524,-1.29165,0.9,1924-10-19
+10881315,Vespula germanica,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1924-10-13
+10883798,Vespula vulgaris,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1925-08-02
+10883797,Vespula vulgaris,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1925-08-05
+10883796,Vespula vulgaris,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1925-08-05
+10883666,Vespula vulgaris,Scotland,Nethy Bridge,NA,NA,NA,NA,NA,NA,NA,1925-08-14
+10883665,Vespula vulgaris,Scotland,Glen Urquhart,NA,NA,NA,NA,NA,NA,NA,1925-08-17
+10883664,Vespula vulgaris,Scotland,Glen Urquhart,NA,NA,NA,NA,NA,NA,NA,1925-08-17
+10882700,Vespula germanica,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1925-08-02
+10882610,Vespula germanica,Somerset,Washford,NA,NA,NA,NA,51.16130066,-3.363600016,0.5,1925-10-07
+10882603,Vespula germanica,Oxon.,Bagley wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1925-08-02
+10881809,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.754873,-1.257574,0.49,1925-11-02
+10881589,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1925-10-10
+10881317,Vespula germanica,Somerset,Washford,NA,NA,NA,NA,51.16130066,-3.363600016,0.5,1925-10-07
+10884457,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1926-08-07
+10884217,Vespa crabro,Oxon,Headington,NA,NA,NA,NA,51.7626,-1.1986,3.5,1926-06-09
+10883663,Vespula vulgaris,Scotland,Skye,NA,NA,NA,NA,NA,NA,NA,1926-08-26
+10883316,Vespula vulgaris,Surrey,Hindhead,NA,NA,NA,NA,51.1136,-0.7321,1.1,1926-04-02
+10882729,Vespula germanica,Dorset,Weymouth,NA,NA,NA,NA,50.624043,-2.443906,2.13,1926-09-01
+10881770,Vespula germanica,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1926-05-02
+10881769,Vespula germanica,Middx.,Stanmorre,NA,NA,NA,NA,51.6164,-0.3197,2.3,1926-06-30
+10881768,Vespula germanica,London,Hampstead,NA,NA,NA,NA,51.5557,-0.1762,1,1926-06-01
+10881728,Vespula germanica,Berks.,Bagley Wood,NA,NA,NA,NA,51.7162,-1.2596,1.2,1926-06-04
+10881473,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1926-04-03
+10884447,Vespula vulgaris,Surrey,West Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1927-09-20
+10884446,Vespula vulgaris,Surrey,West Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1927-10-19
+10884443,Vespula vulgaris,Surrey,West Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1927-10-08
+10884092,Vespa crabro,Berks.,Ascot,NA,NA,NA,NA,51.4092,-0.6726,1.6,1927-10-01
+10883863,Vespula vulgaris,Cambs.,Hardwick Wood,NA,NA,NA,NA,52.1985,-0.0218,0.8,1927-08-02
+10883813,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883812,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883811,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883810,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883809,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883808,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883807,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883806,Vespula vulgaris,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1927-08-10
+10883722,Vespula vulgaris,Bucks.,Chesham Bois,NA,NA,NA,NA,51.690826,-0.615231,2.4,1927-10-15
+10883526,Vespula vulgaris,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1927-10-17
+10883315,Vespula vulgaris,Oxon,NA,NA,NA,NA,OC,51.808,-1.2863,50.6,1927-04-20
+10883314,Vespula vulgaris,Oxon,NA,NA,NA,NA,OC,51.808,-1.2863,50.6,1927-03-18
+10882895,Vespula germanica,Norfolk,Lynford,NA,NA,NA,NA,52.4877,0.6796,1.5,1927-08-26
+10881749,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1927-06-03
+10881729,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.754873,-1.257574,0.49,1927-03-21
+10881596,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-05-05
+10881595,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1927-04-20
+10881444,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-04-24
+10881438,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.761348,-1.255119,0.9,1927-11-03
+10881334,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-10-03
+10881333,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-10-03
+10881332,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-10-03
+10881330,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1927-10-03
+10884366,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884197,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884196,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884195,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884194,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884193,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884192,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1928-08-17
+10884184,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1928-08-01
+10884140,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1928-08-01
+10884114,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1928-08-01
+10884106,Vespa crabro,Devon,Weymouth,NA,NA,NA,NA,50.616174,-2.452195,0.05,1928-09-24
+10883792,Vespula vulgaris,Somerset,Winscombe,NA,NA,NA,NA,50.7152,-3.7904,0.1,1928-12-04
+10883306,Vespula vulgaris,Kent,Otford,NA,NA,NA,NA,51.3114,0.1898,2,1928-05-06
+10882894,Vespula germanica,Sussex,Amberley,NA,NA,NA,NA,50.9055,-0.529,2.6,1928-07-27
+10882874,Vespula germanica,Sussex,Amberley,NA,NA,NA,NA,50.9055,-0.529,2.6,1928-07-27
+10882865,Vespula germanica,Sussex,Amberley,NA,NA,NA,NA,50.9055,-0.529,2.6,1928-07-27
+10882855,Vespula germanica,Kent,Eynsford,NA,NA,NA,NA,51.3665,0.2115,0.8,1928-04-14
+10882611,Vespula germanica,Scotland,Fordoun,NA,NA,NA,2M,NA,NA,NA,1928-08-01
+10884089,Vespa crabro,London,N. Kensington,NA,NA,NA,NA,51.52287,-0.221868,0.74,1929-10-10
+10883958,Vespula vulgaris,Notts.,NA,NA,NA,NA,OC,53.13,-1.0098,46.6,1929-09-02
+10883791,Vespula vulgaris,Norfolk,Meres,NA,NA,NA,OC,52.614,0.8864,61,1929-08-09
+10883152,Vespula vulgaris,Surrey,Camberley,NA,NA,NA,NA,51.3354,-0.7429,2.6,1929-04-24
+10882709,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1929-07-23
+10882636,Vespula germanica,Norfolk,Wicklewood,NA,NA,NA,NA,52.583193,1.062424,1.83,1929-09-10
+10881734,Vespula germanica,Bucks.,Iver,NA,NA,NA,NA,51.520294,-0.509027,4.3,1929-04-02
+10884432,Vespa crabro,Hants.,Brockenhurst,NA,NA,NA,NA,50.8189,-1.5757,2.5,1930-08-07
+10884323,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1930-10-14
+10883088,Vespula vulgaris,I. o. W.,Niton,NA,NA,NA,NA,50.5883,-1.2849,0.7,1930-06-09
+10881786,Vespula germanica,Cambs.,Cambridge,NA,NA,NA,NA,52.228113,0.08083,0.13,1930-06-19
+10884372,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-23
+10884305,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-10
+10884304,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-10
+10884303,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-10
+10884302,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-10
+10884301,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-16
+10884300,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-16
+10884299,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-16
+10884298,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-16
+10884297,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-16
+10884296,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-10-13
+10884295,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-21
+10884294,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-21
+10884283,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-08-21
+10884202,Vespa crabro,Berks.,Wytham Park,NA,NA,NA,NA,51.77,-1.3163,1,1931-10-15
+10883835,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883834,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883833,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883832,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883831,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883830,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883829,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883800,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883799,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883721,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-11-17
+10883720,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-11-17
+10883317,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10883068,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1931-09-17
+10884325,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-09-09
+10883320,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-06-03
+10883319,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-05-15
+10883124,Vespula vulgaris,Oxon,Oxford,NA,NA,NA,NA,51.7162,-1.2596,1.2,1932-06-15
+10883043,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-10-04
+10882881,Vespula germanica,London,Hounslow,NA,NA,NA,NA,51.4609,-0.3731,2.6,1932-10-01
+10882866,Vespula germanica,London,Hounslow,NA,NA,NA,NA,51.4609,-0.3731,2.6,1932-10-01
+10881590,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-06-22
+10881323,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1932-10-21
+10884085,Vespa crabro,London,Morden,NA,NA,NA,Bred,51.3949,-0.1945,1.5,1933-10-01
+10884390,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1933-07-28
+10884256,Vespa crabro,Hants.,Romsey,NA,NA,NA,NA,51.013444,-1.534176,1.81,1933-12-23
+10884247,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1933-12-03
+10884182,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-24
+10884181,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-24
+10884180,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-24
+10884179,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-24
+10884178,Vespa crabro,Hants.,"New Forest, Between Bank and Emery Down",NA,NA,NA,NA,50.850712,-1.575142,3.27,1933-08-24
+10884135,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1933-08-01
+10884134,Vespa crabro,Devon,Bovey Tracey,NA,NA,NA,NA,50.5935,-3.6726,1.7,1933-08-01
+10884025,Vespa crabro,Surrey,Staines,NA,NA,NA,NA,51.4315,-0.5155,2.7,1933-09-01
+10883627,Vespula vulgaris,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-05
+10883626,Vespula vulgaris,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-05
+10883318,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1933-09-04
+10883257,Vespula vulgaris,Jersey,Gorey,NA,NA,NA,NA,NA,NA,NA,1933-10-13
+10883085,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-05-15
+10882985,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-11-29
+10882883,Vespula germanica,Surrey,Ockham,NA,NA,NA,NA,51.2989,-0.4645,1,1933-08-08
+10882848,Vespula germanica,Wales,NA,NA,NA,NA,NA,52.2874,-3.410193,70.5,1933-10-18
+10882842,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1933-10-16
+10882743,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-09-16
+10882734,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1933-10-29
+10882733,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1933-10-29
+10882732,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1933-10-29
+10882713,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-09-18
+10882661,Vespula germanica,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-16
+10882660,Vespula germanica,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-08-02
+10882659,Vespula germanica,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1933-09-10
+10882555,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1933-10-29
+10882546,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1933-10-29
+10881730,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1933-09-05
+10881724,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1933-04-04
+10881716,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1933-08-05
+10881647,Vespula germanica,London,Wimbledon,NA,NA,NA,NA,51.4183,-0.2206,2.6,1933-04-14
+10881591,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1933-08-05
+10881576,Vespula germanica,Oxon,Oxford,NA,NA,NA,NA,51.752,-1.2577,4.9,1933-05-19
+10881454,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-09-15
+10881449,Vespula germanica,London,Wimbledon,NA,NA,NA,NA,51.4183,-0.2206,2.6,1933-04-15
+10881344,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1933-09-29
+10884386,Vespa crabro,Hants.,Brockenhurst,NA,NA,NA,NA,50.8189,-1.5757,2.5,1934-08-04
+10884105,Vespa crabro,Herts.,Moddesdon,NA,NA,NA,NA,51.75979,-0.015056,0.26,1934-10-24
+10884066,Vespa crabro,Devon,Dartmouth,NA,NA,NA,NA,50.3525,-3.5788,2.1,1934-09-13
+10884032,Vespa crabro,Derbyshire,Hatton,NA,NA,NA,NA,51.4637,-0.417,1.5,1934-10-05
+10883653,Vespula vulgaris,Hants.,Boldre,NA,NA,NA,NA,50.9155,-1.2757,1.8,1934-11-19
+10883513,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1934-08-30
+10883431,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1934-07-22
+10883122,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1934-05-04
+10883121,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1934-05-27
+10882902,Vespula germanica,Cheshire,Halton,NA,NA,NA,NA,51.7831,-0.7339,1.4,1934-09-27
+10882882,Vespula germanica,Surrey,Ockham,NA,NA,NA,NA,51.2989,-0.4645,1,1934-08-30
+10882806,Vespula germanica,Norfolk,Cromer,NA,NA,NA,NA,52.9314003,1.301900029,2,1934-08-12
+10882778,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1934-10-08
+10882703,Vespula germanica,Norfolk,Palling,NA,NA,NA,NA,52.7856,1.6051,2.1,1934-08-01
+10882607,Vespula germanica,Norfolk,Palling,NA,NA,NA,NA,52.7856,1.6051,2.1,1934-08-14
+10881767,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881723,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881722,Vespula germanica,Glos.,Lydbrook,NA,NA,NA,NA,51.840013,-2.580233,0.5,1934-04-10
+10881721,Vespula germanica,Glos.,Lydbrook,NA,NA,NA,NA,51.840013,-2.580233,0.5,1934-04-10
+10881719,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881717,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881597,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881594,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10881593,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-14
+10881592,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1934-04-19
+10883436,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-08-09
+10883435,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-08-09
+10883432,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-08-09
+10883429,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-09-26
+10883425,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-08-08
+10883424,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-09-16
+10883423,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-09-26
+10882986,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-09-26
+10882976,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-10-06
+10882804,Vespula germanica,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1935-08-01
+10882803,Vespula germanica,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1935-06-03
+10882584,Vespula germanica,NA,NA,NA,NA,NA,NA,NA,NA,NA,1935-08-17
+10882583,Vespula germanica,London,Mill Hill,NA,NA,NA,NA,51.6165,-0.2204,3,1935-08-28
+10881600,Vespula germanica,Sussex,Falmer,NA,NA,NA,NA,50.8639,-0.0806,1.4,1935-05-26
+10881551,Vespula germanica,Berks.,Reading,NA,NA,NA,NA,51.446046,-0.945536,0.05,1935-03-28
+10881548,Vespula germanica,Dorset,Wimborne,NA,NA,NA,NA,50.8007,-1.9845,2.6,1935-12-29
+10881492,Vespula germanica,Sussex,Falmer,NA,NA,NA,NA,50.8639,-0.0806,1.4,1935-05-26
+10881452,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1935-06-03
+10881318,Vespula germanica,Essex,Epping Forest,NA,NA,NA,NA,51.6571,0.0413,5.6,1935-09-23
+10884275,Vespa crabro,Hants.,Brockenhurst,NA,NA,NA,NA,50.8189,-1.5757,2.5,1936-07-07
+10884091,Vespa crabro,Hants.,Fawley,NA,NA,NA,NA,51.5769,-0.9205,0.7,1936-10-07
+10883896,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-11-13
+10883893,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-11-12
+10883891,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-11-12
+10883654,Vespula vulgaris,Hants.,Boldre,NA,NA,NA,NA,50.7821,-1.5533,1.3,1936-07-25
+10883652,Vespula vulgaris,Hants.,Boldre,NA,NA,NA,NA,50.7821,-1.5533,1.3,1936-07-25
+10883433,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-10-30
+10883426,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-10-30
+10883404,Vespula vulgaris,Essex,Epping Forest,NA,NA,NA,NA,51.6571,0.0413,5.6,1936-06-28
+10883401,Vespula vulgaris,London,Mill Hill,NA,NA,NA,NA,51.6165,-0.2204,3,1936-08-03
+10883313,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1936-11-06
+10883312,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1936-09-30
+10883291,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1936-03-19
+10883211,Vespula vulgaris,London,Mill Hill,NA,NA,NA,NA,51.6165,-0.2204,3,1936-04-24
+10882987,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-10-30
+10882982,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-11-05
+10882981,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-10-28
+10882980,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-11-05
+10882975,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-10-28
+10882776,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1936-09-01
+10882735,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-08-07
+10882634,Vespula germanica,Hants.,Pamber Forest,NA,NA,NA,NA,51.3436,-1.1197,0.7,1936-07-20
+10882633,Vespula germanica,Hants.,Pamber Forest,NA,NA,NA,NA,51.3436,-1.1197,0.7,1936-07-20
+10882632,Vespula germanica,Hants.,Pamber Forest,NA,NA,NA,NA,51.3436,-1.1197,0.7,1936-07-20
+10881553,Vespula germanica,Hants.,Alton,NA,NA,NA,NA,51.1507,-0.9732,3,1936-10-18
+10881453,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1936-03-31
+10881360,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1936-11-19
+10881316,Vespula germanica,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1936-10-18
+10881314,Vespula germanica,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1936-09-29
+10884414,Vespa crabro,Hants.,New Forest,SU2608,NA,NA,NA,50.8765,-1.6315,2.7,1937-09-04
+10884262,Vespa crabro,Hants.,New Forest,SU2608,NA,NA,NA,50.8765,-1.6315,2.7,1937-04-01
+10884218,Vespa crabro,London,Putney Heath,NA,NA,NA,NA,51.4502,-0.2326,0.8,1937-04-27
+10884201,Vespa crabro,Hants.,Brockenhurst,NA,NA,NA,NA,50.8189,-1.5757,2.5,1937-08-07
+10884199,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1937-09-02
+10884198,Vespa crabro,Berks.,Windsor Forest,NA,NA,NA,NA,51.4601,-0.666,1.7,1937-08-18
+10884169,Vespa crabro,Hants.,"New Forest, Holmsley",NA,NA,NA,NA,50.7869,-1.6961,1.4,1937-09-19
+10884159,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1937-09-04
+10884158,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1937-09-04
+10884157,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1937-09-04
+10883954,Vespula vulgaris,Notts.,Southwell,NA,NA,NA,NA,53.079107,-0.960141,1.4,1937-09-04
+10883727,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1937-10-01
+10883205,Vespula vulgaris,Essex,Epping Forest,NA,NA,NA,NA,51.6571,0.0413,5.6,1937-09-19
+10883186,Vespula vulgaris,Hants.,Alton,NA,NA,NA,NA,51.1507,-0.9732,3,1937-09-25
+10882931,Vespula germanica,Kent,NA,NA,NA,NA,OC,51.2787,0.5217,66.8,1937-10-28
+10881503,Vespula germanica,Surrey,Oxted,NA,NA,NA,NA,51.2557,0,2.7,1937-10-01
+10881502,Vespula germanica,Surrey,Oxted,NA,NA,NA,NA,51.2557,0,2.7,1937-10-01
+10881501,Vespula germanica,Surrey,Weybridge,NA,NA,NA,NA,51.3716,-0.4579,3.7,1937-05-02
+10881491,Vespula germanica,Surrey,Oxted,NA,NA,NA,NA,51.2557,0,2.7,1937-11-07
+10881490,Vespula germanica,Surrey,Oxted,NA,NA,NA,NA,51.2557,0,2.7,1937-10-01
+10883994,Vespula vulgaris,Notts.,Cotgrave,NA,NA,NA,NA,52.91121,-1.041143,0.7,1938-07-09
+10883956,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1938-07-19
+10883955,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1938-08-14
+10883953,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1938-07-19
+10883926,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883925,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883895,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883894,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883892,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883890,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883889,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883888,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883887,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883886,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883885,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883828,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10883827,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10883825,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883824,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883823,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883822,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883794,Vespula vulgaris,Hants.,"New Forest, Mark Ash Wood",NA,NA,NA,NA,50.863844,-1.643648,0.7,1938-06-05
+10883790,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883789,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883788,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883787,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883786,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883785,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883784,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883783,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883782,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883781,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883780,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883779,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883778,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883777,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883776,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883775,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883774,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883773,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883772,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883771,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883770,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883769,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883768,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883767,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883766,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883765,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883764,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883763,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883762,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883761,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883760,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883759,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883758,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10883719,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10883718,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10883717,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10883154,Vespula vulgaris,Herts.,Brickett Wood,NA,NA,NA,NA,51.707381,-0.36682,1.26,1938-04-08
+10883126,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-12
+10883084,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-08-13
+10883074,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10883073,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10883072,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10883071,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10883070,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10883069,Vespula vulgaris,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-09-03
+10882988,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-11-02
+10882750,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10882708,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10882706,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-08
+10882702,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1938-08-01
+10881550,Vespula germanica,Dorset,Studland,NA,NA,NA,NA,50.6426,-1.9536,1,1938-06-06
+10881436,Vespula germanica,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1938-05-05
+10881331,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881329,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881328,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881327,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881326,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881325,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10881324,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1938-11-03
+10884436,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1939-07-03
+10883993,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-04
+10883957,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-08-08
+10883952,Vespula vulgaris,Lincolnshire,Barkston,NA,NA,NA,NA,52.960741,-0.6202225,0.26,1939-08-20
+10883951,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-04
+10883902,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-06-26
+10883901,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-08-19
+10883900,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-08-19
+10883899,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-07-20
+10883898,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-07-20
+10883897,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-07-20
+10883819,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-07-20
+10883510,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1939-08-28
+10883408,Vespula vulgaris,Scotland,Kirn,NA,NA,NA,NA,NA,NA,NA,1939-08-27
+10883128,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-07-20
+10883107,Vespula vulgaris,Dorset,Crichel,NA,NA,NA,NA,50.876881,-2.012173,0.9,1939-10-01
+10882801,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-24
+10882800,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-24
+10882797,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-08-08
+10882795,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-24
+10882794,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1939-10-24
+10882728,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-08-19
+10882701,Vespula germanica,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1939-08-10
+10882565,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-09-13
+10882563,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-09-13
+10882562,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1939-09-13
+10884374,Vespa crabro,Hants.,Linwood,NA,NA,NA,NA,50.8833,-1.7404,2.2,1940-08-27
+10884373,Vespa crabro,Hants.,Burley,NA,NA,NA,NA,50.8264,-1.7017,1.7,1940-08-26
+10884371,Vespa crabro,Hants.,Burley,NA,NA,NA,NA,50.8264,-1.7017,1.7,1940-08-26
+10884306,Vespa crabro,Hants.,Burley,NA,NA,NA,NA,50.8264,-1.7017,1.7,1940-08-26
+10884212,Vespa crabro,Hants.,Ashton,NA,NA,NA,NA,52.1419,-0.8861,1.1,1940-06-10
+10883946,Vespula vulgaris,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1940-12-01
+10883945,Vespula vulgaris,Derbyshire,Matlock,NA,NA,NA,NA,53.1372,-1.5518,2.3,1940-05-10
+10883944,Vespula vulgaris,Derbyshire,Matlock,NA,NA,NA,NA,53.1372,-1.5518,2.3,1940-05-05
+10883904,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883903,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-06
+10883821,Vespula vulgaris,Glos.,Newent,NA,NA,NA,NA,51.9293,-2.4046,1.3,1940-06-20
+10883820,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-04
+10883818,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883817,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883816,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10883815,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-01
+10883522,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-07-04
+10883519,Vespula vulgaris,Cumbria,Witherslack,NA,NA,NA,NA,54.2523,-2.8764,2.9,1940-09-01
+10883516,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-08-04
+10883515,Vespula vulgaris,Cumbria,Witherslack,NA,NA,NA,NA,54.2523,-2.8764,2.9,1940-09-01
+10883498,Vespula vulgaris,Oxon,Henley-on-thames,NA,NA,NA,NA,51.5521,-0.8985,0.5,1940-06-25
+10883458,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-22
+10883455,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10883452,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10883451,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-20
+10883450,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-20
+10883449,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-26
+10883447,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10883445,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-30
+10883444,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-01
+10883443,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-21
+10883441,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883440,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-14
+10883438,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940-06-20
+10883437,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-22
+10883434,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-22
+10883428,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883309,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10883290,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-06-01
+10883284,Vespula vulgaris,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940-05-05
+10883258,Vespula vulgaris,Hants.,Burley,NA,NA,NA,NA,50.8264,-1.7017,1.7,1940-05-12
+10883129,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-05-20
+10883125,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-07-06
+10883098,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-05-04
+10883086,Vespula vulgaris,Glos.,Stroud,NA,NA,NA,NA,51.7457,-2.2178,3.1,1940-07-06
+10883079,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-06-22
+10883077,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-05-08
+10882998,Vespula vulgaris,Dorset,Wimborne,NA,NA,NA,NA,50.8007,-1.9845,2.6,1940-10-13
+10882991,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10882989,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-19
+10882984,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-28
+10882798,Vespula germanica,Notts.,Gedling,NA,NA,NA,NA,52.973055,-1.090099,2.35,1940-09-01
+10882791,Vespula germanica,Notts.,Fiskerton,NA,NA,NA,NA,53.049053,-0.908356,1.2,1940-06-15
+10882749,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-26
+10882746,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-26
+10882738,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-29
+10882719,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882718,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882717,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882715,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882714,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882712,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882710,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10882689,Vespula germanica,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940-09-02
+10882688,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-09-20
+10882687,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-08-24
+10882686,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-08-11
+10882684,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-09-19
+10882566,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-23
+10882564,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-29
+10882561,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-28
+10882560,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-07
+10882559,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-20
+10882558,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-22
+10882557,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-10-15
+10882556,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-27
+10882553,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-22
+10882551,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-09-05
+10881580,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1940-08-09
+10881482,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-05-13
+10881481,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-05-03
+10881480,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-04-30
+10881471,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-05-02
+10881465,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-05-02
+10881463,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-05-18
+10881385,Vespula germanica,Hants.,Burley,NA,NA,NA,NA,50.8264,-1.7017,1.7,1940-05-12
+10881359,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1940-09-10
+10884348,Vespa crabro,Dorset,Ferndown,NA,NA,NA,NA,50.8074,-1.8998,2.1,1941-09-12
+10884324,Vespa crabro,Berks.,Slough,NA,NA,NA,NA,51.5105,-0.595,4.5,1941-10-23
+10884213,Vespa crabro,Dorset,Stapehill,NA,NA,NA,NA,50.80407,-1.925167,0.8,1941-05-14
+10884186,Vespa crabro,Dorset,Pamphill,NA,NA,NA,NA,50.799517,-2.017236,0.5,1941-10-05
+10884185,Vespa crabro,Dorset,Pamphill,NA,NA,NA,NA,50.799517,-2.017236,0.5,1941-10-05
+10884183,Vespa crabro,Dorset,Pamphill,NA,NA,NA,NA,50.799517,-2.017236,0.5,1941-10-05
+10883723,Vespula vulgaris,Bucks.,Black Park,NA,NA,NA,NA,51.5466,-0.5418,2.6,1941-10-26
+10883512,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1941-07-30
+10883460,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-06
+10883459,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-06
+10883457,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-20
+10883456,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-06
+10883454,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-06-11
+10883453,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-22
+10883448,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-09-02
+10883446,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-21
+10883442,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-09-06
+10883439,Vespula vulgaris,Glos.,Chalford,NA,NA,NA,NA,51.721594,-2.156674,0.4,1941-08-22
+10883430,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-06
+10883427,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-20
+10883089,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-06
+10883083,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-20
+10883082,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-05
+10883081,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-18
+10883080,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-20
+10883078,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-13
+10883076,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-06-27
+10882983,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-22
+10882979,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-20
+10882978,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-22
+10882977,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-20
+10882748,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-02
+10882745,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-08-24
+10882744,Vespula germanica,NA,NA,NA,NA,NA,NA,NA,NA,NA,1941-09-03
+10882716,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-09-25
+10882707,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-10-03
+10882683,Vespula germanica,NA,NA,NA,NA,NA,NA,NA,NA,NA,1941-09-14
+10882567,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-07-23
+10882554,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-07-29
+10882552,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-09-02
+10881451,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-04
+10881450,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1941-05-16
+10884250,Vespa crabro,Herts.,Boxmoor,NA,NA,NA,NA,51.7452,-0.4991,1.1,1942-09-01
+10884155,Vespa crabro,Herts.,Boxmoor,NA,NA,NA,NA,51.7452,-0.4991,1.1,1942-09-01
+10884093,Vespa crabro,London,Richmond,NA,NA,NA,NA,51.4613,-0.3037,2,1942-10-10
+10883826,Vespula vulgaris,Bucks.,Black Park,NA,NA,NA,NA,51.5466,-0.5418,2.6,1942-09-07
+10883523,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-08-14
+10883472,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-12
+10883471,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-06
+10883470,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-07-25
+10883469,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-06
+10883468,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-07-22
+10883467,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-01
+10883466,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-06
+10883465,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-07-19
+10883464,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-07-19
+10883463,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-07-30
+10883462,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-02
+10883461,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-03
+10883422,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-10-03
+10883292,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-08-14
+10883289,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-06-06
+10883288,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-06-23
+10883287,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-04-08
+10883097,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-06-01
+10883096,Vespula vulgaris,Glos.,Symonds Yat,NA,NA,NA,NA,51.846736,-2.645709,0.4,1942-05-29
+10883095,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-05-03
+10883094,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-05-03
+10883093,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-04-18
+10883092,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-04-26
+10883091,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-04-12
+10883090,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-04-14
+10882737,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-08-03
+10882608,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-09-28
+10881561,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-04-22
+10881470,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1942-04-11
+10881446,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-04-15
+10881445,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-10-02
+10881443,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-10-02
+10881442,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-10-02
+10881441,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-09-19
+10881440,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1942-05-07
+10884160,Vespa crabro,Bucks.,Woburn Sands,NA,NA,NA,NA,52.0122,-0.6473,1.6,1943-09-01
+10883479,Vespula vulgaris,Glos.,Walham,NA,NA,NA,NA,51.87850189,-2.252199888,1,1943-08-19
+10883478,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-10-27
+10883477,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-22
+10883476,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-17
+10883475,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-16
+10883474,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-16
+10883473,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-17
+10883421,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-06-29
+10883201,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-04-13
+10883087,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-08-06
+10883075,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-05-15
+10882990,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-10-30
+10882974,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-10-27
+10882973,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-10-27
+10882747,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-09-21
+10882742,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-03
+10882740,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-22
+10882739,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-16
+10882736,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-09-09
+10882685,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1943-09-12
+10882548,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-07-16
+10881477,Vespula germanica,Herts.,Tring,NA,NA,NA,NA,51.79610062,-0.655900002,1.89999997,1943-04-14
+10881464,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1943-05-04
+10881427,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1943-05-27
+10884460,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1944-07-23
+10884459,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1944-07-25
+10884458,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1944-07-26
+10884342,Vespa crabro,NA,NA,NA,NA,NA,NA,NA,NA,NA,1944-09-10
+10884289,Vespa crabro,Cambs.,Cambridge,NA,NA,NA,NA,52.2053,0.1218,5.2,1944-11-25
+10884274,Vespa crabro,NA,Monmouth,SD4076,SD4076,NA,NA,NA,NA,1.48,1944-05-01
+10884216,Vespa crabro,Surrey,Ottershaw,NA,NA,NA,NA,51.3634,-0.5303,1,1944-08-08
+10884200,Vespa crabro,Surrey,Ottershaw,NA,NA,NA,NA,51.3634,-0.5303,1,1944-08-08
+10884177,Vespa crabro,Dorset,Cranborne,NA,NA,NA,NA,50.9188,-1.9214,1.6,1944-09-01
+10884143,Vespa crabro,Surrey,Ottershaw,NA,NA,NA,NA,51.3634,-0.5303,1,1944-09-18
+10884139,Vespa crabro,Dorset,Cranborne,NA,NA,NA,NA,50.9188,-1.9214,1.6,1944-09-01
+10884138,Vespa crabro,Dorset,Cranborne,NA,NA,NA,NA,50.9188,-1.9214,1.6,1944-09-01
+10884088,Vespa crabro,Hants.,Holdenhurst,NA,NA,NA,NA,50.75736,-1.820084,1.03,1944-10-13
+10884060,Vespa crabro,London,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1944-09-25
+10883691,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-17
+10883690,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-14
+10883689,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-14
+10883688,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-21
+10883687,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-21
+10883686,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-06-19
+10883685,Vespula vulgaris,Glos.,Daglingworth,NA,NA,NA,NA,51.7445,-2.0102,0.8,1944-07-31
+10883684,Vespula vulgaris,Glos.,Daglingworth,NA,NA,NA,NA,51.7445,-2.0102,0.8,1944-07-31
+10883683,Vespula vulgaris,Glos.,Daglingworth,NA,NA,NA,NA,51.7445,-2.0102,0.8,1944-07-31
+10883682,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-13
+10883681,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-08-26
+10883680,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-14
+10883679,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-06-19
+10883678,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-02
+10883677,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-24
+10883527,Vespula vulgaris,Somerset,Edington,NA,NA,NA,NA,51.1526,-2.8778,0.5,1944-08-23
+10883521,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1944-07-23
+10882995,Vespula vulgaris,Scotland,Aviemore,NA,NA,NA,NA,NA,NA,NA,1944-10-04
+10882992,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-10-22
+10882711,Vespula germanica,S. Yorkshire,Longley Park,NA,NA,NA,NA,53.41806,-1.463021,0.5,1944-08-27
+10882696,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-07-14
+10882695,Vespula germanica,Glos.,Daglingworth,NA,NA,NA,NA,51.7445,-2.0102,0.8,1944-07-31
+10882694,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-08-12
+10882693,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-08-02
+10882580,Vespula germanica,Glos.,Daglingworth,NA,NA,NA,NA,51.7445,-2.0102,0.8,1944-07-31
+10882568,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-09-11
+10881478,Vespula germanica,Somerset,Edington,NA,NA,NA,NA,51.1526,-2.8778,0.5,1944-05-10
+10881343,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1944-10-19
+10884425,Vespa crabro,Herts.,Tring,NA,NA,NA,NA,51.7961,-0.6559,1.5,1945-04-19
+10884415,Vespa crabro,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1945-09-09
+10884349,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884347,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884346,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884344,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884341,Vespa crabro,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945-06-04
+10884340,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884339,Vespa crabro,Middx.,Harrow,NA,NA,NA,NA,51.615892,-0.341217,0.57,1945-08-07
+10884338,Vespa crabro,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945-07-23
+10884221,Vespa crabro,Norfolk,Weeting,NA,NA,NA,NA,52.4686,0.6095,1.1,1945-05-25
+10884064,Vespa crabro,Herts.,Tring,NA,NA,NA,NA,51.7961,-0.6559,1.5,1945-10-01
+10884027,Vespa crabro,Wilts.,NA,NA,NA,NA,OC,51.2463,-1.9922,53.6,1945-06-01
+10883928,Vespula vulgaris,Glos.,Cheltenham,NA,NA,NA,NA,51.8994,-2.0783,3.7,1945-06-24
+10883420,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-08-23
+10883419,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-08-19
+10883220,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10883219,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-13
+10883200,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-15
+10883199,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-15
+10883198,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-09
+10883197,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-09
+10883196,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-09
+10883195,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-09
+10883194,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10883101,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-05-17
+10883100,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10883099,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10882727,Vespula germanica,Glos.,Cheltenham,NA,NA,NA,NA,51.8994,-2.0783,3.7,1945-10-30
+10882704,Vespula germanica,Glos.,Cheltenham,NA,NA,NA,NA,51.8994,-2.0783,3.7,1945-10-30
+10882609,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-08-26
+10882582,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-08-19
+10881556,Vespula germanica,Norfolk,Weeting,NA,NA,NA,NA,52.4686,0.6095,1.1,1945-05-25
+10881536,Vespula germanica,Herts.,Boxmoor,NA,NA,NA,NA,51.7452,-0.4991,1.1,1945-06-12
+10881533,Vespula germanica,Oxon,Souldern,NA,NA,NA,NA,51.976076,-1.24514,1.2,1945-06-21
+10881496,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-27
+10881485,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-27
+10881484,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10881483,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1945-04-12
+10881472,Vespula germanica,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1945-04-06
+10881437,Vespula germanica,S. Yorkshire,Longley Park,NA,NA,NA,NA,53.41806,-1.463021,0.5,1945-06-23
+10884257,Vespa crabro,London,Putney Heath,NA,NA,NA,Hibernating,51.4502,-0.2326,0.8,1946-03-17
+10884380,Vespa crabro,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1946-09-24
+10884369,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1946-10-06
+10884336,Vespa crabro,Herts.,Watford,NA,NA,NA,NA,51.677039,-0.436846,0.6,1946-10-02
+10884319,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1946-08-21
+10884318,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1946-08-21
+10884315,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1946-08-21
+10884314,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1946-08-21
+10884211,Vespa crabro,Devon,Bickleigh Vale,NA,NA,NA,NA,50.43439865,-4.081999779,3.0999999,1946-06-07
+10883311,Vespula vulgaris,Essex,Brentwood,NA,NA,NA,NA,51.6205,0.3072,4.4,1946-05-18
+10882698,Vespula germanica,Jersey,St. Catherines,NA,NA,NA,NA,NA,NA,NA,1946-08-01
+10882626,Vespula germanica,Jersey,Quennevais,NA,NA,NA,NA,NA,NA,NA,1946-08-08
+10882625,Vespula germanica,Jersey,Gorey,NA,NA,NA,NA,NA,NA,NA,1946-08-06
+10884445,Vespula vulgaris,Scotland,Kincraig,NA,NA,NA,NA,NA,NA,NA,1947-10-26
+10884444,Vespula vulgaris,Scotland,Kincraig,NA,NA,NA,NA,NA,NA,NA,1947-10-26
+10884368,Vespa crabro,Devon,NA,NA,NA,NA,OC,50.7772,-3.9995,67.2,1947-10-02
+10884326,Vespa crabro,Devon,NA,NA,NA,NA,OC,50.7772,-3.9995,67.2,1947-10-02
+10884209,Vespa crabro,London,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1947-10-01
+10883867,Vespula vulgaris,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1947-10-20
+10883857,Vespula vulgaris,Scotland,Kincraig,NA,NA,NA,NA,NA,NA,NA,1947-10-26
+10883795,Vespula vulgaris,Cornwall,Bossiney,NA,NA,NA,NA,50.667089,-4.738715,0.9,1947-08-08
+10883321,Vespula vulgaris,Middx.,Edmonton,NA,NA,NA,NA,51.6136,-0.0626,1.4,1947-04-30
+10883185,Vespula vulgaris,Middx.,Edmonton,NA,NA,NA,NA,51.6136,-0.0626,1.4,1947-05-02
+10883018,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1947-10-25
+10883017,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1947-10-25
+10883016,Vespula vulgaris,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1947-10-25
+10883015,Vespula vulgaris,Scotland,Kincraig,NA,NA,NA,NA,NA,NA,NA,1947-10-26
+10882996,Vespula vulgaris,Scotland,Kineraig,NA,NA,NA,NA,NA,NA,NA,1947-10-26
+10881554,Vespula germanica,Beds.,Beds.,NA,NA,NA,NA,51.3857,-2.0532,1,1947-04-16
+10881552,Vespula germanica,Middx.,Edmonton,NA,NA,NA,NA,51.6136,-0.0626,1.4,1947-05-08
+10881247,Vespula germanica,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1947-10-05
+10884433,Vespa crabro,Worcestershire,Wyre Forest,NA,NA,NA,NA,52.3817,-2.3722,6.4,1948-07-28
+10884428,Vespa crabro,Herts.,Watford,NA,NA,NA,NA,51.6565,-0.3903,5.2,1948-09-07
+10884413,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1948-08-12
+10884311,Vespa crabro,Herts.,Watford,NA,NA,NA,NA,51.669092,-0.413672,0.03,1948-11-07
+10884282,Vespa crabro,Devon,Lympstone,NA,NA,NA,NA,50.6482,-3.4295,1.5,1948-09-25
+10884099,Vespa crabro,Devon,Lydford,NA,NA,NA,NA,50.6554,-4.0898,0.3,1948-10-09
+10883802,Vespula vulgaris,Wales,Pembroke,NA,NA,NA,NA,51.968493,-4.870789,2.21,1948-11-08
+10883801,Vespula vulgaris,Wales,Pembroke,NA,NA,NA,NA,52.0216,-4.892,0.03,1948-08-24
+10883725,Vespula vulgaris,Wales,Pembroke,NA,NA,NA,NA,52.016946,-4.902055,0.46,1948-08-30
+10883724,Vespula vulgaris,Wales,Pembroke,NA,NA,NA,NA,52.015315,-4.83491,2.26,1948-08-26
+10884376,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1949-07-16
+10884375,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1949-07-16
+10884370,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1949-07-16
+10884151,Vespa crabro,Somerset,Wedmore,NA,NA,NA,NA,51.229303,-2.810365,1,1949-10-14
+10884126,Vespa crabro,Hants.,Berley,NA,NA,NA,NA,50.826105,-1.701957,2.83,1949-08-08
+10884117,Vespa crabro,Hants.,Berley,NA,NA,NA,NA,50.826105,-1.701957,2.83,1949-08-08
+10884115,Vespa crabro,Hants.,Berley,NA,NA,NA,NA,50.826105,-1.701957,2.83,1949-08-08
+10883884,Vespula vulgaris,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1949-08-30
+10883883,Vespula vulgaris,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1949-08-30
+10883882,Vespula vulgaris,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1949-08-30
+10883881,Vespula vulgaris,Kent,Orpington,NA,NA,NA,NA,51.37480164,0.0942,3.20000004,1949-08-30
+10883637,Vespula vulgaris,Surrey,Caterham,NA,NA,NA,NA,51.2803,-0.0816,2.6,1949-08-01
+10883514,Vespula vulgaris,Cumbria,Grange-over-Sands,NA,NA,NA,NA,54.191,-2.9107,2.2,1949-07-24
+10883127,Vespula vulgaris,London,Ealing,NA,NA,NA,NA,51.5111,-0.3058,2.2,1949-01-16
+10881542,Vespula germanica,London,Crayford,NA,NA,NA,NA,51.453,0.1791,1.2,1949-04-01
+10881538,Vespula germanica,London,Crayford,NA,NA,NA,NA,51.453,0.1791,1.2,1949-04-01
+10881424,Vespula germanica,London,Crayford,NA,NA,NA,NA,51.453,0.1791,1.2,1949-10-01
+10884246,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884245,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884244,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884243,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884242,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884241,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884240,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884239,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884238,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884237,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884236,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884234,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884232,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884167,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884166,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884163,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884162,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884153,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884111,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884110,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884094,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884086,Vespa crabro,Surrey,Byfleet,NA,NA,NA,Bred,51.3401,-0.4714,1.5,1950-10-01
+10884440,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884439,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884438,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884437,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884316,Vespa crabro,London,Ealing,NA,NA,NA,NA,51.513056,-0.288903,0.25,1950-10-11
+10884261,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884260,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884259,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1950-10-01
+10884229,Vespa crabro,London,Harlesden,NA,NA,NA,NA,51.534863,-0.247302,0.89,1950-10-16
+10884189,Vespa crabro,Somerset,Bickenhall,NA,NA,NA,NA,50.960612,-3.025784,1.1,1950-09-02
+10884188,Vespa crabro,Somerset,Bickenhall,NA,NA,NA,NA,50.960612,-3.025784,1.1,1950-09-02
+10884187,Vespa crabro,Somerset,Bickenhall,NA,NA,NA,NA,50.960612,-3.025784,1.1,1950-09-02
+10881560,Vespula germanica,Surrey,Walton-on-Thames,NA,NA,NA,NA,51.3885,-0.417,2.3,1950-05-24
+10884406,Vespa crabro,Essex,Felsted,NA,NA,NA,NA,51.857807,0.435744,0.9,1951-07-21
+10884403,Vespa crabro,Surrey,Byfleet,NA,NA,NA,NA,51.3401,-0.4714,1.5,1951-04-01
+10884402,Vespa crabro,Essex,Felsted,NA,NA,NA,NA,51.857807,0.435744,0.9,1951-10-01
+10884362,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,,1951-11-22
+10884270,Vespa crabro,Somerset,Spaxton,NA,NA,NA,NA,51.118885,-3.128631,1,1951-06-17
+10884206,Vespa crabro,Bucks.,Newport Pagnell,NA,NA,NA,NA,52.0846,-0.7346,2.6,1951-08-01
+10882705,Vespula germanica,Wales,Malltreath,NA,NA,NA,NA,53.191466,-4.384599,0.88,1951-08-30
+10884465,Vespula vulgaris,Hants.,Awbridge,SU323248,SU3224,SU32,NA,NA,NA,NA,1952-08-03
+10884435,Vespa crabro,Glos.,Pinbury,NA,NA,NA,NA,51.742889,-2.066583,0.5,1952-07-20
+10884401,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-21
+10884360,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-21
+10884359,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-16
+10884358,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-16
+10884357,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-21
+10884334,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-16
+10884333,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-21
+10884332,Vespa crabro,Hants.,Friarscliffe,NA,NA,NA,NA,50.736354,-1.72833,1.78,1952-08-26
+10884331,Vespa crabro,Hants.,Southampton,NA,NA,NA,NA,50.9262,-1.4092,1.5,1952-08-28
+10884330,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1952-08-21
+10884280,Vespa crabro,Berks.,Sunninghill,NA,NA,NA,NA,51.4013,-0.6557,2.3,1952-05-14
+10884269,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-05
+10883561,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1952-08-08
+10883560,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1952-08-03
+10883559,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1952-08-03
+10883558,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1952-08-03
+10883557,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1952-08-03
+10883216,Vespula vulgaris,Herts.,Radlett,NA,NA,NA,NA,51.679667,-0.322389,0.03,1952-04-14
+10882670,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-05
+10882669,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-06
+10882668,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-05
+10882666,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-06
+10882665,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1952-08-05
+10881429,Vespula germanica,Herts.,Radlett,NA,NA,NA,NA,51.679667,-0.322389,0.03,1952-04-17
+10201834,Vespula vulgaris,Scotland,Blair Atholl,NA,NA,NA,NA,NA,NA,NA,1952-06-16
+10884423,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-06-06
+10884364,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-06-06
+10884271,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-04-13
+10884258,Vespa crabro,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-06-06
+10884253,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-06-06
+10884228,Vespa crabro,Cornwall,Wadebridge,NA,NA,NA,NA,50.5167,-4.8365,1.4,1953-06-01
+10884173,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-08-01
+10884172,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1953-08-01
+10883747,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-06-14
+10883564,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-06-23
+10883563,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-06-23
+10883562,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-06-23
+10883137,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1953-05-03
+10881428,Vespula germanica,Scotland,St. Andrews,NA,NA,NA,NA,NA,NA,NA,1953-06-24
+10884363,Vespa crabro,Cambs.,Chippenham,NA,NA,NA,NA,52.2983,0.4118,1.1,1954-06-06
+10883592,Vespula vulgaris,N. Yorkshire,Darnholme,NA,NA,NA,NA,54.406744,-0.717825,0.76,1954-08-08
+10883591,Vespula vulgaris,N. Yorkshire,Slipho,NA,NA,NA,NA,54.317771,-0.51467,0.9,1954-08-08
+10883590,Vespula vulgaris,N. Yorkshire,Littlebeck,NA,NA,NA,NA,54.432826,-0.641875,1.5,1954-08-08
+10883589,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883588,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883587,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883586,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883585,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883584,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883583,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10883582,Vespula vulgaris,N. Yorkshire,Helwatch Beck,NA,NA,NA,OC,53.8573,-1.1709,99.1,1954-08-08
+10882656,Vespula germanica,Worcestershire,Wyre Forest,NA,NA,NA,NA,52.3817,-2.3722,6.4,1954-06-27
+10883566,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1955-09-24
+10884255,Vespa crabro,Devon,Exeter,NA,NA,NA,NA,50.7184,-3.5339,5.7,1957-06-29
+10882348,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-07-30
+10882130,Vespula germanica,Devon,Teignmouth,NA,NA,NA,NA,50.547,-3.4967,2.6,1957-04-20
+10882106,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-08-01
+10882105,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-08-01
+10882104,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-08-01
+10882103,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-07-31
+10882102,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-07-31
+10882101,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-08-03
+10882100,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-08-03
+10881605,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1957-05-03
+10881603,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1957-05-05
+10881602,Vespula germanica,Channel Islands,Herm,NA,NA,NA,NA,NA,NA,NA,1957-05-12
+10884254,Vespa crabro,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1958-06-02
+10884174,Vespa crabro,Devon,Lower Velwell,NA,NA,NA,NA,50.454431,-3.741566,0.225,1958-09-08
+10884090,Vespa crabro,Devon,Lower Velwell,NA,NA,NA,NA,50.454431,-3.741566,0.225,1958-09-09
+10883570,Vespula vulgaris,Hants.,Eastleight,NA,NA,NA,NA,50.977182,-1.354686,0.03,1958-08-05
+10883569,Vespula vulgaris,Dorset,Marchwood,NA,NA,NA,NA,50.8907,-1.4494,2.6,1958-07-31
+10882768,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,2M,51.48329926,-1.08739996,1.89999997,1958-08-01
+10882767,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,2M,51.48329926,-1.08739996,1.89999997,1958-08-01
+10882766,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,2M,51.48329926,-1.08739996,1.89999997,1958-08-01
+10882765,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,2M,51.48329926,-1.08739996,1.89999997,1958-08-01
+10881772,Vespula germanica,Lincolnshire,Barton-upon-Humber,NA,NA,NA,NA,53.686613,-0.443308,1.78,1958-04-01
+10881559,Vespula germanica,Wales,Cardiff,NA,NA,NA,NA,51.4816,-3.1791,10.7,1958-06-13
+10881347,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1958-09-08
+10881339,Vespula germanica,Berks.,Nr. Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1958-09-08
+10884463,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883604,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883603,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883602,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883601,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883600,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883599,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883598,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883597,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883596,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883595,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883594,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883593,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883574,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883573,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883572,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883571,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883567,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1959-08-04
+10883556,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1959-08-16
+10883147,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1959-10-17
+10883144,Vespula vulgaris,London,Orpington,NA,NA,NA,NA,51.3748,0.0942,3.4,1959-08-07
+10883143,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1959-10-17
+10883142,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1959-10-31
+10883140,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1959-09-27
+10883014,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10883013,Vespula vulgaris,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882932,Vespula germanica,Scotland,Loch Ken,NA,NA,NA,NA,NA,NA,NA,1959-09-10
+10882930,Vespula germanica,Cumbria,Langwathby,NA,NA,NA,NA,54.695804,-2.665673,4.26,1959-06-23
+10882926,Vespula germanica,Cumbria,Langwathby,NA,NA,NA,NA,54.695804,-2.665673,4.26,1959-06-29
+10882667,Vespula germanica,Hants.,Awbridge,SU323248,SU3224,SU32,NA,NA,NA,NA,1959-07-05
+10882664,Vespula germanica,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1959-08-04
+10882654,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882653,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882652,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882651,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882650,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882649,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10882635,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10881340,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10881338,Vespula germanica,Berks.,Pangbourne,NA,NA,NA,NA,51.48329926,-1.08739996,1.89999997,1959-10-24
+10884467,Vespula vulgaris,Hants.,Totton,SU355127,SU3512,SU31,Found dead in window,50.9141,-1.4986,1.6,1960-10-27
+10884466,Vespula vulgaris,Hants.,Totton,SU355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1960-07-31
+10884464,Vespula vulgaris,Hants.,Awbridge,SU323248,SU3224,SU32,NA,NA,NA,NA,1960-07-03
+10884267,Vespa crabro,Wales,NA,NA,NA,NA,NA,52.1307,-3.7837,154.3,1960-09-01
+10883575,Vespula vulgaris,Kent,Shoreham,NA,NA,NA,NA,51.3322,0.1889,1.3,1960-07-16
+10883565,Vespula vulgaris,Hants.,Awbridge,NA,NA,NA,NA,NA,NA,NA,1960-08-07
+10883529,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1960-08-02
+10883135,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1960-05-09
+10882948,Vespula germanica,Hants.,Farenborough,NA,NA,NA,NA,51.360131,0.074941,0.03,1960-07-01
+10881606,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1960-05-24
+10881604,Vespula germanica,Channel Islands,Alderney,NA,NA,NA,NA,NA,NA,NA,1960-05-24
+10881535,Vespula germanica,Hants.,Awbridge,SU 323248,SU3224,SU32,NA,NA,NA,NA,1960-04-18
+10881534,Vespula germanica,Cheshire,Tatton,SU 355127,SU3512,SU31,NA,50.9141,-1.4986,1.6,1960-05-09
+10883581,Vespula vulgaris,London,Hampstead,NA,NA,NA,NA,51.5608,-0.1631,1.9,1961-07-25
+10883299,Vespula vulgaris,Scotland,Eighe Forest,NA,NA,NA,NA,NA,NA,NA,1961-05-30
+10883134,Vespula vulgaris,Scotland,Shieldaig,NA,NA,NA,NA,NA,NA,NA,1961-06-01
+10883133,Vespula vulgaris,Scotland,Shieldaig,NA,NA,NA,NA,NA,NA,NA,1961-06-07
+10882672,Vespula germanica,Surrey,Morden,NA,NA,NA,NA,51.3949,-0.1945,1.5,1961-08-01
+10882671,Vespula germanica,Surrey,Morden,NA,NA,NA,NA,51.3949,-0.1945,1.5,1961-08-01
+10881455,Vespula germanica,Surrey,Morden,NA,NA,NA,NA,51.3949,-0.1945,1.5,1961-08-01
+10881308,Vespula germanica,Cornwall,Calstock,NA,NA,NA,NA,50.497,-4.2021,1.1,1961-10-14
+10201835,Vespula vulgaris,Scotland,Kiniochewe,NA,NA,NA,NA,NA,NA,NA,1961-06-16
+10884422,Vespa crabro,Dorset,NA,NA,NA,NA,OC,50.8038,-2.3357,53.8,1962-05-01
+10883221,Vespula vulgaris,London,Cantral,NA,NA,NA,NA,51.50109863,-0.145999998,0.4,1962-09-11
+10883933,Vespula vulgaris,Berks.,Streatley,NA,NA,NA,NA,51.5256,-1.1517,1.4,1963-08-16
+10883932,Vespula vulgaris,Berks.,Streatley,NA,NA,NA,NA,51.5256,-1.1517,1.4,1963-08-16
+10883931,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,NA,NA,NA,1963-08-30
+10883929,Vespula vulgaris,Berks.,Reading,NA,NA,NA,NA,NA,NA,NA,1963-07-30
+10883741,Vespula vulgaris,Oxon,Goring-on-Thames,NA,NA,NA,NA,51.5218,-1.1272,1.5,1963-10-26
+10883153,Vespula vulgaris,Notts.,NA,NA,NA,NA,OC,53.13,-1.0098,46.6,1963-04-20
+10883149,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.4967,-0.1763,0.2,1963-03-11
+10882618,Vespula germanica,Berks.,Reading,NA,NA,NA,NA,NA,NA,NA,1963-09-03
+10884441,Vespa crabro,Somerset,Yeovil,NA,NA,NA,NA,50.9421,-2.6333,3.5,1964-09-01
+10883577,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1964-08-09
+10883576,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1964-08-09
+10882938,Vespula germanica,Somerset,Yeovil,NA,NA,NA,NA,50.9421,-2.6333,3.5,1964-05-06
+10882828,Vespula germanica,Jersey,St. Ouen,NA,NA,NA,NA,NA,NA,NA,1965-05-25
+10882761,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1965-08-22
+10881255,Vespula germanica,Ascension Island,NA,NA,NA,NA,NA,NA,NA,NA,1965-05-10
+10883716,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.4942,-0.1747,0.9,1966-09-26
+10883579,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-08-27
+10883578,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-08-27
+10883568,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1966-09-04
+10883496,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-09-16
+10883495,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1966-07-23
+10883494,Vespula vulgaris,Hants.,Totton,NA,NA,NA,NA,50.9141,-1.4986,1.6,1966-06-21
+10883493,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.4942,-0.1747,0.9,1966-10-04
+10883492,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-09-16
+10883491,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-09-16
+10883490,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-09-24
+10883489,Vespula vulgaris,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-09-24
+10883487,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883486,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883485,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883484,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883483,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883482,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883481,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10883480,Vespula vulgaris,Herts.,St. Albans,NA,NA,NA,NA,51.7527,-0.3394,4.6,1966-07-30
+10882575,Vespula germanica,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1966-08-21
+10883742,Vespula vulgaris,Devon,Morwellham Quay,NA,NA,NA,NA,50.506216,-4.193092,0.08,1967-09-23
+10883740,Vespula vulgaris,Oxon,Goring-on-Thames,NA,NA,NA,NA,51.5218,-1.1272,1.5,1967-10-08
+10883739,Vespula vulgaris,Oxon,Goring-on-Thames,NA,NA,NA,NA,51.5218,-1.1272,1.5,1967-10-08
+10883738,Vespula vulgaris,Oxon,Goring-on-Thames,NA,NA,NA,NA,51.5218,-1.1272,1.5,1967-10-08
+10883141,Vespula vulgaris,West Midlands,Walsall,NA,NA,NA,NA,52.5862,-1.9829,6.4,1967-04-30
+10882541,Vespula germanica,Essex,Basildon,NA,NA,NA,NA,51.481934,-1.139035,1.59,1967-08-08
+10882540,Vespula germanica,Essex,Basildon,NA,NA,NA,NA,51.481934,-1.139035,1.59,1967-07-01
+10881821,Vespula germanica,Devon,Yelverton,NA,NA,NA,NA,50.4935,-4.0856,1.2,1967-05-01
+10881820,Vespula germanica,Essex,Basildon,NA,NA,NA,NA,51.481934,-1.139035,1.59,1967-05-18
+10881819,Vespula germanica,Kent,Gromley,NA,NA,NA,OC,51.2787,0.5217,66.8,1967-04-18
+10881818,Vespula germanica,Oxon,Goring-on-Thames,NA,NA,NA,NA,51.5218,-1.1272,1.5,1967-05-11
+10881817,Vespula germanica,London,Carshalton,NA,NA,NA,NA,51.357398,-0.169713,0.83,1967-06-04
+10881816,Vespula germanica,Northamptonshire,Rushden,NA,NA,NA,NA,52.288792,-0.600246,1.4,1967-04-01
+10881815,Vespula germanica,Northamptonshire,Rushden,NA,NA,NA,NA,52.288792,-0.600246,1.4,1967-04-25
+10881814,Vespula germanica,Northamptonshire,Rushden,NA,NA,NA,NA,52.288792,-0.600246,1.4,1967-05-11
+10881813,Vespula germanica,Northamptonshire,Rushden,NA,NA,NA,NA,52.288792,-0.600246,1.4,1967-05-11
+10884417,Vespa crabro,Hants.,Lyndhurst,NA,NA,NA,NA,50.8726,-1.5768,0.7,1968-08-27
+10883930,Vespula vulgaris,Berks.,Basildon,NA,NA,NA,NA,51.481671,-1.141078,2,1968-07-12
+10883214,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.4967,-0.1763,0.2,1968-11-28
+10883212,Vespula vulgaris,London,Stamford Brook,NA,NA,NA,NA,51.49749,-0.246769,0.36,1968-10-28
+10884263,Vespa crabro,Hants.,Whitley Wood,NA,NA,NA,NA,50.851514,-1.580367,0.9,1969-11-08
+10881245,Vespula germanica,NA,NA,NA,NA,NA,NA,NA,NA,NA,1970-10-23
+10884112,Vespa crabro,Hants.,"New Forest, Denny Wood",NA,NA,NA,NA,50.85,-1.5232,1,1970-08-29
+10883997,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883996,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883995,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883844,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883843,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883842,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883841,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883840,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883839,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883838,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883837,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883836,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883672,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1970-10-19
+10883671,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1970-10-19
+10883670,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1970-10-03
+10883646,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883645,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883644,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883643,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883642,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883641,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883640,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883639,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883638,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883636,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883635,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883634,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883536,Vespula vulgaris,Hants.,"New Forest, Mallard Wood",NA,NA,NA,NA,50.882296,-1.544132,0.72,1970-11-21
+10883535,Vespula vulgaris,Hants.,"New Forest, Mallard Wood",NA,NA,NA,NA,50.882296,-1.544132,0.72,1970-11-21
+10883534,Vespula vulgaris,Hants.,"New Forest, Mallard Wood",NA,NA,NA,NA,50.882296,-1.544132,0.72,1970-11-21
+10883533,Vespula vulgaris,Hants.,"New Forest, Mallard Wood",NA,NA,NA,NA,50.882296,-1.544132,0.72,1970-11-21
+10883488,Vespula vulgaris,London,S. Kensington,NA,NA,NA,NA,51.4967,-0.1763,0.2,1970-08-13
+10883282,Vespula vulgaris,Scotland,Loch Shiel,NA,NA,NA,NA,NA,NA,NA,1970-05-12
+10883183,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883182,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883181,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883180,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883179,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883178,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883177,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883176,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883175,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883174,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883173,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883172,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883171,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883170,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883169,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883168,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883167,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883166,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883165,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883164,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883163,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883162,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883161,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883160,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883159,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883158,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883157,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883156,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-11-21
+10883065,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883064,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883063,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883062,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883061,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883060,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883059,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883058,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883057,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883056,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883055,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883054,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883053,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883052,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883051,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883050,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883049,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883048,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883047,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883046,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883045,Vespula vulgaris,Hants.,"New Forest, Balmer Lawn",NA,NA,NA,NA,50.829043,-1.563574,0.88,1970-09-21
+10883044,Vespula vulgaris,Hants.,Catisfield,NA,NA,NA,NA,50.852973,-1.224749,0.6,1970-10-23
+10882758,Vespula germanica,Wales,Aberystwyth,NA,NA,NA,NA,52.4153,-4.0829,5.4,1970-08-08
+10882642,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882641,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882640,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882639,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882638,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882637,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-11-15
+10882627,Vespula germanica,I. o. W.,The Undercliff,NA,NA,NA,NA,50.585614,-1.237066,1.28,1970-06-20
+10881447,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1970-05-24
+10884130,Vespa crabro,Hants.,"New Forest, New Park",NA,NA,NA,Found dead,50.8448,-1.5853,0.6,1971-09-18
+10884430,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-24
+10884424,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-14
+10884412,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884411,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-13
+10884410,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-29
+10884409,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884408,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884407,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884405,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884404,Vespa crabro,Hants.,Minstead,NA,NA,NA,NA,50.9011,-1.5997,0.9,1971-09-06
+10884097,Vespa crabro,Hants.,Rhinefield,NA,NA,NA,NA,50.83179855,-1.625399947,1.10000002,1971-09-27
+10884096,Vespa crabro,Hants.,Rhinefield,NA,NA,NA,NA,50.83179855,-1.625399947,1.10000002,1971-09-27
+10884075,Vespa crabro,Hants.,Rhinefield,NA,NA,NA,NA,50.83179855,-1.625399947,1.10000002,1971-09-27
+10883865,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1971-07-17
+10883669,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1971-07-11
+10883668,Vespula vulgaris,Hants.,Botley Wood,NA,NA,NA,NA,50.8883,-1.2291,1,1971-08-28
+10883667,Vespula vulgaris,Hants.,Botley Wood,NA,NA,NA,NA,50.8883,-1.2291,1,1971-08-28
+10883537,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8495,-1.1382,2.4,1971-10-09
+10883191,Vespula vulgaris,Hants.,Catisfield,NA,NA,NA,NA,50.852973,-1.224749,0.6,1971-05-09
+10882759,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1971-09-04
+10882631,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.837542,-1.113727,0.18,1971-10-23
+10882630,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.837542,-1.113727,0.18,1971-10-23
+10882629,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.837542,-1.113727,0.18,1971-10-23
+10882628,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.837542,-1.113727,0.18,1971-10-23
+10881565,Vespula germanica,I. o. W.,The Undercliff,NA,NA,NA,NA,50.585614,-1.237066,1.28,1971-05-15
+10881298,Vespula germanica,Hants.,Portchester,NA,NA,NA,NA,50.837542,-1.113727,0.18,1971-10-23
+10884129,Vespa crabro,Hants.,"New Forest, Mark Ash",NA,NA,NA,Found dead,50.863844,-1.643648,0.7,1972-11-25
+10884128,Vespa crabro,Hants.,"New Forest, Mark Ash",NA,NA,NA,Found dead,50.863844,-1.643648,0.7,1972-11-25
+10883658,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1972-08-26
+10883657,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1972-08-26
+10883656,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1972-08-26
+10883655,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1972-08-26
+10883188,Vespula vulgaris,Hants.,"New Forest, Gritnam Wood",NA,NA,NA,NA,50.855415,-1.59804,0.57,1972-11-02
+10882773,Vespula germanica,London,S. Kensington,NA,NA,NA,NA,51.4967,-0.1763,0.2,1972-05-01
+10883528,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1973-07-21
+10883323,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1973-04-14
+10883283,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1973-05-19
+10883193,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.257679,0.535908,0.03,1973-01-28
+10883959,Vespula vulgaris,Hants.,Harewood Forest,NA,NA,NA,NA,51.1891,-1.4267,3.4,1974-11-16
+10883949,Vespula vulgaris,Dorset,Bracketts Coppice,NA,NA,NA,NA,NA,NA,NA,1974-04-09
+10883941,Vespula vulgaris,Dorset,Bracketts Coppice,NA,NA,NA,NA,NA,NA,NA,1974-08-14
+10883856,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883505,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883504,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883503,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883502,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883501,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883500,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883499,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10883326,Vespula vulgaris,Devon,Princetown,NA,NA,NA,NA,50.540043,-3.943975,3.31,1974-05-19
+10883322,Vespula vulgaris,Hants.,Parkgate,NA,NA,NA,NA,50.861851,-1.264157,0.27,1974-03-15
+10882910,Vespula germanica,Hants.,Harewood Forest,NA,NA,NA,NA,51.1891,-1.4267,3.4,1974-11-16
+10882648,Vespula germanica,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10882647,Vespula germanica,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1974-08-24
+10884400,Vespa crabro,Hants.,Southampton,NA,NA,NA,NA,50.92607,-1.409077,1.45,1975-10-02
+10884399,Vespa crabro,Bristol,Avonmouth Docks,NA,NA,NA,NA,51.499859,-2.703039,2,1975-10-10
+10883693,Vespula vulgaris,Hants.,Old Alresford Pond,NA,NA,NA,NA,51.094332,-1.159161,0.28,1975-08-16
+10883692,Vespula vulgaris,Hants.,Old Alresford Pond,NA,NA,NA,NA,51.094332,-1.159161,0.28,1975-08-16
+10883332,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883331,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883330,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883329,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883328,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883327,Vespula vulgaris,N. Yorkshire,Brandsby,NA,NA,NA,NA,54.144502,-1.098949,1.5,1975-09-23
+10883184,Vespula vulgaris,Hants.,Harewood Forest,NA,NA,NA,NA,51.1891,-1.4267,3.4,1975-06-07
+10882598,Vespula germanica,I. o. W.,NA,NA,NA,NA,OC,50.6805,-1.314,19.8,1975-09-18
+10881425,Vespula germanica,Hants.,Romsey,NA,NA,NA,NA,51.0154,-1.5425,0.7,1975-04-01
+10884431,Vespa crabro,Hants.,Rhinefield,SU20,NA,NA,2M,50.83179855,-1.625399947,1.10000002,1976-08-18
+10884391,Vespa crabro,Hants.,Rhinefield,SU20,NA,NA,2M,50.83179855,-1.625399947,1.10000002,1976-07-23
+10884389,Vespa crabro,Hants.,Rhinefield,SU20,NA,NA,2M,50.83179855,-1.625399947,1.10000002,1976-07-23
+10884387,Vespa crabro,Hants.,Rhinefield,SU20,NA,NA,2M,50.83179855,-1.625399947,1.10000002,1976-09-08
+10884322,Vespa crabro,Devon,Kilmington,NA,NA,NA,NA,50.773468,-3.029009,0.7,1976-10-13
+10884248,Vespa crabro,Hants.,Rhinefield,SU20,NA,NA,2M,50.83179855,-1.625399947,1.10000002,1976-08-18
+10883973,Vespula vulgaris,Surrey,Weybourne,NA,NA,NA,NA,51.2143,-0.7988,2.8,1976-03-19
+10883854,Vespula vulgaris,I. o. W.,St. Helens,NA,NA,NA,NA,50.695725,-1.099131,0.5,1976-08-07
+10883853,Vespula vulgaris,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.7892,-1.172,0.9,1976-07-27
+10883852,Vespula vulgaris,Hants.,Old Burghclere,NA,NA,NA,NA,51.317277,-1.327353,0.64,1976-07-31
+10883851,Vespula vulgaris,Hants.,Shortheath Common,NA,NA,NA,NA,51.126289,-0.894453,1.53,1976-07-31
+10883850,Vespula vulgaris,Hants.,"New Forest, Heathland West of Beaulieu Rd",NA,NA,NA,NA,50.8656,-1.5328,2.8,1976-07-29
+10883849,Vespula vulgaris,Hants.,"New Forest, Heathland West of Beaulieu Rd",NA,NA,NA,NA,50.8656,-1.5328,2.8,1976-07-29
+10883848,Vespula vulgaris,I. o. W.,Whitecliff Bay,NA,NA,NA,NA,50.675013,-1.095127,1.21,1976-08-07
+10883847,Vespula vulgaris,Hants.,Bramdean,NA,NA,NA,NA,NA,NA,NA,1976-07-26
+10883846,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1976-08-30
+10883845,Vespula vulgaris,Hants.,Stockbridge,NA,NA,NA,NA,51.1121,-1.4601,1,1976-07-30
+10883753,Vespula vulgaris,Hants.,Stockbridge,NA,NA,NA,NA,51.1121,-1.4601,1,1976-07-30
+10883712,Vespula vulgaris,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1976-07-17
+10883709,Vespula vulgaris,Sussex,Castle Hill,NA,NA,NA,NA,50.91289902,-1.917500019,0.2,1976-07-14
+10883708,Vespula vulgaris,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.7892,-1.172,0.9,1976-07-27
+10883707,Vespula vulgaris,Hants.,Portchester,NA,NA,NA,NA,50.8582,-1.1105,6.4,1976-07-18
+10883706,Vespula vulgaris,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.7892,-1.172,0.9,1976-07-27
+10883704,Vespula vulgaris,Hants.,Hawkley,NA,NA,NA,NA,51.066149,-0.926572,1.51,1976-07-26
+10883703,Vespula vulgaris,Hants.,Hawkley,NA,NA,NA,NA,51.066149,-0.926572,1.51,1976-07-26
+10883702,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.065361,-1.39884,1.83,1976-07-10
+10883701,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.065361,-1.39884,1.83,1976-07-10
+10883696,Vespula vulgaris,Hants.,"New Forest, Heathland West of Beaulieu Rd",NA,NA,NA,NA,50.8656,-1.5328,2.8,1976-07-11
+10883695,Vespula vulgaris,Hants.,Harewood Forest,NA,NA,NA,NA,51.1891,-1.4267,3.4,1976-07-03
+10883694,Vespula vulgaris,Hants.,Harewood Forest,NA,NA,NA,NA,51.1891,-1.4267,3.4,1976-07-03
+10883109,Vespula vulgaris,Hants.,Botley wood,NA,NA,NA,NA,50.8883,-1.2291,1,1976-03-28
+10882864,Vespula germanica,Kent,Bexley Heath,NA,NA,NA,NA,51.453124,0.138344,3.31,1976-09-01
+10882846,Vespula germanica,W. Yorkshire,Mirfield,NA,NA,NA,NA,53.682031,-1.712702,0.1,1976-03-01
+10882757,Vespula germanica,Hants.,Stockbridge,NA,NA,NA,NA,51.1121,-1.4601,1,1976-07-30
+10882690,Vespula germanica,Hants.,Stockbridge,NA,NA,NA,NA,51.1121,-1.4601,1,1976-07-30
+10882646,Vespula germanica,Hants.,Crab Wood,NA,NA,NA,NA,51.065361,-1.39884,1.83,1976-07-10
+10882644,Vespula germanica,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1976-07-17
+10882643,Vespula germanica,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1976-07-17
+10882597,Vespula germanica,Hants.,Lee-on-Solent,NA,NA,NA,NA,50.7892,-1.172,0.9,1976-07-27
+10882574,Vespula germanica,I. o. W.,St. Helens,NA,NA,NA,NA,50.695725,-1.099131,0.5,1976-08-07
+10882573,Vespula germanica,Hants.,Old Burghclere,NA,NA,NA,NA,51.317277,-1.327353,0.64,1976-07-31
+10882572,Vespula germanica,Hants.,Bramdean,NA,NA,NA,NA,NA,NA,NA,1976-08-26
+10882571,Vespula germanica,Hants.,Bramdean,NA,NA,NA,NA,NA,NA,NA,1976-08-26
+10882570,Vespula germanica,Hants.,Pamber Forest,NA,NA,NA,NA,51.3436,-1.1197,0.7,1976-08-14
+10882569,Vespula germanica,I. o. W.,The Undercliff,NA,NA,NA,NA,50.590998,-1.222684,1.28,1976-08-21
+10881823,Vespula germanica,Devon,Buckland Monachorum,NA,NA,NA,NA,50.49520111,-4.130899906,1.89999997,1976-05-08
+10881805,Vespula germanica,Cambs.,Cambridge,NA,NA,NA,NA,52.2053,0.1218,5.2,1976-05-01
+10881790,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1976-05-26
+10881789,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1976-04-29
+10881788,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1976-05-01
+10881787,Vespula germanica,Channel Islands,Guernsey,NA,NA,NA,NA,NA,NA,NA,1976-05-01
+10884312,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1977-11-03
+10884310,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1977-11-03
+10884309,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1977-11-03
+10884308,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1977-11-03
+10884307,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1977-11-03
+10883975,Vespula vulgaris,Dorset,Alum Chine,NA,NA,NA,NA,50.714443,-1.900575,0.9,1977-03-14
+10883970,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-03-19
+10883969,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10883968,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10883967,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-08-10
+10883966,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-08-10
+10883965,Vespula vulgaris,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-08-10
+10883880,Vespula vulgaris,Scotland,Airlie Castle,NA,NA,NA,NA,NA,NA,NA,1977-07-19
+10883879,Vespula vulgaris,Scotland,Airlie Castle,NA,NA,NA,NA,NA,NA,NA,1977-07-19
+10883878,Vespula vulgaris,Scotland,Airlie Castle,NA,NA,NA,NA,NA,NA,NA,1977-07-19
+10883877,Vespula vulgaris,Scotland,Ballinluig,NA,NA,NA,NA,NA,NA,NA,1977-07-20
+10883876,Vespula vulgaris,Scotland,Ballinluig,NA,NA,NA,NA,NA,NA,NA,1977-07-20
+10883874,Vespula vulgaris,Scotland,Ballinluig,NA,NA,NA,NA,NA,NA,NA,1977-07-20
+10883752,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1977-02-02
+10883751,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1977-02-11
+10883750,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1977-02-02
+10883715,Vespula vulgaris,I. o. W.,The Undercliff,NA,NA,NA,NA,50.590998,-1.222684,1.28,1977-07-28
+10883698,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1977-10-15
+10883697,Vespula vulgaris,Hants.,"New Forest, Hollando wood",NA,NA,NA,NA,50.829454,-1.570165,0.18,1977-07-25
+10883298,Vespula vulgaris,Devon,Yelverton,NA,NA,NA,NA,50.4935,-4.0856,1.2,1977-11-12
+10883114,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1977-10-15
+10882920,Vespula germanica,Hants.,Winchester,NA,NA,NA,NA,51.0598,-1.3101,3.9,1977-07-02
+10882919,Vespula germanica,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10882918,Vespula germanica,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10882917,Vespula germanica,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10882916,Vespula germanica,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10882915,Vespula germanica,Hants.,Leckford area,NA,NA,NA,NA,51.1366,-1.4632,1.8,1977-07-30
+10882762,Vespula germanica,Wales,Oxwich,NA,NA,NA,NA,51.559,-4.1703,0.9,1977-09-03
+10882731,Vespula germanica,Devon,Noss Mayo,NA,NA,NA,NA,50.310253,-4.038261,0.9,1977-10-14
+10882645,Vespula germanica,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1977-10-23
+10201923,Vespula vulgaris,Scotland,Ballinluig,NA,NA,NA,NA,NA,NA,NA,1977-07-20
+10201923,Vespula vulgaris,Scotland,Argyll,NA,NA,NA,NA,NA,NA,NA,1977-07-12
+10201921,Vespula vulgaris,Scotland,Enochdhu,NA,NA,NA,NA,NA,NA,NA,1977-07-18
+10201920,Vespula vulgaris,Scotland,Enochdhu,NA,NA,NA,NA,NA,NA,NA,1977-07-18
+10883972,Vespula vulgaris,Surrey,Weybourne,NA,NA,NA,NA,51.2143,-0.7988,2.8,1978-05-28
+10883971,Vespula vulgaris,Hants.,Winchester,NA,NA,NA,NA,51.0598,-1.3101,3.9,1978-12-02
+10883757,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1978-03-20
+10883756,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1978-03-20
+10883755,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1978-03-20
+10883754,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,1978-03-20
+10883714,Vespula vulgaris,I. o. W.,Tennyson Down,NA,NA,NA,NA,50.6665,-1.5415,2.9,1978-08-26
+10883713,Vespula vulgaris,I. o. W.,Tennyson Down,NA,NA,NA,NA,50.6665,-1.5415,2.9,1978-08-26
+10883710,Vespula vulgaris,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1978-06-03
+10883700,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1978-09-23
+10883264,Vespula vulgaris,Devon,Lustleigh,NA,NA,NA,NA,50.61731,-3.718612,1.77,1978-09-13
+10883115,Vespula vulgaris,Hants.,Hoe Moor woods,NA,NA,NA,NA,50.841909,-1.845294,3.2,1978-05-29
+10883113,Vespula vulgaris,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1978-06-03
+10883112,Vespula vulgaris,Hants.,Bitterne,NA,NA,NA,NA,50.915693,-1.358141,1.86,1978-04-23
+10883111,Vespula vulgaris,Hants.,Bitterne,NA,NA,NA,NA,50.915693,-1.358141,1.86,1978-04-24
+10882857,Vespula germanica,Hants.,Titchfield,NA,NA,NA,NA,50.8257,-1.2383,1.8,1978-05-26
+10882832,Vespula germanica,Hants.,Titchfield,NA,NA,NA,NA,50.8257,-1.2383,1.8,1978-05-26
+10882730,Vespula germanica,Devon,Sheepwash,NA,NA,NA,NA,50.837415,-4.152752,3.74,1978-09-01
+10881435,Vespula germanica,Hants.,Hamble Common,NA,NA,NA,NA,50.851119,-1.316158,0.6,1978-05-27
+10881426,Vespula germanica,Hants.,Titchfield,NA,NA,NA,NA,50.8257,-1.2383,1.8,1978-05-21
+10884352,Vespa crabro,Sussex,NA,SU998176,SU9917,SU91,NA,NA,NA,NA,1979-08-23
+10884290,Vespa crabro,Devon,Axminster,NA,NA,NA,NA,50.78269958,-2.994899988,1.39999997,1979-12-03
+10883980,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1979-09-02
+10883979,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1979-09-01
+10883978,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1979-09-02
+10883974,Vespula vulgaris,Surrey,Esher Common,NA,NA,NA,NA,51.3472,-0.3738,1.2,1979-03-02
+10883962,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1979-09-02
+10883960,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1979-09-23
+10883804,Vespula vulgaris,Hants.,Winchester,NA,NA,NA,NA,51.04589844,-1.31099999,0.80000001,1979-08-10
+10883711,Vespula vulgaris,I. o. W.,Luccombe Chine,NA,NA,NA,NA,50.605333,-1.177183,3.13,1979-08-06
+10883705,Vespula vulgaris,Hants.,Petersfield,NA,NA,NA,NA,50.9647,-0.9877,0.9,1979-08-05
+10883699,Vespula vulgaris,Hants.,Crab Wood,NA,NA,NA,NA,51.0628,-1.3861,1,1979-08-19
+10882940,Vespula germanica,Kent,Ham Green,TQ1869?,NA,NA,NA,51.389757,0.651789,0.75,1979-11-02
+10882937,Vespula germanica,Kent,Ham Green,TQ1869?,NA,NA,NA,51.389757,0.651789,0.75,1979-11-02
+10882936,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,1979-09-23
+10882935,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,1979-09-23
+10882934,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,1979-09-02
+10882933,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,1979-09-02
+10884377,Vespa crabro,Herefordshire,Evesbatch,NA,NA,NA,NA,52.131714,-2.463561,0.52,1980-05-18
+10883511,Vespula vulgaris,I. o. W.,St. Helens,NA,NA,NA,NA,50.698,-1.1138,1.2,1980-08-27
+10883325,Vespula vulgaris,I. o. W.,The Undercliff,NA,NA,NA,NA,50.5861,-1.2365,1.7,1980-04-19
+10883324,Vespula vulgaris,I. o. W.,Firestone Copse,NA,NA,NA,NA,50.716527,-1.214696,0.9,1980-04-19
+10884329,Vespa crabro,London,Kingston Vale,NA,NA,NA,NA,51.4336,-0.2575,1.4,1981-12-02
+10884095,Vespa crabro,Suffolk,Stowmarket,NA,NA,NA,NA,52.1889,0.9977,2.6,1981-10-17
+10883805,Vespula vulgaris,Hants.,Winchester,NA,NA,NA,NA,51.0598,-1.3101,3.9,1981-06-21
+10883803,Vespula vulgaris,I. o. W.,Yarmouth,NA,NA,NA,NA,50.7053,-1.4989,1.2,1981-09-05
+10883146,Vespula vulgaris,Devon,Shipley,NA,NA,NA,NA,50.451155,-3.858691,1.04,1981-04-09
+10884019,Vespa crabro,Norfolk,Bausey,NA,NA,NA,NA,52.74795,0.463835,2,1982-09-15
+10884018,Vespa crabro,Norfolk,Bausey,NA,NA,NA,NA,52.74795,0.463835,2,1982-09-15
+10884017,Vespa crabro,Norfolk,Bausey,NA,NA,NA,NA,52.74795,0.463835,2,1982-09-15
+10882741,Vespula germanica,Glos.,Rodborough,NA,NA,NA,NA,51.7391,-2.2342,0.4,1982-08-29
+10884313,Vespa crabro,Cornwall,Truro,NA,NA,NA,NA,50.320277,-4.960693,2.4,1983-11-27
+10884378,Vespa crabro,London,Lambeth,TQ3271,TQ3271,NA,NA,51.4309,-0.0936,,1985-10-19
+10884051,Vespa crabro,Middx.,Hampton,NA,NA,NA,NA,51.41339,-0.3667,3.8,1986-09-25
+10883927,Vespula vulgaris,Hants.,Hatchet Pond,NA,NA,NA,NA,50.81119919,-1.479500055,0.60000002,1986-07-21
+10883992,Vespula vulgaris,Kent,Chattenden,NA,NA,NA,NA,51.4194,0.5326,1.1,1988-08-01
+10883983,Vespula vulgaris,Kent,Chattenden,NA,NA,NA,NA,51.4194,0.5326,1.1,1988-08-01
+10883991,Vespula vulgaris,Surrey,Reigate,NA,NA,NA,NA,51.2373,-0.2059,2.4,1989-07-24
+10883938,Vespula vulgaris,Herts.,Berkhamsted,NA,NA,NA,NA,51.7598,-0.5679,3.5,1989-11-08
+10884379,Vespa crabro,Hants.,New Forest,SU2608,SU2608,NA,NA,50.8765,-1.6315,3.7,1990-10-01
+10884327,Vespa crabro,London,Richmond,NA,NA,NA,NA,51.4427,-0.2837,2.6,1990-08-22
+10883961,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1990-05-26
+10883990,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883989,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883988,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883987,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883986,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883985,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883984,Vespula vulgaris,Kent,Maidstone,NA,NA,NA,NA,51.2704,0.5227,4.9,1991-11-06
+10883939,Vespula vulgaris,Herts.,Berkhamsted,NA,NA,NA,NA,51.7598,-0.5679,3.5,1991-03-07
+10883187,Vespula vulgaris,Surrey,Boundstone,NA,NA,NA,NA,51.19,-0.812,0.6,1991-05-13
+10884012,Vespa crabro,Norfolk,Bausey,NA,NA,NA,NA,52.74795,0.463835,2,1992-09-15
+10883662,Vespula vulgaris,Surrey,Boundstone,NA,NA,NA,NA,51.19,-0.812,0.6,1992-08-30
+10884335,Vespa crabro,London,Richmond,NA,NA,NA,NA,51.4427,-0.2837,2.6,1993-07-03
+10882619,Vespula germanica,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,1993-09-26
+10883855,Vespula vulgaris,Surrey,Boundstone,NA,NA,NA,NA,51.19,-0.812,0.6,1994-08-10
+10882949,Vespula germanica,Hants.,Farenborough,NA,NA,NA,NA,51.360131,0.074941,0.03,1997-04-01
+10883982,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,1998-04-01
+10883294,Vespula vulgaris,Cheshire,Hilbre Islands,NA,NA,NA,NA,53.3825,-3.227531,0.8,1998-08-04
+10882862,Vespula germanica,London,S. Kensington,NA,NA,NA,NA,51.49610138,-0.178499997,0.1,1998-06-16
+10882860,Vespula germanica,London,S. Kensington,NA,NA,NA,NA,51.49610138,-0.178499997,0.1,1998-06-16
+10882829,Vespula germanica,London,S. Kensington,NA,NA,NA,NA,51.49610138,-0.178499997,0.1,1998-06-16
+10883977,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,2000-08-29
+10884426,Vespa crabro,Wilts.,Hill's Copse area,NA,NA,NA,NA,51.178676,-1.675453,3.01,2001-07-31
+10884014,Vespa crabro,Kent,Biddenden,TQ83??,NA,NA,NA,51.1151,0.6433,1.2,2001-09-07
+10884013,Vespa crabro,Kent,Biddenden,TQ83??,NA,NA,NA,51.1151,0.6433,1.2,2001-09-07
+10884023,Vespa crabro,Kent,Penshurst,TQ5344,TQ5344,TQ54,NA,NA,NA,NA,2002-09-26
+10883999,Vespula vulgaris,Hants.,Farenborough,NA,NA,NA,NA,51.360131,0.074941,0.03,2002-04-10
+10883998,Vespula vulgaris,Hants.,Farenborough,NA,NA,NA,NA,51.360131,0.074941,0.03,2002-04-10
+10882941,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2002-10-16
+10882939,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2002-10-16
+10882942,Vespula germanica,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2003-03-10
+10884418,Vespa crabro,Surrey,Reigate Priory Park,TQ251497,TQ2549,TQ24,NA,NA,NA,NA,2004-10-06
+10884011,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2004-07-31
+10884008,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2004-08-05
+10884004,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2004-08-13
+10884002,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2004-05-28
+10884006,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2005-06-08
+10884003,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2005-06-29
+10883293,Vespula vulgaris,Hunts.,Monks Wood,NA,NA,NA,2M,52.405,-0.2413,1,2005-09-28
+10881476,Vespula germanica,Hunts.,Monks Wood,TL202805,TL2080,TL28,NA,NA,NA,NA,2005-09-26
+10884022,Vespa crabro,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2006-10-14
+10884021,Vespa crabro,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2006-10-14
+10884020,Vespa crabro,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2006-10-14
+10884015,Vespa crabro,Kent,Aylesford,TQ7359,TQ7359,TQ75,NA,NA,NA,NA,2006-07-22
+10883580,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,2006-02-24
+10883531,Vespula vulgaris,St. Helena,NA,NA,NA,NA,NA,NA,NA,NA,2006-01-18
+10884010,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2008-08-11
+10884009,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2008-08-11
+10882861,Vespula germanica,London,S. Kensington,TQ265790,TQ2679,TQ27,NA,NA,NA,NA,2008-07-11
+10884421,Vespa crabro,Herts.,Aldbury,SP966121,SP9612,SP91,NA,51.8,-0.6,0.9,2010-07-04
+10883963,Vespula vulgaris,Somerset,Exmoor National Park,NA,NA,NA,NA,51.1667,-3.75,3.9,2010-08-15
+10884420,Vespa crabro,Bucks.,Pitstone Common,SP971133,SP9713,SP91,2M,NA,NA,NA,2011-04-22
+10884419,Vespa crabro,Bucks.,Pitstone Common,SP971133,SP9713,SP91,NA,NA,NA,NA,2011-04-07
+10884016,Vespa crabro,Kent,Faggs wood,TQ9834,TQ9834,TQ93,NA,NA,NA,NA,2011-08-17
+10884007,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2011-05-06
+10884005,Vespa crabro,Middx.,Harefield,NA,NA,NA,NA,51.61119843,-0.485100001,0.4,2011-04-30
+10883964,Vespula vulgaris,Berks.,Maidenhead,NA,NA,NA,NA,NA,NA,NA,2011-08-08
+10883814,Vespula vulgaris,Berks.,Maidenhead,NA,NA,NA,NA,NA,NA,NA,2011-08-08
+10883981,Vespula vulgaris,Kent,Aylesford,NA,NA,NA,NA,NA,NA,NA,2012-04-03
+10884442,Vespa crabro,London,Wimbledon,TQ2371,NA,NA,NA,51.42890167,-0.255499989,1.5,2015-08-22
+10882901,Vespula germanica,London,Putney Heath,TQ2372,NA,NA,NA,51.4502,-0.2326,0.8,2015-07-18
+10884350,Vespa crabro,Rutland,Great Casterton,NA,NA,NA,NA,52.671711,-0.519456,1.2,2016-05-15
+10881309,Vespula germanica,London,Greenwich,NA,NA,NA,NA,NA,NA,NA,2016-05-22
+10881249,Vespula germanica,London,Greenwich,TQ400792,TQ4079,TQ47,NA,NA,NA,NA,2016-05-22
