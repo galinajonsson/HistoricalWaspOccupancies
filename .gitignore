@@ -1,8 +1,11 @@
-# Hide BWARS data
+# BWARS data
 data/rawData/BWARSraw.csv
 
-# .DS/_Store
-**.DS/_Store
+# .DS_Store
+*.DS_Store
+
+# .rds files (data output files)
+*.rds
 
 # History files
 .Rhistory
