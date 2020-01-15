@@ -1,3 +1,9 @@
+# Hide BWARS data
+data/rawData/BWARSraw.csv
+
+# .DS/_Store
+*.DS/_Store
+
 # History files
 .Rhistory
 .Rapp.history
