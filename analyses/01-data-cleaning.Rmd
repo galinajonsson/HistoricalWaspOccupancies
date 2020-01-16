@@ -126,6 +126,1056 @@ NHM <- subset(NHM, error_radius <= 10)
 ```
 
 
+We removed all records that were not of either Vespula vulgaris, Vespula germania or Vespa crabro and removed any records dating before 1900 or after 2016. Furthermore, we changed the class of the columns to match those of the NHM data, and assign each record to a time period. 
+```{r NHMclean-time ,eval=TRUE, message=FALSE, warning=FALSE}
+# Extract the year and create new column
+NHM$year <- format(as.Date(NHM$date, format="%Y-%m-%d"),"%Y")
+
+# Get rid of records pre 1900, post 2016 and those without years
+NHM <- subset(NHM, year >= 1900)
+NHM <- subset(NHM, year <= 2016)
+NHM <- NHM[!is.na(NHM$year), ]
+NHM$year <- as.integer(NHM$year)
+
+
+# Define my time periods: FIVE years 
+time_periods5 <- data.frame(start = c(1900, 1905, 1910, 1915, 1920, 1925, 1930, 1935, 1940,
+                                       1945, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005,
+                                       2010, 2015), end = c(1904, 1909, 1914, 1919, 1924,
+                                                            1929, 1934, 1939, 1944, 1949, 1954, 1959, 1964, 1969,
+                                                            1974, 1979,1984, 1989, 1994, 1999, 2004, 2009, 2014,
+                                                            2019))
+
+# Define my time periods: TEN years
+time_periods10 <- data.frame(start = c(1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000,
+                                      2010), end = c(1909, 1919, 1929, 1939, 1949, 1959, 1969, 1979,1989,
+                                                     1999, 2009, 2019))
+
+
+# Now use these to assign my dates to time periods (five years). No specimens collection period extends over two years so I can use collection from dates
+NHM$tp5 <- sparta::date2timeperiod(Date = NHM$date, time_period = time_periods5)
+
+
+# Give the time periods useful names
+NHM$tp5[NHM$tp5 == "1"] <- "1900-1904"
+NHM$tp5[NHM$tp5 == "2"] <- "1905-1909"
+NHM$tp5[NHM$tp5 == "3"] <- "1910-1914"
+NHM$tp5[NHM$tp5 == "4"] <- "1915-1919"
+NHM$tp5[NHM$tp5 == "5"] <- "1920-1924"
+NHM$tp5[NHM$tp5 == "6"] <- "1925-1929"
+NHM$tp5[NHM$tp5 == "7"] <- "1930-1934"
+NHM$tp5[NHM$tp5 == "8"] <- "1935-1939"
+NHM$tp5[NHM$tp5 == "9"] <- "1940-1944"
+NHM$tp5[NHM$tp5 == "10"] <- "1945-1949"
+NHM$tp5[NHM$tp5 == "11"] <- "1950-1954"
+NHM$tp5[NHM$tp5 == "12"] <- "1955-1959"
+NHM$tp5[NHM$tp5 == "13"] <- "1960-1964"
+NHM$tp5[NHM$tp5 == "14"] <- "1965-1969"
+NHM$tp5[NHM$tp5 == "15"] <- "1970-1974"
+NHM$tp5[NHM$tp5 == "16"] <- "1975-1979"
+NHM$tp5[NHM$tp5 == "17"] <- "1980-1984"
+NHM$tp5[NHM$tp5 == "18"] <- "1985-1989"
+NHM$tp5[NHM$tp5 == "19"] <- "1990-1994"
+NHM$tp5[NHM$tp5 == "20"] <- "1995-1999"
+NHM$tp5[NHM$tp5 == "21"] <- "2000-2004"
+NHM$tp5[NHM$tp5 == "22"] <- "2005-2009"
+NHM$tp5[NHM$tp5 == "23"] <- "2010-2014"
+NHM$tp5[NHM$tp5 == "24"] <- "2015-2019"
+
+
+# Define my time periods: TEN years
+time_periods10 <- data.frame(start = c(1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000,
+                                      2010), end = c(1909, 1919, 1929, 1939, 1949, 1959, 1969, 1979,1989,
+                                                     1999, 2009, 2019))
+
+# Now use these to assign my dates to time periods
+NHM$tp10 <- sparta::date2timeperiod(Date = NHM$date, time_period = time_periods10)
+
+# Give the time periods useful names
+NHM$tp10[NHM$tp10 == "1"] <- "1900-1909"
+NHM$tp10[NHM$tp10 == "2"] <- "1910-1919"
+NHM$tp10[NHM$tp10 == "3"] <- "1920-1929"
+NHM$tp10[NHM$tp10 == "4"] <- "1930-1939"
+NHM$tp10[NHM$tp10 == "5"] <- "1940-1949"
+NHM$tp10[NHM$tp10 == "6"] <- "1950-1959"
+NHM$tp10[NHM$tp10 == "7"] <- "1960-1969"
+NHM$tp10[NHM$tp10 == "8"] <- "1970-1979"
+NHM$tp10[NHM$tp10 == "9"] <- "1980-1989"
+NHM$tp10[NHM$tp10 == "10"] <- "1990-1999"
+NHM$tp10[NHM$tp10 == "11"] <- "2000-2009"
+NHM$tp10[NHM$tp10 == "12"] <- "2010-2019"
+```
+
+
+Finally, tidy up the data frame and only keep columns we're interested in but first add a source column as to identify that this data is from NHM and not BWARS
+```{r NHMclean-final ,eval=TRUE, message=FALSE, warning=FALSE}
+# I will drop columns that I will not longer use
+keepcolumns <- c("species", "date", "year", "km1grid", "km2grid", "km5grid", "km10grid", "tp5", "tp10")
+NHM <- NHM[keepcolumns]
+```
+
+
+## BWARS records
+
+###Load and tidy the BWARS dataset
+We were provided with the Bees, Wasps and Ants Recording Society's (BWARS) records of all Hymenopteran species until 2016. The data contained three columns (see output of below code chunk): species name, collection date and OSNG grid reference. As the BWARS data is available on request from the National Biodiversity Network (NBN; contact details below), a reader of this document who wants to reproduce the code might be provided with data that has additional columns, different column names and species. Hence, some steps of the following code chunks might not be neccessary (e.g. removing all records that are not of either Vespula vulgaris, Vespula germania or Vespa crabro).
+
+The National Biodiversity Network (NBN) contact details are:
+The National Biodiversity Network
+Unit F, 14-18 St. Mary’s Gate
+Lace Market
+Nottingham, UK
+Telephone: +44 (0)115 850 0177
+Email: support@nbn.org.uk
+
+Firstly, I load the data (NOTE that thsi data file is not provided but is available on request, hence the file path and file name will be different for someone wishing to reproduce this code), give columns more infomrative names and show its structure.
+```{r loadBWARS, eval=TRUE}
+# Load BWARS data 
+BWARS <- read.csv('../data/rawData/BWARSraw.csv', header=T, as.is = TRUE, na.strings=c("","NA")) #NOTE that the file path and file name will be different for someone wishing to reproduce this code
+
+# Rename columns
+colnames(BWARS)[1] <- "species"
+colnames(BWARS)[2] <- "gridref"
+colnames(BWARS)[3] <- "date"
+
+# Show structure
+str(BWARS)
+```
+
+
+As the raw data contains records of all Hymenopteran species until 2016. We removed all records that were not of either Vespula vulgaris, Vespula germania or Vespa crabro and removed any records dating before 1900. A reader wishing to reproduce this code might use records of V. vulgaris, V. germanica and V. crabro only, and/or a dataset extending to later years. If so, skip the step removing other species in the below code chunk and/or remove records dating post 2016. Furthermore, we changed the class of the columns to match those of the NHM data, and assign each record to a time period. 
+```{r BWARSclean-Spp-Date ,eval=TRUE}
+# Get rid of other species
+BWARS$species <- as.factor(BWARS$species)
+BWARS <- BWARS[BWARS$species == "VESPULA vulgaris" | BWARS$species == "VESPULA germanica" | 
+           BWARS$species == "VESPA crabro", ]
+BWARS$species <- droplevels(BWARS$species)
+
+# Rename BWARS species name to match those in the NHM dataframe
+levels(BWARS$species) <- sub("VESPA crabro", "Vespa crabro", levels(BWARS$species))
+levels(BWARS$species) <- sub("VESPULA germanica", "Vespula germanica", levels(BWARS$species))
+levels(BWARS$species) <- sub("VESPULA vulgaris", "Vespula vulgaris", levels(BWARS$species))
+
+# Convert "date" to date class and "gridref" to character
+BWARS$date <- as.Date(BWARS$date, "%Y-%m-%d")
+BWARS$gridref <- as.character(BWARS$gridref)
+
+# Extract the year and create new column
+BWARS$year <- format(as.Date(BWARS$date, format="%Y-%m-%d"),"%Y")
+
+# Get rid of records pre 1900, post 2016 and those without years
+BWARS <- subset(BWARS, year >= 1900)
+BWARS <- subset(BWARS, year <= 2016)
+BWARS <- BWARS[!is.na(BWARS$year), ]
+
+
+###### Assign records to closure periods######
+# I can use the time periods defined in the NHM section and the sparta function date2timeperiod to assign record dates to time periods starting with five year time periods.
+BWARS$tp5 <- sparta::date2timeperiod(Date = BWARS$date, time_period = time_periods5)
+
+# Give the time periods useful names
+BWARS$tp5[BWARS$tp5 == "1"] <- "1900-1904"
+BWARS$tp5[BWARS$tp5 == "2"] <- "1905-1909"
+BWARS$tp5[BWARS$tp5 == "3"] <- "1910-1914"
+BWARS$tp5[BWARS$tp5 == "4"] <- "1915-1919"
+BWARS$tp5[BWARS$tp5 == "5"] <- "1920-1924"
+BWARS$tp5[BWARS$tp5 == "6"] <- "1925-1929"
+BWARS$tp5[BWARS$tp5 == "7"] <- "1930-1934"
+BWARS$tp5[BWARS$tp5 == "8"] <- "1935-1939"
+BWARS$tp5[BWARS$tp5 == "9"] <- "1940-1944"
+BWARS$tp5[BWARS$tp5 == "10"] <- "1945-1949"
+BWARS$tp5[BWARS$tp5 == "11"] <- "1950-1954"
+BWARS$tp5[BWARS$tp5 == "12"] <- "1955-1959"
+BWARS$tp5[BWARS$tp5 == "13"] <- "1960-1964"
+BWARS$tp5[BWARS$tp5 == "14"] <- "1965-1969"
+BWARS$tp5[BWARS$tp5 == "15"] <- "1970-1974"
+BWARS$tp5[BWARS$tp5 == "16"] <- "1975-1979"
+BWARS$tp5[BWARS$tp5 == "17"] <- "1980-1984"
+BWARS$tp5[BWARS$tp5 == "18"] <- "1985-1989"
+BWARS$tp5[BWARS$tp5 == "19"] <- "1990-1994"
+BWARS$tp5[BWARS$tp5 == "20"] <- "1995-1999"
+BWARS$tp5[BWARS$tp5 == "21"] <- "2000-2004"
+BWARS$tp5[BWARS$tp5 == "22"] <- "2005-2009"
+BWARS$tp5[BWARS$tp5 == "23"] <- "2010-2014"
+BWARS$tp5[BWARS$tp5 == "24"] <- "2015-2019"
+
+# Now use these to assign my dates to time periods
+BWARS$tp10 <- sparta::date2timeperiod(Date = BWARS$date, time_period = time_periods10)
+
+# Give the time periods useful names
+BWARS$tp10[BWARS$tp10 == "1"] <- "1900-1909"
+BWARS$tp10[BWARS$tp10 == "2"] <- "1910-1919"
+BWARS$tp10[BWARS$tp10 == "3"] <- "1920-1929"
+BWARS$tp10[BWARS$tp10 == "4"] <- "1930-1939"
+BWARS$tp10[BWARS$tp10 == "5"] <- "1940-1949"
+BWARS$tp10[BWARS$tp10 == "6"] <- "1950-1959"
+BWARS$tp10[BWARS$tp10 == "7"] <- "1960-1969"
+BWARS$tp10[BWARS$tp10 == "8"] <- "1970-1979"
+BWARS$tp10[BWARS$tp10 == "9"] <- "1980-1989"
+BWARS$tp10[BWARS$tp10 == "10"] <- "1990-1999"
+BWARS$tp10[BWARS$tp10 == "11"] <- "2000-2009"
+BWARS$tp10[BWARS$tp10 == "12"] <- "2010-2019"
+```
+
+
+Extract the grid cells of interest (1 km^2, 2 km^2, 5 km^2, 10 km^2) and remove all observations from outside of England.
+```{r BWARSclean-gridref ,eval=TRUE}
+# Remove any records with less than 6 letters+digits (1km^2 cell precision)
+BWARS <- BWARS[(which(nchar(BWARS$gridref) >= 6)),]
+
+# Reformat the grid references to 1 km^2, 2 km^2, 5 km^2, 10 km^2 precision using BRCmap function reformat_gr
+BWARS$km1grid <- BRCmap::reformat_gr(BWARS$gridref, prec_out = 1000, precision = NULL, pad_gr = FALSE)
+BWARS$km2grid <- BRCmap::reformat_gr(BWARS$gridref, prec_out = 2000, precision = NULL, pad_gr = FALSE)
+BWARS$km5grid <- BRCmap::reformat_gr(BWARS$gridref, prec_out = 5000, precision = NULL, pad_gr = FALSE)
+BWARS$km10grid <- BRCmap::reformat_gr(BWARS$gridref, prec_out = 10000, precision = NULL, pad_gr = FALSE)
+
+############ Drop records that are not from England ############
+
+# Load csv file specifying which country each 10x10 grid cell is in
+country_ID <- read.csv('/Users/galinajonsson/Downloads/SQ_10km_CN_ID.csv', header=TRUE)
+
+# As country names are coded from 1 to 7, rename with informative names
+cn_names <- data.frame(CN_ID = 1:7,
+                       CN_NAME = c('ENGLAND','WALES','SCOTLAND','CHANNEL ISLES',
+                                   'NORTHERN IRELAND','REPUBLIC OF IRELAND','ISLE OF MAN'))
+country_ID <- merge(x = country_ID, y = cn_names, all.x = TRUE, all.y = FALSE)
+
+# Rename 10x10 grid cell column
+colnames(country_ID)[2] <- "km10grid"
+
+# Merge country names with BWARS data indicating which country each record is from
+BWARS <- merge(BWARS, country_ID[, c("km10grid", "CN_NAME")], by="km10grid")
+
+# Drop records that are not from England
+BWARS$CN_NAME <- as.factor(BWARS$CN_NAME)
+BWARS <- droplevels(subset(BWARS, CN_NAME != "CHANNEL ISLES"))
+BWARS <- droplevels(subset(BWARS, CN_NAME != "ISLE OF MAN"))
+BWARS <- droplevels(subset(BWARS, CN_NAME != "NORTHERN IRELAND"))
+BWARS <- droplevels(subset(BWARS, CN_NAME != "REPUBLIC OF IRELAND"))
+BWARS <- droplevels(subset(BWARS, CN_NAME != "SCOTLAND"))
+BWARS <- droplevels(subset(BWARS, CN_NAME != "WALES"))
+
+# Change column classes to match the NHM dataset
+BWARS$km1grid <- as.factor(BWARS$km1grid)
+BWARS$km2grid <- as.factor(BWARS$km2grid)
+BWARS$km5grid <- as.factor(BWARS$km5grid)
+BWARS$km10grid <- as.factor(BWARS$km10grid)
+BWARS$year <- as.integer(BWARS$year)
+
+# I will drop columns that I will not longer use
+keepcolumns <- c("species", "date", "year", "km1grid", "km2grid", "km5grid", "km10grid", "tp5", "tp10")
+BWARS <- BWARS[keepcolumns]
+```
+
+## Combine NHM and BWARS records
+Since the NHM dataframe has more columns than the BWARS dataframe, I first load the the BWARS data into the combined dataframe (which I will call "NHM_BWARS") and add columns to match those of the NHM dataframe. I will also rearrange the columns of the dataframe to match those of the NHM data before I merge. 
+```{r eval=TRUE}
+# Load the BWARS data into the combined dataframe
+NHM_BWARS <- BWARS
+
+# Create a column to identify that these observations are from the BWARS dataset 
+NHM_BWARS$source <- as.factor("BWARS")
+NHM$source <- as.factor("NHM")
+
+#Merge the MusemBWARSdat with the tidy NHM df
+NHM_BWARS <- rbind(NHM_BWARS, NHM) 
+```
+
+
+
+The function used to run the Bayesian occupancy models only uses records from sites visited in two or more closure periods. If this is not accounted for, models at different spatiotemporal ressolutions would include different numbers of sites such that the more temporally coarse a model is, the smaller the chance of sites being visited in two or more closure periods and hence, such models will include fewer sites than those at finer temporal ressolutions. To compare models at different spatiotemporal ressolutions, sites that are not visited in two or more closure periods at the coarsest temporal resolution have to be removed. Given that 10 year TPs is the coarsest temporal resolution used, we find the sites visited in more than one 10 year TP and remove all other sites from the dataset before formatting the data.
+
+However, first, we identify visits (combination of grid cell and date) using the function "formatOccData" (from the sparta package). 
+
+
+
+
+We first separately format both the NHM and the BWARS data at a resolution of ten year closure period and 1 km^^2 grid cell. The function output contains two data frames used in the models: spp_vis and formattedOccData. To find sites present in two 10 year closure periods, I will only need the formattedOccData dataframe. We therefore merge the formattedOccData dataframes from each of the two datasets (NHM and BWARS).
+```{r format-10TP-visits,echo=TRUE, message=FALSE, message=FALSE, warning=FALSE}
+### Format the NHM data
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHM$species, 
+                                              site = NHM$km1grid, 
+                                              survey= paste(NHM$km1grid,NHM$date), # visits are called survey here
+                                              closure_period = NHM$tp10)
+
+#### Format the BWARS data
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARS$species, 
+                                                site = BWARS$km1grid, 
+                                                survey= paste(BWARS$km1grid,BWARS$date), # visits are called survey here
+                                                closure_period = BWARS$tp10)
+
+
+#Merge the formated NHM data with the formatted BWARS data
+occDetdata_merged_1kmgrid_10years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+```
+
+From the combined formattedOccData dataframe, we find sites that have been visited in more than one closure period across both the NHM and BWARS datasets (which are now combined). 
+```{r echo=TRUE, cache=TRUE}
+require(reshape2)
+# only include sites which have more than nyr of records
+nyr <- 2
+yps <- rowSums(acast(occDetdata_merged_1kmgrid_10years, site ~ TP, length, value.var = 'L') > 0)
+sites_to_include <- (names(yps[yps >= nyr]))
+sites_to_include <- data.frame(sites_to_include)
+sites_to_include$km1grid <- sites_to_include$sites_to_include
+```
+
+
+We now remove records from sites not present in two or more closure periods from each of the unformtted NHM and BWARS datasets separately. 
+
+```{r echo=TRUE, cache=TRUE, message=FALSE, warning=FALSE}
+############ NHM data ############
+# Make list of sites to delete (sites that don't exist in two or more time periods) - NHM
+sites2deleteNHM <- NHM %>% anti_join(sites_to_include, by = "km1grid")
+
+# Delete sites to delete from raw NHM dataset
+NHMdat <- NHM[!(NHM$km1grid %in% sites2deleteNHM$km1grid),]
+
+
+############ BWARS data ############
+# Make list of sites to delete (sites that don't exist in both) - BWARS
+sites2deleteBWARS <- BWARS %>% anti_join(sites_to_include, by = "km1grid")
+
+# Delete sites to delete from raw BWARS dataset
+BWARSdat <- BWARS[!(BWARS$km1grid %in% sites2deleteBWARS$km1grid),]
+```
+
+
+
+
+# Format data and run models
+
+```{r plot-functions, message=FALSE, echo=FALSE}
+#First I need to load the plotting functions I've written
+############################ One Year ############################
+
+plot.occDet.wasp1yr <- function(x, y = NULL, main = x$SPP_NAME, reg_agg = '', ...){
+    
+  # gets summary output from the BUGS files 
+  spp_data <- as.data.frame(x$BUGSoutput$summary)
+  
+  if(reg_agg != '') reg_agg <- paste0('.r_', reg_agg)
+  
+  # get rows we are interested in
+  ### take psi.fs rows - these are the yearly proportion of occupied cells ###
+  spp_data$X <- row.names(spp_data)
+  new_data <- spp_data[grepl(paste0("^psi.fs", reg_agg, "\\["),spp_data$X),]
+  new_data$year <- (Year = (x$min_year + 1899) + as.numeric(gsub(paste0("psi.fs", reg_agg), "", gsub("\\[|\\]","", row.names(new_data)))))
+  
+  # rename columns, otherwise ggplot doesn't work properly    
+  names(new_data) <- gsub("2.5%","quant_025", names(new_data))
+  names(new_data) <- gsub("97.5%","quant_975", names(new_data))
+  
+  # Add rhat T/F column
+  new_data$rhat_threshold[new_data$Rhat < 1.1] <- 'Good (<1.1)'
+  new_data$rhat_threshold[new_data$Rhat > 1.1] <- 'Bad (>1.1)'
+  
+  ### plot the yearly predicted proportion of occupied sites ###
+  # plot with error bars based on 95CI
+  ggplot(new_data, aes_string(x = "year", y = "mean"), ...) + 
+    theme_bw() +
+    geom_ribbon(data = new_data,
+                aes_string(group = 1, ymin = "quant_025", ymax = "quant_975"),
+                alpha = 0.2) +
+    geom_line(size = 1, col = "black") +
+    scale_y_continuous(limits = c(0, 1)) +
+    scale_x_continuous(breaks=seq(1900, 2020,20)) +
+    geom_point(size = 4, aes(col = rhat_threshold)) +
+    scale_color_manual(name = 'Rhat', values = c('Bad (>1.1)' = 'red','Good (<1.1)' = 'blue')) +
+    ylab("Occupancy") +
+    xlab("Year") +
+    scale_y_continuous(limits = c(0, 1)) +
+    ggtitle(main) + 
+    theme(plot.title = element_text(lineheight = .8, face = "bold"),
+          legend.position = 'bottom')
+}
+
+############################ Five Years ############################
+
+
+#' Plot occDet Objects
+#' 
+#' @param x An object of class occDet
+#' @param y not used
+#' @param main The plot title, defaults to the species name
+#' @param reg_agg The name of a region or region aggregate to plot.
+#' If '' (default) then the overall occupancy estimates are plotted
+#' @param ... Additional arguments passed to ggplot
+
+#' @import ggplot2
+#' @method plot occDet
+#' @export
+
+plot.occDet.wasp5yrs <- function(x, y = NULL, main = x$SPP_NAME, reg_agg = '', ...){
+    
+  # gets summary output from the BUGS files 
+  spp_data <- as.data.frame(x$BUGSoutput$summary)
+  
+  if(reg_agg != '') reg_agg <- paste0('.r_', reg_agg)
+  
+  # get rows we are interested in
+  ### take psi.fs rows - these are the yearly proportion of occupied cells ###
+  spp_data$X <- row.names(spp_data)
+  new_data <- spp_data[grepl(paste0("^psi.fs", reg_agg, "\\["),spp_data$X),]
+  new_data$year <- (Year = (x$min_year +1894) + (as.numeric(gsub(paste0("psi.fs", reg_agg), "", gsub("\\[|\\]","", row.names(new_data)))))*5)
+  
+  # rename columns, otherwise ggplot doesn't work properly    
+  names(new_data) <- gsub("2.5%","quant_025", names(new_data))
+  names(new_data) <- gsub("97.5%","quant_975", names(new_data))
+  
+  # Add rhat T/F column
+  new_data$rhat_threshold[new_data$Rhat < 1.1] <- 'Good (<1.1)'
+  new_data$rhat_threshold[new_data$Rhat > 1.1] <- 'Bad (>1.1)'
+  
+  ### plot the yearly predicted proportion of occupied sites ###
+  # plot with error bars based on 95CI
+  ggplot(new_data, aes_string(x = "year", y = "mean"), ...) + 
+    theme_bw() +
+    geom_ribbon(data = new_data,
+                aes_string(group = 1, ymin = "quant_025", ymax = "quant_975"),
+                alpha = 0.2) +
+    geom_line(size = 1, col = "black") +
+    geom_point(size = 4, aes(col = rhat_threshold)) +
+    scale_color_manual(name = 'Rhat', values = c('Bad (>1.1)' = 'red','Good (<1.1)' = 'blue')) +
+    ylab("Occupancy") +
+    scale_y_continuous(limits = c(0, 1)) +
+    scale_x_continuous(breaks=seq(1900, 2020,20)) +
+    xlab("Year") +
+    scale_y_continuous(limits = c(0, 1)) +
+    ggtitle(main) + 
+    theme(plot.title = element_text(lineheight = .8, face = "bold"),
+          legend.position = 'bottom')
+}
+
+
+
+############################ Ten Years ############################
+
+
+#' Plot occDet Objects
+#' 
+#' @param x An object of class occDet
+#' @param y not used
+#' @param main The plot title, defaults to the species name
+#' @param reg_agg The name of a region or region aggregate to plot.
+#' If '' (default) then the overall occupancy estimates are plotted
+#' @param ... Additional arguments passed to ggplot
+
+#' @import ggplot2
+#' @method plot occDet
+#' @export
+
+plot.occDet.wasp10yrs <- function(x, y = NULL, main = x$SPP_NAME, reg_agg = '', ...){
+    
+  # gets summary output from the BUGS files 
+  spp_data <- as.data.frame(x$BUGSoutput$summary)
+  
+  if(reg_agg != '') reg_agg <- paste0('.r_', reg_agg)
+  
+  # get rows we are interested in
+  ### take psi.fs rows - these are the yearly proportion of occupied cells ###
+  spp_data$X <- row.names(spp_data)
+  new_data <- spp_data[grepl(paste0("^psi.fs", reg_agg, "\\["),spp_data$X),]
+  new_data$year <- (Year = (x$min_year +1889) + (as.numeric(gsub(paste0("psi.fs", reg_agg), "", gsub("\\[|\\]","", row.names(new_data)))))*10)
+  
+  # rename columns, otherwise ggplot doesn't work properly    
+  names(new_data) <- gsub("2.5%","quant_025", names(new_data))
+  names(new_data) <- gsub("97.5%","quant_975", names(new_data))
+  
+  # Add rhat T/F column
+  new_data$rhat_threshold[new_data$Rhat < 1.1] <- 'Good (<1.1)'
+  new_data$rhat_threshold[new_data$Rhat > 1.1] <- 'Bad (>1.1)'
+  
+  ### plot the yearly predicted proportion of occupied sites ###
+  # plot with error bars based on 95CI
+  ggplot(new_data, aes_string(x = "year", y = "mean"), ...) + 
+    theme_bw() +
+    geom_ribbon(data = new_data,
+                aes_string(group = 1, ymin = "quant_025", ymax = "quant_975"),
+                alpha = 0.2) +
+    geom_line(size = 1, col = "black") +
+    scale_y_continuous(limits = c(0, 1)) +
+    scale_x_continuous(breaks=seq(1900, 2020,20)) +
+    geom_point(size = 4, aes(col = rhat_threshold)) +
+    scale_color_manual(name = 'Rhat', values = c('Bad (>1.1)' = 'red','Good (<1.1)' = 'blue')) +
+    ylab("Occupancy") +
+    xlab("Year") +
+    scale_y_continuous(limits = c(0, 1)) +
+    ggtitle(main) + 
+    theme(plot.title = element_text(lineheight = .8, face = "bold"),
+          legend.position = 'bottom')
+}
+```
+
+
+Here I will format the data and run the 12 models with varying spatial (1, 2, 5 and 10 km grid cells) and temporal (1, 5 or 10 year TPs) resolutions. Please note that I will describe each step in detail for model 1 and omitt any repeated descriptions in the formatting of subsequent models. 
+
+## Model 1 (1 yr + 1km^^2)
+#### Survey: date (dd/mm/yyyy)xGridCell
+#### Closure period: 1 year
+#### Grid cell: 1 km^2
+
+### Format
+I will first format the NHM and BWARS datasets (now only containing sites that have been visited at two or more ten year closure periods) separately. 
+
+The package "sparta" divides the data into different data types (DTs) depending on the list length of each observation. By default, "sparta" has three different DTs, which are treated as independent realisations of the same underlying state with no inherent order of importance. The package translates a list length of 1 (one species observed at any given visit) into DT 1, a list length of 2-3 into DT 2 and a list length of 4 or more into DT 3. I want the model to treat BWARS data and the NHM data as different DTs since these data are collected in different ways. Given that I have a maximum of three species per visit in both the NHM and BWARS datasets, the maximum list length in either of these datasets will be 3 and none of the two datasets will contain DT 3 (list length of 4 or more). I will not change the list length of the BWARS dataset in order for the data it contains to translate into either DT 1 (list length 1) or DT 2 (list length 2-3) in the final model that will contain both the NHM and BWARS datasets. For the NHM dataset, I will change the list length of every visit to a number larger than 4 so that it will be translated into DT 3 in the final model.
+```{r model1-format, echo=TRUE, message=FALSE, warning=FALSE}
+######### Format the NHM data #########
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km1grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),       
+                                              closure_period = NHMdat$year)
+
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km1grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$year)
+
+# Change the list length of the formatted NHM data by assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_1kmgrid_date_year <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_1kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+
+### Model
+
+```{r load-model1-data, message=FALSE, warning=FALSE, echo=FALSE}
+occDetdata_merged_1kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_1kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+
+results_1kmgrid_date_year_vv <- readRDS("../data/modelResults/results_1kmgrid_date_year_vv.rds")
+results_1kmgrid_date_year_vg <- readRDS("../data/modelResults/results_1kmgrid_date_year_vg.rds")
+results_1kmgrid_date_year_vc <- readRDS("../data/modelResults/results_1kmgrid_date_year_vc.rds")
+```
+
+### Model 1a: Vespula vulgaris
+```{r model1a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_year,
+                      spp_vis = spp_vis_merged_1kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model1a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+require(ggplot2)
+plot.occDet.wasp1yr(results_1kmgrid_date_year_vv) 
+```
+
+### Model 1b: Vespula germaica
+```{r model1b-germanica, cache=TRUE, results="hide", eval=FALSE}
+# Run model
+results_1kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_year,
+                      spp_vis = spp_vis_merged_1kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model1b-plot, echo=FALSE, message=FALSE, cache=TRUE}
+plot.occDet.wasp1yr(results_1kmgrid_date_year_vg)
+```
+
+
+### Model 1c: Vespa crabro
+```{r model1c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_year,
+                      spp_vis = spp_vis_merged_1kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model1c-plot, echo=FALSE, cache=TRUE, message=FALSE}
+plot.occDet.wasp1yr(results_1kmgrid_date_year_vc)
+```
+
+
+## Model 2 (1 yr + 2km^^2)
+#### Survey: date (dd/mm/yyyy)
+#### Closure period: 1 year
+#### Grid cell: 2 km^2
+
+### Format
+```{r model2-format, echo=TRUE, message=FALSE, warning=FALSE}
+######### Format the NHM data #########
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km2grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),       
+                                              closure_period = NHMdat$year)
+
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km2grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$year)
+
+# Change the list length of the formatted NHM data by assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_2kmgrid_date_year <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_2kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+Load the formatted data
+```{r load-model2-data, message=FALSE, warning=FALSE, echo=FALSE}
+occDetdata_merged_2kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_2kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+
+results_2kmgrid_date_year_vv <- readRDS("../data/modelResults/results_2kmgrid_date_year_vv.rds")
+results_2kmgrid_date_year_vg <- readRDS("../data/modelResults/results_2kmgrid_date_year_vg.rds")
+results_2kmgrid_date_year_vc <- readRDS("../data/modelResults/results_2kmgrid_date_year_vc.rds")
+```
+
+### Model 2a: Vespula vulgaris
+```{r model2a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_2kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_2kmgrid_date_year,
+                      spp_vis = spp_vis_merged_2kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model2a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_2kmgrid_date_year_vv) 
+```
+
+
+### Model 2b: Vespula germanica
+```{r model2b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_2kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_2kmgrid_date_year,
+                      spp_vis = spp_vis_merged_2kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model2b-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_2kmgrid_date_year_vg)
+```
+
+
+### Model 2c: Vespa crabro
+```{r model2c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_2kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_2kmgrid_date_year,
+                      spp_vis = spp_vis_merged_2kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model2c-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_2kmgrid_date_year_vc)
+```
+
+
+
+
+
+
+
+
+
+## Model 3 (1 yr + 5km^^2)
+#### Survey: date (dd/mm/yyyy)
+#### Closure period: 1 year
+#### Grid cell: 5 km^2
+
+```{r model3-format, echo=TRUE, message=FALSE, warning=FALSE}
+######### Format the NHM data #########
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km5grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),       
+                                              closure_period = NHMdat$year)
+
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km5grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$year)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_5kmgrid_date_year <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_5kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+
+```{r load-model3-data, message=FALSE, warning=FALSE, echo=FALSE}
+# Load data
+occDetdata_merged_5kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_5kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+
+results_5kmgrid_date_year_vv <- readRDS("../data/modelResults/results_5kmgrid_date_year_vv.rds")
+results_5kmgrid_date_year_vg <- readRDS("../data/modelResults/results_5kmgrid_date_year_vg.rds")
+results_5kmgrid_date_year_vc <- readRDS("../data/modelResults/results_5kmgrid_date_year_vc.rds")
+```
+
+### Model 3a: Vespula vulgaris
+```{r model3a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_5kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_5kmgrid_date_year,
+                      spp_vis = spp_vis_merged_5kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model3a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_5kmgrid_date_year_vv) 
+```
+
+
+
+### Model 3b: Vespula germanica
+```{r model3b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_5kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_5kmgrid_date_year,
+                      spp_vis = spp_vis_merged_5kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model3b-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_5kmgrid_date_year_vg)
+```
+
+
+### Model 3c: Vespa crabro
+```{r model3c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_5kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_5kmgrid_date_year,
+                      spp_vis = spp_vis_merged_5kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model3c-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_5kmgrid_date_year_vc)
+```
+
+
+
+
+## Model 4 (1 yrs + 10km^^2)
+#### Survey: date (dd/mm/yyyy)
+#### Closure period: One year
+#### Grid cell: 10 km^2
+
+```{r model4-format, echo=TRUE, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km10grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date), 
+                                              closure_period = NHMdat$year)
+
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km10grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$year)
+
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_10kmgrid_date_year <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_10kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+
+```{r load-model4-data, message=FALSE, warning=FALSE, echo=FALSE}
+occDetdata_merged_10kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_10kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+
+results_10kmgrid_date_year_vv <- readRDS("../data/modelResults/results_10kmgrid_date_year_vv.rds")
+results_10kmgrid_date_year_vg <- readRDS("../data/modelResults/results_10kmgrid_date_year_vg.rds")
+results_10kmgrid_date_year_vc <- readRDS("../data/modelResults/results_10kmgrid_date_year_vc.rds")
+```
+
+### Model 4a: Vespula vulgaris
+```{r model4a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_10kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_10kmgrid_date_year,
+                      spp_vis = spp_vis_merged_10kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model4a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_10kmgrid_date_year_vv) 
+```
+
+
+
+### Model 4b: Vespula germanica
+```{r model4b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_10kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_10kmgrid_date_year,
+                      spp_vis = spp_vis_merged_10kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model4b-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_10kmgrid_date_year_vg)
+```
+
+
+
+### Model 4c: Vespa crabro
+```{r model4c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_10kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_10kmgrid_date_year,
+                      spp_vis = spp_vis_merged_10kmgrid_date_year,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model10c-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp1yr(results_10kmgrid_date_year_vc)
+```
+
+
+
+
+## Model 5 (5 yrs + 1km^^2)
+#### Survey: date (dd/mm/yyyy)
+#### Closure period: Five years
+#### Grid cell: 1 km^2
+
+```{r model5-format, echo=TRUE, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km1grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),                                 
+                                              closure_period = NHMdat$tp5)
+
+############# Format the BWARS data #############
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km1grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp5)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_1kmgrid_date_5years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_1kmgrid_date_5years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+
+```{r load-model5-data, message=FALSE, warning=FALSE, echo=FALSE}
+# Load data
+occDetdata_merged_1kmgrid_date_5years <- read.csv('../data/modelData/occDetdata_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_1kmgrid_date_5years <- read.csv('../data/modelData/spp_vis_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+
+results_1kmgrid_date_5years_vv <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vv.rds")
+results_1kmgrid_date_5years_vg <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vg.rds")
+results_1kmgrid_date_5years_vc <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vc.rds")
+```
+
+
+### Model 5a: Vespula vulgaris
+```{r model5a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_5years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_5years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model5a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp5yrs(results_1kmgrid_date_5years_vv)
+```
+
+
+
+### Model 5b: Vespula germanica
+```{r model5b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_5years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_5years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+```{r model5b-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp5yrs(results_1kmgrid_date_5years_vg)
+```
+
+
+### Model 5c: Vespa crabro
+
+#### Run model
+```{r model5c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+results_1kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_5years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_5years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model5c-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp5yrs(results_1kmgrid_date_5years_vc)
+```
+
+## Model 9 (10 yrs + 1km^^2)
+#### Survey: date (dd/mm/yyyy)
+#### Closure period: Ten years
+#### Grid cell: 1 km^2
+
+### Format
+```{r model9-format, echo=TRUE, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km1grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),            
+                                              closure_period = NHMdat$tp10)
+
+
+############# Format the BWARS data #############
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km1grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp10)
+
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_1kmgrid_date_10years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_1kmgrid_date_10years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+```
+
+
+```{r load-model9-data, message=FALSE, warning=FALSE, echo=FALSE}
+occDetdata_merged_1kmgrid_date_10years <- read.csv('../data/modelData/occDetdata_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_1kmgrid_date_10years <- read.csv('../data/modelData/spp_vis_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+
+results_1kmgrid_date_10years_vv <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vv.rds")
+results_1kmgrid_date_10years_vg <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vg.rds")
+results_1kmgrid_date_10years_vc <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vc.rds")
+```
+
+### Model 9a: Vespula vulgaris
+```{r model9a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_10years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_10years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model9a-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp10yrs(results_1kmgrid_date_10years_vv)
+```
+
+
+
+### Model 9b: Vespula germanica
+```{r model9b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_10years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_10years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model9b-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp10yrs(results_1kmgrid_date_10years_vg)
+```
+
+
+### Model 9c: Vespa crabro
+```{r model9c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
+# Run model
+results_1kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
+                      n_iterations = 50000,
+                      burnin = 25000, 
+                      occDetdata = occDetdata_merged_1kmgrid_date_10years,
+                      spp_vis = spp_vis_merged_1kmgrid_date_10years,
+                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
+                      write_results = FALSE)
+```
+
+
+```{r model9c-plot, cache=TRUE, message=FALSE, warning=FALSE}
+plot.occDet.wasp10yrs(results_1kmgrid_date_10years_vc)
+```
+
+
 
 
 
