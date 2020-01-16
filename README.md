@@ -9,50 +9,50 @@ This repository contains all the code and some data for:
 
 ## Data
 We used two sources of data: specimen records from the Natural History Museum, London (NHM), and observational records from the Bees, Ants and Wasps Recording Society (BWARS). The BWARS data is available upon request from:
->The National Biodiversity Network
-Unit F, 14-18 St. Mary’s Gate
-Lace Market
-Nottingham, UK
-Telephone: +44 (0)115 850 0177
-Email: support@nbn.org.uk
+>The National Biodiversity Network  
+Unit F, 14-18 St. Mary’s Gate  
+Lace Market  
+Nottingham, UK  
+Telephone: +44 (0)115 850 0177  
+Email: support@nbn.org.uk  
 
-For reproducibility purposes download this and place it into a `rawdata/` or `data/` folder as appropriate to rerun our analyses. 
+For reproducibility purposes download this and place it into the `rawdata/` or `data/` folder as appropriate to rerun our analyses. 
 
 The full NHM dataset is available via the [NHM data portal](https://data.nhm.ac.uk/doi/10.5519/qd.tdi9zagc). If you use it, please cite as folows: 
 > Natural History Museum (2019). Data Portal query on 1 resources created at 2019-12-20 14:28:57.870572 PID https://doi.org/10.5519/qd.tdi9zagc
 
-In this repository, we have uploaded the raw NHM data for all Vespula vulgaris, Vespula germanica and Vespa crabro specimens in folder `data/rawData`, as well as the cleaned NHM data in the folder `data/cleanData` and auxiliary data in `data/auxiliaryData`.
+In this repository, we have uploaded the raw NHM data for all *Vespula vulgaris*, *Vespula germanica* and *Vespa crabro* specimens in the folder `data/rawData`, as well as the cleaned NHM data in the folder `data/cleanData`, and auxiliary data in the folder `data/auxiliaryData`.
 
-We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. These files will be made available on Dryad after the manuscript has been accepted for publication. 
-
-## Data wrangling
-
+We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. These files will be made available on Dryad if the manuscript is accepted for publication. 
 
 ## Analyses
+The analysis code is divided into .Rmd files that run the analyses and plot the figures for each section of the manuscript/supplementary materials, and more detailed scripts for the figures found in the paper and called by the .Rmd files.
 
-What things you need to install the software and how to install them
+Note that throughout I've commented out `write.csv` and `saveRDS` commands in order to not clog up your machine (the analyses were run on high performance machines).
 
-```
-Give examples
-```
+* __01-data-cleaning-Rdm__
+* __02-format-data.Rdm__
+* __03-models__
+* __04-summary-stats.Rmd__
+* __05-summary-plots.Rmd__
+
+##### Code for figures
+
+* __figure-bla__
+* __figure-bla__
+* __figure-bla__
+
+
+##### Code for functions
+
+* __function-bla__
+* __figure-bla__
+
 
 ## Other folders
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+* ´/figs´ contains the figures
+* ´/output´ contains the formatted data and model outputs. For reproducibility purposes download these files from Dryad and place into this folder to rerun our analyses.
 
 ## Session Info
 
