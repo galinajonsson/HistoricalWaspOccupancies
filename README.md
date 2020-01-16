@@ -51,8 +51,8 @@ Note that throughout I've commented out `write.csv` and `saveRDS` commands in or
 
 ## Other folders
 
-* ´/figs´ contains the figures
-* ´/output´ contains the formatted data and model outputs. For reproducibility purposes download these files from Dryad and place into this folder to rerun our analyses.
+* `/figs` contains the figures
+* `/output` contains the formatted data and model outputs. For reproducibility purposes download these files from Dryad and place into this folder to rerun our analyses.
 
 ## Session Info
 
