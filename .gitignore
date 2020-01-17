@@ -1,5 +1,10 @@
 # BWARS data
 data/rawData/BWARSraw.csv
+BWARSclean.csv
+
+# BRC files
+analyses/BRCmap
+*.zip
 
 # .DS_Store
 *.DS_Store
