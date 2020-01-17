@@ -253,7 +253,338 @@ NHM &lt;- droplevels(subset(NHM, county != &quot;Channel Islands&quot;))
 NHM &lt;- droplevels(subset(NHM, county != &quot;Wales&quot;))
 
 NHM &lt;- droplevels(NHM)</code></pre>
+<p>The iCollections’ collection site coordinates are given in decimal degrees and the NHM’s georefrencing guidelines also requires coordinates to be recorded in decimal degrees, whilst we use OSNG grid references in analyses. Therefore, we covert the decimal degrees into OSNG grid references using the package “BRCmap”. We also used a dataset indicating in which country all UK 10x10 OS grid cells are located. This dataset can be found in the auxiliaryData folder within the data folder.</p>
+<pre class="r"><code># Use the function &quot;gps_latlon2gr&quot; to convert decimal degrees to gridreferences at a 1x1 m^2 square precision and call the dataframe &quot;OSNG&quot;
+NHM$OSNG &lt;- gps_latlon2gr(NHM$latitude_decimal, NHM$longitude_decimal, out_projection = &quot;OSGB&quot;, return_type = &quot;both&quot;)
+
+# Reformat the 1x1 m^2 grid references to 1 km^2, 2 km^2, 5 km^2, 10 km^2 precision using BRCmap function reformat_gr
+NHM$km1grid &lt;- BRCmap::reformat_gr(NHM$OSNG$GRIDREF, prec_out = 1000, precision = NULL, pad_gr = FALSE)
+
+# A few specimens have collection site entered as OSNG grid references, enter these to the km1grid column
+for (i in 1:nrow(NHM)){
+  if (is.na(NHM[i,6])==FALSE){
+    NHM[i,15] &lt;- as.character(NHM[i,6])}
+  }
+
+# Continue reformatting all to 2 km^2, 5 km^2, 10 km^2 precision
+NHM$km2grid &lt;- BRCmap::reformat_gr(NHM$km1grid, prec_out = 2000, precision = NULL, pad_gr = FALSE)
+NHM$km5grid &lt;- BRCmap::reformat_gr(NHM$km1grid, prec_out = 5000, precision = NULL, pad_gr = FALSE)
+NHM$km10grid &lt;- BRCmap::reformat_gr(NHM$km1grid, prec_out = 10000, precision = NULL, pad_gr = FALSE)
+
+
+# Make these columns factors
+NHM$km1grid &lt;- as.factor(NHM$km1grid)
+NHM$km2grid &lt;- as.factor(NHM$km2grid)
+NHM$km5grid &lt;- as.factor(NHM$km5grid)
+NHM$km10grid &lt;- as.factor(NHM$km10grid)
+
+
+# Remove records that don't have 1x1 km precision
+NHM &lt;- NHM[!is.na(NHM$km1grid),]
+
+# Again, check that records are from England
+# Load csv file specifying which country each 10x10 grid cell is in
+country_ID &lt;- read.csv('../data/auxiliaryData/SQ_10km_CN_ID.csv', header=TRUE) 
+
+# As country names are coded from 1 to 7, rename with informative names
+cn_names &lt;- data.frame(CN_ID = 1:7,
+                       CN_NAME = c('ENGLAND','WALES','SCOTLAND','CHANNEL ISLES',
+                                   'NORTHERN IRELAND','REPUBLIC OF IRELAND','ISLE OF MAN'))
+country_ID &lt;- merge(x = country_ID, y = cn_names, all.x = TRUE, all.y = FALSE)
+
+# Rename 10x10 grid cell column
+colnames(country_ID)[2] &lt;- &quot;km10grid&quot;
+
+# Merge country names with NHM data indicating which country each record is from
+NHM &lt;- merge(NHM, country_ID[, c(&quot;km10grid&quot;, &quot;CN_NAME&quot;)], by=&quot;km10grid&quot;)
+
+# Can now remove the OSNG data frame
+NHM &lt;- NHM[ , !(names(NHM) %in% c(&quot;OSNG&quot;))]
+
+# Get rid of records with a location error radius greater than 10 km, but first change all NA error radii (these are all from specimens with locations given as grid cells at 1x1 km precision to 0.5)
+require(tidyr)
+NHM$error_radius &lt;- NHM$error_radius %&gt;% replace_na(0.5)
+NHM &lt;- subset(NHM, error_radius &lt;= 10)</code></pre>
+<p>We removed all records that were not of either Vespula vulgaris, Vespula germania or Vespa crabro and removed any records dating before 1900 or after 2016. Furthermore, we changed the class of the columns to match those of the NHM data, and assign each record to a time period.</p>
+<pre class="r"><code># Extract the year and create new column
+NHM$year &lt;- format(as.Date(NHM$date, format=&quot;%Y-%m-%d&quot;),&quot;%Y&quot;)
+
+# Get rid of records pre 1900, post 2016 and those without years
+NHM &lt;- subset(NHM, year &gt;= 1900)
+NHM &lt;- subset(NHM, year &lt;= 2016)
+NHM &lt;- NHM[!is.na(NHM$year), ]
+NHM$year &lt;- as.integer(NHM$year)
+
+
+# Define my time periods: FIVE years 
+time_periods5 &lt;- data.frame(start = c(1900, 1905, 1910, 1915, 1920, 1925, 1930, 1935, 1940,
+                                       1945, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005,
+                                       2010, 2015), end = c(1904, 1909, 1914, 1919, 1924,
+                                                            1929, 1934, 1939, 1944, 1949, 1954, 1959, 1964, 1969,
+                                                            1974, 1979,1984, 1989, 1994, 1999, 2004, 2009, 2014,
+                                                            2019))
+
+# Define my time periods: TEN years
+time_periods10 &lt;- data.frame(start = c(1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000,
+                                      2010), end = c(1909, 1919, 1929, 1939, 1949, 1959, 1969, 1979,1989,
+                                                     1999, 2009, 2019))
+
+
+# Now use these to assign my dates to time periods (five years). No specimens collection period extends over two years so I can use collection from dates
+NHM$tp5 &lt;- sparta::date2timeperiod(Date = NHM$date, time_period = time_periods5)
+
+
+# Give the time periods useful names
+NHM$tp5[NHM$tp5 == &quot;1&quot;] &lt;- &quot;1900-1904&quot;
+NHM$tp5[NHM$tp5 == &quot;2&quot;] &lt;- &quot;1905-1909&quot;
+NHM$tp5[NHM$tp5 == &quot;3&quot;] &lt;- &quot;1910-1914&quot;
+NHM$tp5[NHM$tp5 == &quot;4&quot;] &lt;- &quot;1915-1919&quot;
+NHM$tp5[NHM$tp5 == &quot;5&quot;] &lt;- &quot;1920-1924&quot;
+NHM$tp5[NHM$tp5 == &quot;6&quot;] &lt;- &quot;1925-1929&quot;
+NHM$tp5[NHM$tp5 == &quot;7&quot;] &lt;- &quot;1930-1934&quot;
+NHM$tp5[NHM$tp5 == &quot;8&quot;] &lt;- &quot;1935-1939&quot;
+NHM$tp5[NHM$tp5 == &quot;9&quot;] &lt;- &quot;1940-1944&quot;
+NHM$tp5[NHM$tp5 == &quot;10&quot;] &lt;- &quot;1945-1949&quot;
+NHM$tp5[NHM$tp5 == &quot;11&quot;] &lt;- &quot;1950-1954&quot;
+NHM$tp5[NHM$tp5 == &quot;12&quot;] &lt;- &quot;1955-1959&quot;
+NHM$tp5[NHM$tp5 == &quot;13&quot;] &lt;- &quot;1960-1964&quot;
+NHM$tp5[NHM$tp5 == &quot;14&quot;] &lt;- &quot;1965-1969&quot;
+NHM$tp5[NHM$tp5 == &quot;15&quot;] &lt;- &quot;1970-1974&quot;
+NHM$tp5[NHM$tp5 == &quot;16&quot;] &lt;- &quot;1975-1979&quot;
+NHM$tp5[NHM$tp5 == &quot;17&quot;] &lt;- &quot;1980-1984&quot;
+NHM$tp5[NHM$tp5 == &quot;18&quot;] &lt;- &quot;1985-1989&quot;
+NHM$tp5[NHM$tp5 == &quot;19&quot;] &lt;- &quot;1990-1994&quot;
+NHM$tp5[NHM$tp5 == &quot;20&quot;] &lt;- &quot;1995-1999&quot;
+NHM$tp5[NHM$tp5 == &quot;21&quot;] &lt;- &quot;2000-2004&quot;
+NHM$tp5[NHM$tp5 == &quot;22&quot;] &lt;- &quot;2005-2009&quot;
+NHM$tp5[NHM$tp5 == &quot;23&quot;] &lt;- &quot;2010-2014&quot;
+NHM$tp5[NHM$tp5 == &quot;24&quot;] &lt;- &quot;2015-2019&quot;
+
+
+# Define my time periods: TEN years
+time_periods10 &lt;- data.frame(start = c(1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000,
+                                      2010), end = c(1909, 1919, 1929, 1939, 1949, 1959, 1969, 1979,1989,
+                                                     1999, 2009, 2019))
+
+# Now use these to assign my dates to time periods
+NHM$tp10 &lt;- sparta::date2timeperiod(Date = NHM$date, time_period = time_periods10)
+
+# Give the time periods useful names
+NHM$tp10[NHM$tp10 == &quot;1&quot;] &lt;- &quot;1900-1909&quot;
+NHM$tp10[NHM$tp10 == &quot;2&quot;] &lt;- &quot;1910-1919&quot;
+NHM$tp10[NHM$tp10 == &quot;3&quot;] &lt;- &quot;1920-1929&quot;
+NHM$tp10[NHM$tp10 == &quot;4&quot;] &lt;- &quot;1930-1939&quot;
+NHM$tp10[NHM$tp10 == &quot;5&quot;] &lt;- &quot;1940-1949&quot;
+NHM$tp10[NHM$tp10 == &quot;6&quot;] &lt;- &quot;1950-1959&quot;
+NHM$tp10[NHM$tp10 == &quot;7&quot;] &lt;- &quot;1960-1969&quot;
+NHM$tp10[NHM$tp10 == &quot;8&quot;] &lt;- &quot;1970-1979&quot;
+NHM$tp10[NHM$tp10 == &quot;9&quot;] &lt;- &quot;1980-1989&quot;
+NHM$tp10[NHM$tp10 == &quot;10&quot;] &lt;- &quot;1990-1999&quot;
+NHM$tp10[NHM$tp10 == &quot;11&quot;] &lt;- &quot;2000-2009&quot;
+NHM$tp10[NHM$tp10 == &quot;12&quot;] &lt;- &quot;2010-2019&quot;</code></pre>
+<p>Finally, tidy up the data frame and only keep columns we’re interested in but first add a source column as to identify that this data is from NHM and not BWARS</p>
+<pre class="r"><code># I will drop columns that I will not longer use
+keepcolumns &lt;- c(&quot;species&quot;, &quot;date&quot;, &quot;year&quot;, &quot;km1grid&quot;, &quot;km2grid&quot;, &quot;km5grid&quot;, &quot;km10grid&quot;, &quot;tp5&quot;, &quot;tp10&quot;)
+NHM &lt;- NHM[keepcolumns]</code></pre>
 </div>
+</div>
+<div id="bwars-records" class="section level2">
+<h2>BWARS records</h2>
+<div id="load-and-tidy-the-bwars-dataset" class="section level3">
+<h3>Load and tidy the BWARS dataset</h3>
+<p>We were provided with the Bees, Wasps and Ants Recording Society’s (BWARS) records of all Hymenopteran species until 2016. The data contained three columns (see output of below code chunk): species name, collection date and OSNG grid reference. As the BWARS data is available on request from the National Biodiversity Network (NBN; contact details below), a reader of this document who wants to reproduce the code might be provided with data that has additional columns, different column names and species. Hence, some steps of the following code chunks might not be neccessary (e.g. removing all records that are not of either Vespula vulgaris, Vespula germania or Vespa crabro).</p>
+<p>The National Biodiversity Network (NBN) contact details are: The National Biodiversity Network Unit F, 14-18 St. Mary’s Gate Lace Market Nottingham, UK Telephone: +44 (0)115 850 0177 Email: <a href="mailto:support@nbn.org.uk">support@nbn.org.uk</a></p>
+<p>Firstly, I load the data (NOTE that thsi data file is not provided but is available on request, hence the file path and file name will be different for someone wishing to reproduce this code), give columns more infomrative names and show its structure.</p>
+<pre class="r"><code># Load BWARS data 
+BWARS &lt;- read.csv('../data/rawData/BWARSraw.csv', header=T, as.is = TRUE, na.strings=c(&quot;&quot;,&quot;NA&quot;)) #NOTE that the file path and file name will be different for someone wishing to reproduce this code
+
+# Rename columns
+colnames(BWARS)[1] &lt;- &quot;species&quot;
+colnames(BWARS)[2] &lt;- &quot;gridref&quot;
+colnames(BWARS)[3] &lt;- &quot;date&quot;
+
+# Show structure
+str(BWARS)</code></pre>
+<pre><code>## 'data.frame':    570983 obs. of  3 variables:
+##  $ species: chr  &quot;Hedychrum neimelai agg&quot; &quot;EVAGETES dubius&quot; &quot;ANOPLIUS viaticus&quot; &quot;EUMENES coarctatus&quot; ...
+##  $ gridref: chr  &quot;SY9773295029&quot; &quot;SY9838295130&quot; &quot;SY9838295130&quot; &quot;SY9795194833&quot; ...
+##  $ date   : chr  &quot;2010-08-28&quot; &quot;2010-08-28&quot; &quot;2010-08-28&quot; &quot;2010-08-28&quot; ...</code></pre>
+<p>As the raw data contains records of all Hymenopteran species until 2016. We removed all records that were not of either Vespula vulgaris, Vespula germania or Vespa crabro and removed any records dating before 1900. A reader wishing to reproduce this code might use records of V. vulgaris, V. germanica and V. crabro only, and/or a dataset extending to later years. If so, skip the step removing other species in the below code chunk and/or remove records dating post 2016. Furthermore, we changed the class of the columns to match those of the NHM data, and assign each record to a time period.</p>
+<pre class="r"><code># Get rid of other species
+BWARS$species &lt;- as.factor(BWARS$species)
+BWARS &lt;- BWARS[BWARS$species == &quot;VESPULA vulgaris&quot; | BWARS$species == &quot;VESPULA germanica&quot; | 
+           BWARS$species == &quot;VESPA crabro&quot;, ]
+BWARS$species &lt;- droplevels(BWARS$species)
+
+# Rename BWARS species name to match those in the NHM dataframe
+levels(BWARS$species) &lt;- sub(&quot;VESPA crabro&quot;, &quot;Vespa crabro&quot;, levels(BWARS$species))
+levels(BWARS$species) &lt;- sub(&quot;VESPULA germanica&quot;, &quot;Vespula germanica&quot;, levels(BWARS$species))
+levels(BWARS$species) &lt;- sub(&quot;VESPULA vulgaris&quot;, &quot;Vespula vulgaris&quot;, levels(BWARS$species))
+
+# Convert &quot;date&quot; to date class and &quot;gridref&quot; to character
+BWARS$date &lt;- as.Date(BWARS$date, &quot;%Y-%m-%d&quot;)
+BWARS$gridref &lt;- as.character(BWARS$gridref)
+
+# Extract the year and create new column
+BWARS$year &lt;- format(as.Date(BWARS$date, format=&quot;%Y-%m-%d&quot;),&quot;%Y&quot;)
+
+# Get rid of records pre 1900, post 2016 and those without years
+BWARS &lt;- subset(BWARS, year &gt;= 1900)
+BWARS &lt;- subset(BWARS, year &lt;= 2016)
+BWARS &lt;- BWARS[!is.na(BWARS$year), ]
+
+
+###### Assign records to closure periods######
+# I can use the time periods defined in the NHM section and the sparta function date2timeperiod to assign record dates to time periods starting with five year time periods.
+BWARS$tp5 &lt;- sparta::date2timeperiod(Date = BWARS$date, time_period = time_periods5)
+
+# Give the time periods useful names
+BWARS$tp5[BWARS$tp5 == &quot;1&quot;] &lt;- &quot;1900-1904&quot;
+BWARS$tp5[BWARS$tp5 == &quot;2&quot;] &lt;- &quot;1905-1909&quot;
+BWARS$tp5[BWARS$tp5 == &quot;3&quot;] &lt;- &quot;1910-1914&quot;
+BWARS$tp5[BWARS$tp5 == &quot;4&quot;] &lt;- &quot;1915-1919&quot;
+BWARS$tp5[BWARS$tp5 == &quot;5&quot;] &lt;- &quot;1920-1924&quot;
+BWARS$tp5[BWARS$tp5 == &quot;6&quot;] &lt;- &quot;1925-1929&quot;
+BWARS$tp5[BWARS$tp5 == &quot;7&quot;] &lt;- &quot;1930-1934&quot;
+BWARS$tp5[BWARS$tp5 == &quot;8&quot;] &lt;- &quot;1935-1939&quot;
+BWARS$tp5[BWARS$tp5 == &quot;9&quot;] &lt;- &quot;1940-1944&quot;
+BWARS$tp5[BWARS$tp5 == &quot;10&quot;] &lt;- &quot;1945-1949&quot;
+BWARS$tp5[BWARS$tp5 == &quot;11&quot;] &lt;- &quot;1950-1954&quot;
+BWARS$tp5[BWARS$tp5 == &quot;12&quot;] &lt;- &quot;1955-1959&quot;
+BWARS$tp5[BWARS$tp5 == &quot;13&quot;] &lt;- &quot;1960-1964&quot;
+BWARS$tp5[BWARS$tp5 == &quot;14&quot;] &lt;- &quot;1965-1969&quot;
+BWARS$tp5[BWARS$tp5 == &quot;15&quot;] &lt;- &quot;1970-1974&quot;
+BWARS$tp5[BWARS$tp5 == &quot;16&quot;] &lt;- &quot;1975-1979&quot;
+BWARS$tp5[BWARS$tp5 == &quot;17&quot;] &lt;- &quot;1980-1984&quot;
+BWARS$tp5[BWARS$tp5 == &quot;18&quot;] &lt;- &quot;1985-1989&quot;
+BWARS$tp5[BWARS$tp5 == &quot;19&quot;] &lt;- &quot;1990-1994&quot;
+BWARS$tp5[BWARS$tp5 == &quot;20&quot;] &lt;- &quot;1995-1999&quot;
+BWARS$tp5[BWARS$tp5 == &quot;21&quot;] &lt;- &quot;2000-2004&quot;
+BWARS$tp5[BWARS$tp5 == &quot;22&quot;] &lt;- &quot;2005-2009&quot;
+BWARS$tp5[BWARS$tp5 == &quot;23&quot;] &lt;- &quot;2010-2014&quot;
+BWARS$tp5[BWARS$tp5 == &quot;24&quot;] &lt;- &quot;2015-2019&quot;
+
+# Now use these to assign my dates to time periods
+BWARS$tp10 &lt;- sparta::date2timeperiod(Date = BWARS$date, time_period = time_periods10)
+
+# Give the time periods useful names
+BWARS$tp10[BWARS$tp10 == &quot;1&quot;] &lt;- &quot;1900-1909&quot;
+BWARS$tp10[BWARS$tp10 == &quot;2&quot;] &lt;- &quot;1910-1919&quot;
+BWARS$tp10[BWARS$tp10 == &quot;3&quot;] &lt;- &quot;1920-1929&quot;
+BWARS$tp10[BWARS$tp10 == &quot;4&quot;] &lt;- &quot;1930-1939&quot;
+BWARS$tp10[BWARS$tp10 == &quot;5&quot;] &lt;- &quot;1940-1949&quot;
+BWARS$tp10[BWARS$tp10 == &quot;6&quot;] &lt;- &quot;1950-1959&quot;
+BWARS$tp10[BWARS$tp10 == &quot;7&quot;] &lt;- &quot;1960-1969&quot;
+BWARS$tp10[BWARS$tp10 == &quot;8&quot;] &lt;- &quot;1970-1979&quot;
+BWARS$tp10[BWARS$tp10 == &quot;9&quot;] &lt;- &quot;1980-1989&quot;
+BWARS$tp10[BWARS$tp10 == &quot;10&quot;] &lt;- &quot;1990-1999&quot;
+BWARS$tp10[BWARS$tp10 == &quot;11&quot;] &lt;- &quot;2000-2009&quot;
+BWARS$tp10[BWARS$tp10 == &quot;12&quot;] &lt;- &quot;2010-2019&quot;</code></pre>
+<p>Extract the grid cells of interest (1 km^2, 2 km^2, 5 km^2, 10 km^2) and remove all observations from outside of England.</p>
+<pre class="r"><code># Remove any records with less than 6 letters+digits (1km^2 cell precision)
+BWARS &lt;- BWARS[(which(nchar(BWARS$gridref) &gt;= 6)),]
+
+# Reformat the grid references to 1 km^2, 2 km^2, 5 km^2, 10 km^2 precision using BRCmap function reformat_gr
+BWARS$km1grid &lt;- BRCmap::reformat_gr(BWARS$gridref, prec_out = 1000, precision = NULL, pad_gr = FALSE)
+BWARS$km2grid &lt;- BRCmap::reformat_gr(BWARS$gridref, prec_out = 2000, precision = NULL, pad_gr = FALSE)
+BWARS$km5grid &lt;- BRCmap::reformat_gr(BWARS$gridref, prec_out = 5000, precision = NULL, pad_gr = FALSE)
+BWARS$km10grid &lt;- BRCmap::reformat_gr(BWARS$gridref, prec_out = 10000, precision = NULL, pad_gr = FALSE)
+
+############ Drop records that are not from England ############
+
+# Load csv file specifying which country each 10x10 grid cell is in
+country_ID &lt;- read.csv('/Users/galinajonsson/Downloads/SQ_10km_CN_ID.csv', header=TRUE)
+
+# As country names are coded from 1 to 7, rename with informative names
+cn_names &lt;- data.frame(CN_ID = 1:7,
+                       CN_NAME = c('ENGLAND','WALES','SCOTLAND','CHANNEL ISLES',
+                                   'NORTHERN IRELAND','REPUBLIC OF IRELAND','ISLE OF MAN'))
+country_ID &lt;- merge(x = country_ID, y = cn_names, all.x = TRUE, all.y = FALSE)
+
+# Rename 10x10 grid cell column
+colnames(country_ID)[2] &lt;- &quot;km10grid&quot;
+
+# Merge country names with BWARS data indicating which country each record is from
+BWARS &lt;- merge(BWARS, country_ID[, c(&quot;km10grid&quot;, &quot;CN_NAME&quot;)], by=&quot;km10grid&quot;)
+
+# Drop records that are not from England
+BWARS$CN_NAME &lt;- as.factor(BWARS$CN_NAME)
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;CHANNEL ISLES&quot;))
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;ISLE OF MAN&quot;))
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;NORTHERN IRELAND&quot;))
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;REPUBLIC OF IRELAND&quot;))
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;SCOTLAND&quot;))
+BWARS &lt;- droplevels(subset(BWARS, CN_NAME != &quot;WALES&quot;))
+
+# Change column classes to match the NHM dataset
+BWARS$km1grid &lt;- as.factor(BWARS$km1grid)
+BWARS$km2grid &lt;- as.factor(BWARS$km2grid)
+BWARS$km5grid &lt;- as.factor(BWARS$km5grid)
+BWARS$km10grid &lt;- as.factor(BWARS$km10grid)
+BWARS$year &lt;- as.integer(BWARS$year)
+
+# I will drop columns that I will not longer use
+keepcolumns &lt;- c(&quot;species&quot;, &quot;date&quot;, &quot;year&quot;, &quot;km1grid&quot;, &quot;km2grid&quot;, &quot;km5grid&quot;, &quot;km10grid&quot;, &quot;tp5&quot;, &quot;tp10&quot;)
+BWARS &lt;- BWARS[keepcolumns]</code></pre>
+</div>
+</div>
+<div id="combine-nhm-and-bwars-records" class="section level2">
+<h2>Combine NHM and BWARS records</h2>
+<p>Since the NHM dataframe has more columns than the BWARS dataframe, I first load the the BWARS data into the combined dataframe (which I will call “NHM_BWARS”) and add columns to match those of the NHM dataframe. I will also rearrange the columns of the dataframe to match those of the NHM data before I merge.</p>
+<pre class="r"><code># Load the BWARS data into the combined dataframe
+NHM_BWARS &lt;- BWARS
+
+# Create a column to identify that these observations are from the BWARS dataset 
+NHM_BWARS$source &lt;- as.factor(&quot;BWARS&quot;)
+NHM$source &lt;- as.factor(&quot;NHM&quot;)
+
+#Merge the MusemBWARSdat with the tidy NHM df
+NHM_BWARS &lt;- rbind(NHM_BWARS, NHM) </code></pre>
+<p>The function used to run the Bayesian occupancy models only uses records from sites visited in two or more closure periods. If this is not accounted for, models at different spatiotemporal ressolutions would include different numbers of sites such that the more temporally coarse a model is, the smaller the chance of sites being visited in two or more closure periods and hence, such models will include fewer sites than those at finer temporal ressolutions. To compare models at different spatiotemporal ressolutions, sites that are not visited in two or more closure periods at the coarsest temporal resolution have to be removed. Given that 10 year TPs is the coarsest temporal resolution used, we find the sites visited in more than one 10 year TP and remove all other sites from the dataset before formatting the data.</p>
+<p>However, first, we identify visits (combination of grid cell and date) using the function “formatOccData” (from the sparta package).</p>
+<p>We first separately format both the NHM and the BWARS data at a resolution of ten year closure period and 1 km^^2 grid cell. The function output contains two data frames used in the models: spp_vis and formattedOccData. To find sites present in two 10 year closure periods, I will only need the formattedOccData dataframe. We therefore merge the formattedOccData dataframes from each of the two datasets (NHM and BWARS).</p>
+<pre class="r"><code>### Format the NHM data
+formattedOccData_NHM &lt;- sparta::formatOccData(taxa = NHM$species, 
+                                              site = NHM$km1grid, 
+                                              survey= paste(NHM$km1grid,NHM$date), # visits are called survey here
+                                              closure_period = NHM$tp10)
+
+#### Format the BWARS data
+formattedOccData_BWARS &lt;- sparta::formatOccData(taxa = BWARS$species, 
+                                                site = BWARS$km1grid, 
+                                                survey= paste(BWARS$km1grid,BWARS$date), # visits are called survey here
+                                                closure_period = BWARS$tp10)
+
+
+#Merge the formated NHM data with the formatted BWARS data
+occDetdata_merged_1kmgrid_10years &lt;- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)</code></pre>
+<p>From the combined formattedOccData dataframe, we find sites that have been visited in more than one closure period across both the NHM and BWARS datasets (which are now combined).</p>
+<pre class="r"><code>require(reshape2)
+# only include sites which have more than nyr of records
+nyr &lt;- 2
+yps &lt;- rowSums(acast(occDetdata_merged_1kmgrid_10years, site ~ TP, length, value.var = 'L') &gt; 0)
+sites_to_include &lt;- (names(yps[yps &gt;= nyr]))
+sites_to_include &lt;- data.frame(sites_to_include)
+sites_to_include$km1grid &lt;- sites_to_include$sites_to_include</code></pre>
+<p>We now remove records from sites not present in two or more closure periods from each of the unformtted NHM and BWARS datasets separately.</p>
+<pre class="r"><code>############ NHM data ############
+# Make list of sites to delete (sites that don't exist in two or more time periods) - NHM
+sites2deleteNHM &lt;- NHM %&gt;% anti_join(sites_to_include, by = &quot;km1grid&quot;)
+
+# Delete sites to delete from raw NHM dataset
+NHMdat &lt;- NHM[!(NHM$km1grid %in% sites2deleteNHM$km1grid),]
+
+
+############ BWARS data ############
+# Make list of sites to delete (sites that don't exist in both) - BWARS
+sites2deleteBWARS &lt;- BWARS %&gt;% anti_join(sites_to_include, by = &quot;km1grid&quot;)
+
+# Delete sites to delete from raw BWARS dataset
+BWARSdat &lt;- BWARS[!(BWARS$km1grid %in% sites2deleteBWARS$km1grid),]
+
+# Save the cleaned data files
+#write.csv(NHMdat, '../data/cleanData/NHMclean.csv')
+#write.csv(BWARSdat, '../data/cleanData/BWARSclean.csv')</code></pre>
 </div>
 </div>
 

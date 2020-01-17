@@ -6,8 +6,11 @@ BWARSclean.csv
 analyses/BRCmap
 *.zip
 
+# formatted data
+output/formattedData/*.csv
+
 # .DS_Store
-*.DS_Store
+**.DS_Store
 
 # .rds files (data output files)
 *.rds

@@ -437,8 +437,8 @@ sites2deleteBWARS <- BWARS %>% anti_join(sites_to_include, by = "km1grid")
 BWARSdat <- BWARS[!(BWARS$km1grid %in% sites2deleteBWARS$km1grid),]
 
 # Save the cleaned data files
-#
-#
+#write.csv(NHMdat, '../data/cleanData/NHMclean.csv')
+#write.csv(BWARSdat, '../data/cleanData/BWARSclean.csv')
 ```
 
 
