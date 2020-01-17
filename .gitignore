@@ -7,7 +7,7 @@ analyses/BRCmap
 *.zip
 
 # formatted data
-output/formattedData/*.csv
+outputs/formattedData/*.csv
 
 # .DS_Store
 **.DS_Store
