@@ -16,19 +16,19 @@ Nottingham, UK
 Telephone: +44 (0)115 850 0177  
 Email: support@nbn.org.uk  
 
-For reproducibility purposes download this and place it into the `rawdata/` or `data/` folder as appropriate to rerun our analyses. 
+For reproducibility purposes, download this and place it into the `data/rawdata/` folder to rerun our analyses. 
 
 The full NHM dataset is available via the [NHM data portal](https://data.nhm.ac.uk/doi/10.5519/qd.tdi9zagc). If you use it, please cite as folows: 
 > Natural History Museum (2019). Data Portal query on 1 resources created at 2019-12-20 14:28:57.870572 PID https://doi.org/10.5519/qd.tdi9zagc
 
-In this repository, we have uploaded the raw NHM data for all *Vespula vulgaris*, *Vespula germanica* and *Vespa crabro* specimens in the folder `data/rawData`, as well as the cleaned NHM data in the folder `data/cleanData`, and auxiliary data in the folder `data/auxiliaryData`.
+In this repository, we have uploaded the raw NHM data for all *Vespula vulgaris*, *Vespula germanica* and *Vespa crabro* specimens in the folder `/data/rawData`, as well as the cleaned NHM data in the folder `/data/cleanData`, and auxiliary data in the folder `/data/auxiliaryData`.
 
-We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. These files will be made available on Dryad if the manuscript is accepted for publication. 
+We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. These files will be made available on Dryad if the manuscript is accepted for publication. For reproducibility purposes, download these and place it into the `/output/formattedData` and `/output/modelOutput` folders as appropriate to rerun our analyses. 
 
 ## Analyses
-The analysis code is divided into .Rmd files that run the analyses and plot the figures for each section of the manuscript/supplementary materials, and more detailed scripts for the figures found in the paper and called by the .Rmd files.
+The analyses code is divided into .Rmd files that run the analyses and plot the figures for each section of the manuscript/supplementary materials, and more detailed scripts for the figures found in the paper and called by the .Rmd files.
 
-Note that throughout I've commented out `write.csv` and `saveRDS` commands in order to not clog up your machine (the analyses were run on high performance machines).
+Note that throughout I've commented out `write.csv` and `saveRDS` commands in order to not clog up your machine. For code chunks that run he mhodels, I've set evat to FALSE, again, to not clog up your macine as the analyses are computationally expensive and were run on high performance machines.
 
 * __01-data-cleaning-Rdm__
 * __02-format-data.Rdm__
