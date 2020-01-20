@@ -1,0 +1,53 @@
+---
+title: "Bayesian Occupancy Models"
+author: "Galina M. Jönsson"
+date: "17/01/2020"
+output: html_document
+---
+
+
+## general summaries
+
+### Rhat
+First I test whether all models' occupancy estimates have converged (Rhat<1.1) using the function summarise_Rhat (see function description in function-summarise_Rhat.R for details).
+```{r summary-rhat, cache=TRUE, message=FALSE}
+# Load packages
+library(knitr)
+library(kableExtra)
+
+# Load the function
+source("../analyses/function-summarise_Rhat.R")
+
+# Run function to find whether model estimates have converged or not
+RhatSum <- summarise_Rhat("../outputs/modelOutputs")
+
+# Show summary tables
+kable(RhatSum) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+
+Load the tables summarising sample sizes below
+```{r summary-tables, cache=TRUE, message=FALSE}
+# Load packages
+library(knitr)
+library(kableExtra)
+library("boot")
+
+# First, inverse logit alphaPrec and alphaPPrec
+sppModelSumDF$alphaPrec <- inv.logit(sppModelSumDF$alphaPrec)
+sppModelSumDF$alphaPPrec <- inv.logit(sppModelSumDF$alphaPPrec)
+
+# Save modelSumDF
+#write.csv(modelSumDF, '../outputs/SummaryTables/modelSummary.csv')
+
+# Save sppModelSumDF
+#write.csv(sppModelSumDF, '../outputs/SummaryTables/sppLevelSummary.csv')
+
+# Show summary tables
+kable(sppModelSumDF) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+kable(modelSumDF) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```

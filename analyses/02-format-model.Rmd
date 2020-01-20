@@ -2,7 +2,11 @@
 title: "Format and Model Data"
 author: "Galina M. Jönsson"
 date: "17/01/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 Here I will format the data for the 12 models with varying spatial (1, 2, 5 and 10 km grid cells) and temporal (1, 5 or 10 year TPs) resolutions. Please note that I will describe each step in detail for model 1 and omitt any repeated descriptions in the formatting of subsequent models. 
@@ -16,21 +20,21 @@ BWARSdat <- read.csv('../data/cleanData/BWARSclean.csv', header=TRUE, na.strings
 
 
 ... and create an empty dataframe to fill in values
-I will create two empty data frames into which I can enter the results from the models. The first data frame (modelResultsDF) will contain information on each model and the second (speciesResultsDF) will contain information on the spcies. 
+I will create two empty data frames into which I can enter the results from the models. The first data frame (modelSumDF) will contain information on each model and the second (sppModelSumDF) will contain information on the spcies. 
 ```{r create-emptyDF, cache=TRUE, message=FALSE}
 ### Create model data frame
 #
-modelResultsDF <- data.frame(model=factor(c("Model 1", "Model 2", "Model 3","Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9","Model 10", "Model 11", "Model 12")),
+modelSumDF <- data.frame(model=factor(c("Model 1", "Model 2", "Model 3","Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9","Model 10", "Model 11", "Model 12")),
                              closurePer=factor(c("1yr", "5yrs", "10yrs","1yr", "5yrs", "10yrs")),
                              spatialRes=factor(rep(c("1x1km", "2x2km", "5x5km", "10x10km"), times = c(3,3,3,3))),
                              nClosurePer=numeric(12),
                              nVisits=numeric(12),
                              nsites=numeric(12)) 
 #Replace zeroes with NAs
-modelResultsDF[ modelResultsDF == 0 ] <- NA 
+modelSumDF[ modelSumDF == 0 ] <- NA 
 
 ### Create species data frame!
-speciesResultsDF <- data.frame(model=factor(rep(c("Model 1", "Model 2", "Model 3","Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9","Model 10", "Model 11", "Model 12"), times = c(3,3,3,3,3,3,3,3,3,3,3,3))),
+sppModelSumDF <- data.frame(model=factor(rep(c("Model 1", "Model 2", "Model 3","Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9","Model 10", "Model 11", "Model 12"), times = c(3,3,3,3,3,3,3,3,3,3,3,3))),
                                closurePer=factor(rep(c("1yr", "5yrs", "10yrs", "1yr", "5yrs", "10yrs", "1yr", "5yrs", "10yrs", "1yr", "5yrs", "10yrs"), times = c(3,3,3,3,3,3,3,3,3,3,3,3))),
                                spatialRes=factor(rep(c("1x1km", "2x2km", "5x5km", "10x10km"), times = c(9,9,9,9))),
                                Species=factor((rep(c("Vespula vulgaris", "Vespula germanica", "Vespa crabro"), times = c(12)))),
@@ -41,14 +45,14 @@ speciesResultsDF <- data.frame(model=factor(rep(c("Model 1", "Model 2", "Model 3
                                DIC=numeric(36))
 
 #Replace zeroes with NAs
-speciesResultsDF[ speciesResultsDF == 0 ] <- NA 
+sppModelSumDF[ sppModelSumDF == 0 ] <- NA 
 ```
 
 
 ## Model 1 (1 yr + 1km^^2)
-#### Survey: date (dd/mm/yyyy)xGridCell
-#### Closure period: 1 year
-#### Grid cell: 1 km^2
+##### Survey: date (dd/mm/yyyy)xGridCell
+##### Closure period: 1 year
+##### Grid cell: 1x1 km
 
 ### Format
 I will first format the NHM and BWARS datasets (now only containing sites that have been visited at two or more ten year closure periods) separately. 
@@ -83,12 +87,12 @@ spp_vis_merged_1kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formatte
 ### Model
 
 Load formatted data
-```{r load-model1-data, message=FALSE, warning=FALSE, echo=FALSE}
+```{r load-model1-data, message=FALSE, warning=FALSE, echo=TRUE}
 occDetdata_merged_1kmgrid_date_year <- read.csv('../outputs/formattedData/occDetdata_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 spp_vis_merged_1kmgrid_date_year <- read.csv('../outputs/formattedData/spp_vis_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 1a: Vespula vulgaris
+#### Model 1a: Vespula vulgaris
 ```{r model1a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -100,40 +104,40 @@ results_1kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_year_vv, "../data/modelResults/results_1kmgrid_date_year_vv.rds")
+#saveRDS(results_1kmgrid_date_year_vv, "../outputs/modelOutputs/results_1kmgrid_date_year_vv.rds")
 ```
 
-Find results of interest and enter into modelResultsDF and speciesResultsDF. I will only show this here but also do it for all other models and species. 
+Find results of interest and enter into modelSumDF and sppModelSumDF. I will only show this here but also do it for all other models and species. 
 ```{r model1a-results, cache=TRUE}
 # Read model output
-results_1kmgrid_date_year_vv <- readRDS("../data/modelResults/results_1kmgrid_date_year_vv.rds")
+results_1kmgrid_date_year_vv <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_year_vv.rds")
 
-### Model results (modelResultsDF)
+### Model results (modelSumDF)
 # n Closure periods
-modelResultsDF[1, 4] <-(results_1kmgrid_date_year_vv$max_year)
+modelSumDF[1, 4] <-(results_1kmgrid_date_year_vv$max_year)
 # n Visits
-modelResultsDF[1, 5] <-(results_1kmgrid_date_year_vv$nvisits)
+modelSumDF[1, 5] <-(results_1kmgrid_date_year_vv$nvisits)
 # n Sites
-modelResultsDF[1, 6] <-(results_1kmgrid_date_year_vv$nsites)
+modelSumDF[1, 6] <-(results_1kmgrid_date_year_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[1, 5] <- (results_1kmgrid_date_year_vv$species_sites) 
+sppModelSumDF[1, 5] <- (results_1kmgrid_date_year_vv$species_sites) 
 # n species observations
-speciesResultsDF[1, 6] <- (results_1kmgrid_date_year_vv$species_observations) 
+sppModelSumDF[1, 6] <- (results_1kmgrid_date_year_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_year_vv$BUGSoutput$summary)
-speciesResultsDF[1, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[1, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[1, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[1, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[1, 9] <- (results_1kmgrid_date_year_vv$BUGSoutput$DIC) 
+sppModelSumDF[1, 9] <- (results_1kmgrid_date_year_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 1b: Vespula germaica
+#### Model 1b: Vespula germaica
 ```{r model1b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -145,26 +149,26 @@ results_1kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanic
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_year_vg, "../data/modelResults/results_1kmgrid_date_year_vg.rds")
+#saveRDS(results_1kmgrid_date_year_vg, "../outputs/modelOutputs/results_1kmgrid_date_year_vg.rds")
 ```
 
 
-Find results of interest and enter into modelResultsDF and speciesResultsDF
+Find results of interest and enter into modelSumDF and sppModelSumDF
 ```{r model1b-results, cache=TRUE}
-results_1kmgrid_date_year_vg <- readRDS("../data/modelResults/results_1kmgrid_date_year_vg.rds")
+results_1kmgrid_date_year_vg <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_year_vg.rds")
 
 # n species sites
-speciesResultsDF[2, 5] <- (results_1kmgrid_date_year_vg$species_sites) 
+sppModelSumDF[2, 5] <- (results_1kmgrid_date_year_vg$species_sites) 
 # n species observations
-speciesResultsDF[2, 6] <- (results_1kmgrid_date_year_vg$species_observations) 
+sppModelSumDF[2, 6] <- (results_1kmgrid_date_year_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_year_vg$BUGSoutput$summary)
-speciesResultsDF[2, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[2, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[2, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[2, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 # DIC
-speciesResultsDF[2, 9] <- (results_1kmgrid_date_year_vg$BUGSoutput$DIC)
+sppModelSumDF[2, 9] <- (results_1kmgrid_date_year_vg$BUGSoutput$DIC)
 ```
 
 
@@ -172,7 +176,7 @@ speciesResultsDF[2, 9] <- (results_1kmgrid_date_year_vg$BUGSoutput$DIC)
 
 
 
-### Model 1c: Vespa crabro
+#### Model 1c: Vespa crabro
 ```{r model1c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -184,25 +188,25 @@ results_1kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_year_vc, "../data/modelResults/results_1kmgrid_date_year_vc.rds")
+#saveRDS(results_1kmgrid_date_year_vc, "../outputs/modelOutputs/results_1kmgrid_date_year_vc.rds")
 ```
 
 
 ```{r model1c-results, cache=TRUE, message=FALSE}
-results_1kmgrid_date_year_vc <- readRDS("../data/modelResults/results_1kmgrid_date_year_vc.rds")
+results_1kmgrid_date_year_vc <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_year_vc.rds")
 
 # n species sites
-speciesResultsDF[3, 5] <- (results_1kmgrid_date_year_vc$species_sites) 
+sppModelSumDF[3, 5] <- (results_1kmgrid_date_year_vc$species_sites) 
 # n species observations
-speciesResultsDF[3, 6] <- (results_1kmgrid_date_year_vc$species_observations) 
+sppModelSumDF[3, 6] <- (results_1kmgrid_date_year_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_year_vc$BUGSoutput$summary)
-speciesResultsDF[3, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[3, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[3, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[3, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # DIC
-speciesResultsDF[3, 9] <- (results_1kmgrid_date_year_vc$BUGSoutput$DIC)
+sppModelSumDF[3, 9] <- (results_1kmgrid_date_year_vc$BUGSoutput$DIC)
 ```
 
 
@@ -211,9 +215,9 @@ speciesResultsDF[3, 9] <- (results_1kmgrid_date_year_vc$BUGSoutput$DIC)
 ## Model 2 (5 yrs + 1km^^2)
 ##### Survey: date (dd/mm/yyyy)
 ##### Closure period: five years
-##### Grid cell: 1 km{2}
+##### Grid cell: 1x1 km
 
-#### Format
+### Format
 ```{r model2-format, echo=TRUE, message=FALSE, warning=FALSE}
 ############# Format the NHM data #############
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
@@ -240,16 +244,18 @@ spp_vis_merged_1kmgrid_date_5years <- rbind(formattedOccData_NHM$spp_vis, format
 #write.csv(spp_vis_merged_1kmgrid_date_5years, '../outputs/formattedData/spp_vis_merged_1kmgrid_date_5years.csv')
 ```
 
+
+### Model
 Load the formatted data
 ```{r load-model2-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_1kmgrid_date_5years <- read.csv('../data/modelData/occDetdata_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_1kmgrid_date_5years <- read.csv('../outputs/formattedData/occDetdata_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_1kmgrid_date_5years <- read.csv('../data/modelData/spp_vis_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_1kmgrid_date_5years <- read.csv('../outputs/formattedData/spp_vis_merged_1kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 ```
 
 
-### Model 2a: Vespula vulgaris
+#### Model 2a: Vespula vulgaris
 ```{r model2a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -261,39 +267,39 @@ results_1kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgar
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_5years_vv, "../data/modelResults/results_1kmgrid_date_5years_vv.rds")
+#saveRDS(results_1kmgrid_date_5years_vv, "../outputs/modelOutputs/results_1kmgrid_date_5years_vv.rds")
 ```
 
 
 
 ```{r model2a-results, cache=TRUE}
-results_1kmgrid_date_5years_vv <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vv.rds")
+results_1kmgrid_date_5years_vv <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_5years_vv.rds")
 ### n Closure periods
-modelResultsDF[2, 4] <-(results_1kmgrid_date_5years_vv$max_year)
+modelSumDF[2, 4] <-(results_1kmgrid_date_5years_vv$max_year)
 # n Visits
-modelResultsDF[2, 5] <-(results_1kmgrid_date_5years_vv$nvisits)
+modelSumDF[2, 5] <-(results_1kmgrid_date_5years_vv$nvisits)
 # n Sites
-modelResultsDF[2, 6] <-(results_1kmgrid_date_5years_vv$nsites)
+modelSumDF[2, 6] <-(results_1kmgrid_date_5years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[4, 5] <- (results_1kmgrid_date_5years_vv$species_sites) 
+sppModelSumDF[4, 5] <- (results_1kmgrid_date_5years_vv$species_sites) 
 # n species observations
-speciesResultsDF[4, 6] <- (results_1kmgrid_date_5years_vv$species_observations) 
+sppModelSumDF[4, 6] <- (results_1kmgrid_date_5years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_5years_vv$BUGSoutput$summary)
-speciesResultsDF[4, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[4, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[4, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[4, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 #DIC
-speciesResultsDF[4, 9] <-(results_1kmgrid_date_5years_vv$BUGSoutput$DIC) 
+sppModelSumDF[4, 9] <-(results_1kmgrid_date_5years_vv$BUGSoutput$DIC) 
 ```
 
 
 
-### Model 2b: Vespula germanica
+#### Model 2b: Vespula germanica
 ```{r model2b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -305,30 +311,30 @@ results_1kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.german
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_5years_vg, "../data/modelResults/results_1kmgrid_date_5years_vg.rds")
+#saveRDS(results_1kmgrid_date_5years_vg, "../outputs/modelOutputs/results_1kmgrid_date_5years_vg.rds")
 ```
 
 
 ```{r model2b-results, cache=TRUE}
-results_1kmgrid_date_5years_vg <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vg.rds")
+results_1kmgrid_date_5years_vg <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_5years_vg.rds")
 # n species sites
-speciesResultsDF[5, 5] <- (results_1kmgrid_date_5years_vg$species_sites) 
+sppModelSumDF[5, 5] <- (results_1kmgrid_date_5years_vg$species_sites) 
 # n species observations
-speciesResultsDF[5, 6] <- (results_1kmgrid_date_5years_vg$species_observations) 
+sppModelSumDF[5, 6] <- (results_1kmgrid_date_5years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_5years_vg$BUGSoutput$summary)
-speciesResultsDF[5, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[5, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[5, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[5, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 #DIC
-speciesResultsDF[5, 9] <-(results_1kmgrid_date_5years_vg$BUGSoutput$DIC) 
+sppModelSumDF[5, 9] <-(results_1kmgrid_date_5years_vg$BUGSoutput$DIC) 
 #
 ```
 
 
 
-### Model 2c: Vespa crabro
+#### Model 2c: Vespa crabro
 
 #### Run model
 ```{r model2c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
@@ -341,33 +347,33 @@ results_1kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_5years_vc, "../data/modelResults/results_1kmgrid_date_5years_vc.rds")
+#saveRDS(results_1kmgrid_date_5years_vc, "../outputs/modelOutputs/results_1kmgrid_date_5years_vc.rds")
 ```
 
 
 ```{r model2c-results, cache=TRUE}
-results_1kmgrid_date_5years_vc <- readRDS("../data/modelResults/results_1kmgrid_date_5years_vc.rds")
+results_1kmgrid_date_5years_vc <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_5years_vc.rds")
 # n species sites
-speciesResultsDF[6, 5] <- (results_1kmgrid_date_5years_vc$species_sites) 
+sppModelSumDF[6, 5] <- (results_1kmgrid_date_5years_vc$species_sites) 
 # n species observations
-speciesResultsDF[6, 6] <- (results_1kmgrid_date_5years_vc$species_observations) 
+sppModelSumDF[6, 6] <- (results_1kmgrid_date_5years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_5years_vc$BUGSoutput$summary)
-speciesResultsDF[6, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[6, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[6, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[6, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 #DIC
-speciesResultsDF[6, 9] <-(results_1kmgrid_date_5years_vc$BUGSoutput$DIC) 
+sppModelSumDF[6, 9] <-(results_1kmgrid_date_5years_vc$BUGSoutput$DIC) 
 ```
 
 
 ## Model 3 (10 yrs + 1km^^2)
 ##### Survey: date (dd/mm/yyyy)
 ##### Closure period: ten years
-##### Grid cell: 1 km{2}
+##### Grid cell: 1x1 km
 
-#### Format
+### Format
 ```{r model3-format, echo=TRUE, message=FALSE, warning=FALSE}
 ############# Format the NHM data #############
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
@@ -396,15 +402,15 @@ spp_vis_merged_1kmgrid_date_10years <- rbind(formattedOccData_NHM$spp_vis, forma
 #write.csv(spp_vis_merged_1kmgrid_date_10years, '../outputs/formattedData/spp_vis_merged_1kmgrid_date_10years.csv')
 ```
 
-#### Model
+### Model
 Load the formatted data
 ```{r load-model3-data, cache=TRUE, message=FALSE}
-occDetdata_merged_1kmgrid_date_10years <- read.csv('../data/modelData/occDetdata_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
-spp_vis_merged_1kmgrid_date_10years <- read.csv('../data/modelData/spp_vis_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_1kmgrid_date_10years <- read.csv('../outputs/formattedData/occDetdata_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_1kmgrid_date_10years <- read.csv('../outputs/formattedData/spp_vis_merged_1kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 ```
 
 
-### Model 3a: Vespula vulgaris
+#### Model 3a: Vespula vulgaris
 ```{r model3a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -416,38 +422,38 @@ results_1kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulga
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_10years_vv, "../data/modelResults/results_1kmgrid_date_10years_vv.rds")
+#saveRDS(results_1kmgrid_date_10years_vv, "../outputs/modelOutputs/results_1kmgrid_date_10years_vv.rds")
 ```
 
 
 
 ```{r model3a-results, cache=TRUE}
-results_1kmgrid_date_10years_vv <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vv.rds")
+results_1kmgrid_date_10years_vv <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_10years_vv.rds")
 # n Closure periods
-modelResultsDF[3, 4] <-(results_1kmgrid_date_10years_vv$max_year)
+modelSumDF[3, 4] <-(results_1kmgrid_date_10years_vv$max_year)
 # n Visits
-modelResultsDF[3, 5] <-(results_1kmgrid_date_10years_vv$nvisits)
+modelSumDF[3, 5] <-(results_1kmgrid_date_10years_vv$nvisits)
 # n Sites
-modelResultsDF[3, 6] <-(results_1kmgrid_date_10years_vv$nsites)
+modelSumDF[3, 6] <-(results_1kmgrid_date_10years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[7, 5] <- (results_1kmgrid_date_10years_vv$species_sites) 
+sppModelSumDF[7, 5] <- (results_1kmgrid_date_10years_vv$species_sites) 
 # n species observations
-speciesResultsDF[7, 6] <- (results_1kmgrid_date_10years_vv$species_observations) 
+sppModelSumDF[7, 6] <- (results_1kmgrid_date_10years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_10years_vv$BUGSoutput$summary)
-speciesResultsDF[7, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[7, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[7, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[7, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[7, 9] <-(results_1kmgrid_date_10years_vv$BUGSoutput$DIC) 
+sppModelSumDF[7, 9] <-(results_1kmgrid_date_10years_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 3b: Vespula germanica
+#### Model 3b: Vespula germanica
 ```{r model3b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -459,27 +465,27 @@ results_1kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germa
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_10years_vg, "../data/modelResults/results_1kmgrid_date_10years_vg.rds")
+#saveRDS(results_1kmgrid_date_10years_vg, "../outputs/modelOutputs/results_1kmgrid_date_10years_vg.rds")
 ```
 
 
 ```{r model3b-results, cache=TRUE}
-results_1kmgrid_date_10years_vg <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vg.rds")
+results_1kmgrid_date_10years_vg <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_10years_vg.rds")
 # n species sites
-speciesResultsDF[8, 5] <- (results_1kmgrid_date_10years_vg$species_sites) 
+sppModelSumDF[8, 5] <- (results_1kmgrid_date_10years_vg$species_sites) 
 # n species observations
-speciesResultsDF[8, 6] <- (results_1kmgrid_date_10years_vg$species_observations) 
+sppModelSumDF[8, 6] <- (results_1kmgrid_date_10years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_10years_vg$BUGSoutput$summary)
-speciesResultsDF[8, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[8, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[8, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[8, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[8, 9] <-(results_1kmgrid_date_10years_vg$BUGSoutput$DIC) 
+sppModelSumDF[8, 9] <-(results_1kmgrid_date_10years_vg$BUGSoutput$DIC) 
 ```
 
-### Model 3c: Vespa crabro
+#### Model 3c: Vespa crabro
 ```{r model3c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_1kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -491,24 +497,24 @@ results_1kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro"
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_1kmgrid_date_10years_vc, "../data/modelResults/results_1kmgrid_date_10years_vc.rds")
+#saveRDS(results_1kmgrid_date_10years_vc, "../outputs/modelOutputs/results_1kmgrid_date_10years_vc.rds")
 ```
 
 
 ```{r model3c-results, cache=TRUE}
-results_1kmgrid_date_10years_vc <- readRDS("../data/modelResults/results_1kmgrid_date_10years_vc.rds")
+results_1kmgrid_date_10years_vc <- readRDS("../outputs/modelOutputs/results_1kmgrid_date_10years_vc.rds")
 # n species sites
-speciesResultsDF[9, 5] <- (results_1kmgrid_date_10years_vc$species_sites) 
+sppModelSumDF[9, 5] <- (results_1kmgrid_date_10years_vc$species_sites) 
 # n species observations
-speciesResultsDF[9, 6] <- (results_1kmgrid_date_10years_vc$species_observations) 
+sppModelSumDF[9, 6] <- (results_1kmgrid_date_10years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_1kmgrid_date_10years_vc$BUGSoutput$summary)
-speciesResultsDF[9, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[9, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[9, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[9, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[9, 9] <-(results_1kmgrid_date_10years_vc$BUGSoutput$DIC) 
+sppModelSumDF[9, 9] <-(results_1kmgrid_date_10years_vc$BUGSoutput$DIC) 
 ```
 
 
@@ -518,11 +524,11 @@ speciesResultsDF[9, 9] <-(results_1kmgrid_date_10years_vc$BUGSoutput$DIC)
 
 
 ## Model 4 (1 yr + 2km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: One year
-#### Grid cell: 2x2 km2
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: One year
+##### Grid cell: 2x2 km2
 
-#### Format
+### Format
 ```{r model4-format, echo=TRUE, message=FALSE, warning=FALSE}
 ######### Format the NHM data #########
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
@@ -551,12 +557,12 @@ spp_vis_merged_2kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formatte
 ### Model
 Load the formatted data
 ```{r load-model4-data, cache=TRUE, message=FALSE}
-occDetdata_merged_2kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_2kmgrid_date_year <- read.csv('../outputs/formattedData/occDetdata_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_2kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_2kmgrid_date_year <- read.csv('../outputs/formattedData/spp_vis_merged_2kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 4a: Vespula vulgaris
+#### Model 4a: Vespula vulgaris
 ```{r model4a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -568,39 +574,39 @@ results_2kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_year_vv, "../data/modelResults/results_2kmgrid_date_year_vv.rds")
+#saveRDS(results_2kmgrid_date_year_vv, "../outputs/modelOutputs/results_2kmgrid_date_year_vv.rds")
 ```
 
 
 
 ```{r model4a-results, cache=TRUE}
-results_2kmgrid_date_year_vv <- readRDS("../data/modelResults/results_2kmgrid_date_year_vv.rds")
+results_2kmgrid_date_year_vv <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_year_vv.rds")
 
 # n Closure periods
-modelResultsDF[4, 4] <-(results_2kmgrid_date_year_vv$max_year)
+modelSumDF[4, 4] <-(results_2kmgrid_date_year_vv$max_year)
 # n Visits
-modelResultsDF[4, 5] <-(results_2kmgrid_date_year_vv$nvisits)
+modelSumDF[4, 5] <-(results_2kmgrid_date_year_vv$nvisits)
 # n Sites
-modelResultsDF[4, 6] <-(results_2kmgrid_date_year_vv$nsites)
+modelSumDF[4, 6] <-(results_2kmgrid_date_year_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[10, 5] <- (results_2kmgrid_date_year_vv$species_sites) 
+sppModelSumDF[10, 5] <- (results_2kmgrid_date_year_vv$species_sites) 
 # n species observations
-speciesResultsDF[10, 6] <- (results_2kmgrid_date_year_vv$species_observations) 
+sppModelSumDF[10, 6] <- (results_2kmgrid_date_year_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_year_vv$BUGSoutput$summary)
-speciesResultsDF[10, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[10, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[10, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[10, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[10, 9] <-(results_2kmgrid_date_year_vv$BUGSoutput$DIC) 
+sppModelSumDF[10, 9] <-(results_2kmgrid_date_year_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 4b: Vespula germanica
+#### Model 4b: Vespula germanica
 ```{r model4b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -612,29 +618,29 @@ results_2kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanic
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_year_vg, "../data/modelResults/results_2kmgrid_date_year_vg.rds")
+#saveRDS(results_2kmgrid_date_year_vg, "../outputs/modelOutputs/results_2kmgrid_date_year_vg.rds")
 ```
 
 
-```{r model4b-results, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_year_vg <- readRDS("../data/modelResults/results_2kmgrid_date_year_vg.rds")
-### Species results (speciesResultsDF)
+```{r model4b-results, echo=TRUE, cache=TRUE}
+results_2kmgrid_date_year_vg <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_year_vg.rds")
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[11, 5] <- (results_2kmgrid_date_year_vg$species_sites) 
+sppModelSumDF[11, 5] <- (results_2kmgrid_date_year_vg$species_sites) 
 # n species observations
-speciesResultsDF[11, 6] <- (results_2kmgrid_date_year_vg$species_observations) 
+sppModelSumDF[11, 6] <- (results_2kmgrid_date_year_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_year_vg$BUGSoutput$summary)
-speciesResultsDF[11, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[11, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[11, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[11, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[11, 9] <-(results_2kmgrid_date_year_vg$BUGSoutput$DIC) 
+sppModelSumDF[11, 9] <-(results_2kmgrid_date_year_vg$BUGSoutput$DIC) 
 ```
 
 
-### Model 4c: Vespa crabro
+#### Model 4c: Vespa crabro
 ```{r model4c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -646,24 +652,24 @@ results_2kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_year_vc, "../data/modelResults/results_2kmgrid_date_year_vc.rds")
+#saveRDS(results_2kmgrid_date_year_vc, "../outputs/modelOutputs/results_2kmgrid_date_year_vc.rds")
 ```
 
 
-```{r model4c-results, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_year_vc <- readRDS("../data/modelResults/results_2kmgrid_date_year_vc.rds")
+```{r model4c-results, echo=TRUE, cache=TRUE}
+results_2kmgrid_date_year_vc <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_year_vc.rds")
 # n species sites
-speciesResultsDF[12, 5] <- (results_2kmgrid_date_year_vc$species_sites) 
+sppModelSumDF[12, 5] <- (results_2kmgrid_date_year_vc$species_sites) 
 # n species observations
-speciesResultsDF[12, 6] <- (results_2kmgrid_date_year_vc$species_observations) 
+sppModelSumDF[12, 6] <- (results_2kmgrid_date_year_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_year_vc$BUGSoutput$summary)
-speciesResultsDF[12, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[12, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[12, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[12, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[12, 9] <-(results_2kmgrid_date_year_vc$BUGSoutput$DIC) 
+sppModelSumDF[12, 9] <-(results_2kmgrid_date_year_vc$BUGSoutput$DIC) 
 ```
 
 
@@ -678,7 +684,7 @@ speciesResultsDF[12, 9] <-(results_2kmgrid_date_year_vc$BUGSoutput$DIC)
 ##### Closure period: Five years
 ##### Grid cell: 10x10 km2
 
-#### Format
+### Format
 ```{r model5-format, echo=TRUE, message=FALSE, warning=FALSE}
 ############# Format the NHM data #############
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
@@ -707,17 +713,17 @@ spp_vis_merged_2kmgrid_date_5years <- rbind(formattedOccData_NHM$spp_vis, format
 #write.csv(spp_vis_merged_2kmgrid_date_5years, '../outputs/formattedData/spp_vis_merged_2kmgrid_date_5years.csv')
 ```
 
-#### Model
+### Model
 
 Load the formatted data
 ```{r load-model5-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_2kmgrid_date_5years <- read.csv('../data/modelData/occDetdata_merged_2kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_2kmgrid_date_5years <- read.csv('../outputs/formattedData/occDetdata_merged_2kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_2kmgrid_date_5years <- read.csv('../data/modelData/spp_vis_merged_2kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_2kmgrid_date_5years <- read.csv('../outputs/formattedData/spp_vis_merged_2kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 5a: Vespula vulgaris
+#### Model 5a: Vespula vulgaris
 ```{r model5a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -729,38 +735,38 @@ results_2kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgar
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_5years_vv, "../data/modelResults/results_2kmgrid_date_5years_vv.rds")
+#saveRDS(results_2kmgrid_date_5years_vv, "../outputs/modelOutputs/results_2kmgrid_date_5years_vv.rds")
 ```
 
 
 
 ```{r model5a-results, cache=TRUE}
-results_2kmgrid_date_5years_vv <- readRDS("../data/modelResults/results_2kmgrid_date_5years_vv.rds")
+results_2kmgrid_date_5years_vv <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_5years_vv.rds")
 # n Closure periods
-modelResultsDF[5, 4] <-(results_2kmgrid_date_5years_vv$max_year)
+modelSumDF[5, 4] <-(results_2kmgrid_date_5years_vv$max_year)
 # n Visits
-modelResultsDF[5, 5] <-(results_2kmgrid_date_5years_vv$nvisits)
+modelSumDF[5, 5] <-(results_2kmgrid_date_5years_vv$nvisits)
 # n Sites
-modelResultsDF[5, 6] <-(results_2kmgrid_date_5years_vv$nsites)
+modelSumDF[5, 6] <-(results_2kmgrid_date_5years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[13, 5] <- (results_2kmgrid_date_5years_vv$species_sites) 
+sppModelSumDF[13, 5] <- (results_2kmgrid_date_5years_vv$species_sites) 
 # n species observations
-speciesResultsDF[13, 6] <- (results_2kmgrid_date_5years_vv$species_observations) 
+sppModelSumDF[13, 6] <- (results_2kmgrid_date_5years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_5years_vv$BUGSoutput$summary)
-speciesResultsDF[13, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[13, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[13, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[13, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[13, 9] <-(results_2kmgrid_date_5years_vv$BUGSoutput$DIC) 
+sppModelSumDF[13, 9] <-(results_2kmgrid_date_5years_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 5b: Vespula germanica
+#### Model 5b: Vespula germanica
 ```{r model5b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -772,29 +778,29 @@ results_2kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.german
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_5years_vg, "../data/modelResults/results_2kmgrid_date_5years_vg.rds")
+#saveRDS(results_2kmgrid_date_5years_vg, "../outputs/modelOutputs/results_2kmgrid_date_5years_vg.rds")
 ```
 
 
 ```{r model5b-results, cache=TRUE}
-results_2kmgrid_date_5years_vg <- readRDS("../data/modelResults/results_2kmgrid_date_5years_vg.rds")
+results_2kmgrid_date_5years_vg <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_5years_vg.rds")
 # n species sites
-speciesResultsDF[14, 5] <- (results_2kmgrid_date_5years_vg$species_sites) 
+sppModelSumDF[14, 5] <- (results_2kmgrid_date_5years_vg$species_sites) 
 # n species observations
-speciesResultsDF[14, 6] <- (results_2kmgrid_date_5years_vg$species_observations) 
+sppModelSumDF[14, 6] <- (results_2kmgrid_date_5years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_5years_vg$BUGSoutput$summary)
-speciesResultsDF[14, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[14, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[14, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[14, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[14, 9] <-(results_2kmgrid_date_5years_vg$BUGSoutput$DIC) 
+sppModelSumDF[14, 9] <-(results_2kmgrid_date_5years_vg$BUGSoutput$DIC) 
 
 ```
 
 
-### Model 5c: Vespa crabro
+#### Model 5c: Vespa crabro
 ```{r model5c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -806,43 +812,73 @@ results_2kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_2kmgrid_date_5years_vc, "../data/modelResults/results_2kmgrid_date_5years_vc.rds")
+#saveRDS(results_2kmgrid_date_5years_vc, "../outputs/modelOutputs/results_2kmgrid_date_5years_vc.rds")
 ```
 
 
-```{r model5c-results, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_5years_vc <- readRDS("../data/modelResults/results_2kmgrid_date_5years_vc.rds")
+```{r model5c-results, echo=TRUE, cache=TRUE}
+results_2kmgrid_date_5years_vc <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_5years_vc.rds")
 # n species sites
-speciesResultsDF[15, 5] <- (results_2kmgrid_date_5years_vc$species_sites) 
+sppModelSumDF[15, 5] <- (results_2kmgrid_date_5years_vc$species_sites) 
 # n species observations
-speciesResultsDF[15, 6] <- (results_2kmgrid_date_5years_vc$species_observations) 
+sppModelSumDF[15, 6] <- (results_2kmgrid_date_5years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_5years_vc$BUGSoutput$summary)
-speciesResultsDF[15, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[15, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[15, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[15, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[15, 9] <-(results_2kmgrid_date_5years_vc$BUGSoutput$DIC) 
+sppModelSumDF[15, 9] <-(results_2kmgrid_date_5years_vc$BUGSoutput$DIC) 
 ```
 
 
 
 ## Model 6 (10 yrs + 2km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: ten years
-#### Grid cell: 2 km{2}
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: ten years
+##### Grid cell: 2x2 km
 
+### Format
+```{r model6-format, echo=TRUE, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km2grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),            
+                                              closure_period = NHMdat$tp10)
+
+
+############# Format the BWARS data #############
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km2grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp10)
+
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_2kmgrid_date_10years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_2kmgrid_date_10years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+
+#Save files
+#write.csv(occDetdata_merged_2kmgrid_date_10years, '../outputs/formattedData/occDetdata_merged_2kmgrid_date_10years.csv')
+#write.csv(spp_vis_merged_2kmgrid_date_10years, '../outputs/formattedData/spp_vis_merged_2kmgrid_date_10years.csv')
+```
+
+### Model
 
 Load the formatted data
 ```{r load-model6-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_2kmgrid_date_10years <- read.csv('../data/modelData/occDetdata_merged_2kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_2kmgrid_date_10years <- read.csv('../outputs/formattedData/occDetdata_merged_2kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_2kmgrid_date_10years <- read.csv('../data/modelData/spp_vis_merged_2kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_2kmgrid_date_10years <- read.csv('../outputs/formattedData/spp_vis_merged_2kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 6a: Vespula vulgaris
+#### Model 6a: Vespula vulgaris
 ```{r model6a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -854,59 +890,43 @@ results_2kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulga
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_2kmgrid_date_10years_vv, "../data/modelResults/results_2kmgrid_date_10years_vv.rds")
+#saveRDS(results_2kmgrid_date_10years_vv, "../outputs/modelOutputs/results_2kmgrid_date_10years_vv.rds")
 ```
 
 
-```{r model6a-plot, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_10years_vv <- readRDS("../data/modelResults/results_2kmgrid_date_10years_vv.rds")
-plot.occDet.wasp10yrs(results_2kmgrid_date_10years_vv)
-```
 
+```{r model6a-results, echo=TRUE, cache=TRUE}
+# Load data
+results_2kmgrid_date_10years_vv <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_10years_vv.rds")
 
-```{r model6a-results, echo=FALSE, cache=TRUE}
-### Model results (modelResultsDF)
 # n Closure periods
-modelResultsDF[6, 4] <-(results_2kmgrid_date_10years_vv$max_year)
+modelSumDF[6, 4] <-(results_2kmgrid_date_10years_vv$max_year)
 # n Visits
-modelResultsDF[6, 5] <-(results_2kmgrid_date_10years_vv$nvisits)
+modelSumDF[6, 5] <-(results_2kmgrid_date_10years_vv$nvisits)
 # n Sites
-modelResultsDF[6, 6] <-(results_2kmgrid_date_10years_vv$nsites)
+modelSumDF[6, 6] <-(results_2kmgrid_date_10years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[16, 5] <- (results_2kmgrid_date_10years_vv$species_sites) 
+sppModelSumDF[16, 5] <- (results_2kmgrid_date_10years_vv$species_sites) 
 # n species observations
-speciesResultsDF[16, 6] <- (results_2kmgrid_date_10years_vv$species_observations) 
+sppModelSumDF[16, 6] <- (results_2kmgrid_date_10years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_10years_vv$BUGSoutput$summary)
-speciesResultsDF[16, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[16, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[16, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[16, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[16, 9] <-(results_2kmgrid_date_10years_vv$BUGSoutput$DIC) 
+sppModelSumDF[16, 9] <-(results_2kmgrid_date_10years_vv$BUGSoutput$DIC) 
 
 
-#mean(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#sd(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])/sqrt(length(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")]))
-#max(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#min(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#(x[grepl(pattern="psi.fs\\[12", x=dimnames(x)[[1]]), c("mean")])
-#(x[grepl(pattern="psi.fs\\[1]", x=dimnames(x)[[1]]), c("mean")])
-
-
-
-#Change <- sparta::occurrenceChange(first=1, last=7, results_10kmgrid_date_10years_vv, change = "growthrate")
-
-
-#Change <- sparta::occurrenceChange(first=9, last=12, results_10kmgrid_date_10years_vv, change = "growthrate")
 ```
 
 
 
-### Model 6b: Vespula germanica
+#### Model 6b: Vespula germanica
 ```{r model6b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -918,28 +938,25 @@ results_2kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germa
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_2kmgrid_date_10years_vg, "../data/modelResults/results_2kmgrid_date_10years_vg.rds")
+#saveRDS(results_2kmgrid_date_10years_vg, "../outputs/modelOutputs/results_2kmgrid_date_10years_vg.rds")
 ```
 
-```{r model6b-plot, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_10years_vg <- readRDS("../data/modelResults/results_2kmgrid_date_10years_vg.rds")
-plot.occDet.wasp10yrs(results_2kmgrid_date_10years_vg)
-```
+```{r model6b-results, cache=TRUE}
+#Load model output
+results_2kmgrid_date_10years_vg <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_10years_vg.rds")
 
-```{r model6b-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
 # n species sites
-speciesResultsDF[17, 5] <- (results_2kmgrid_date_10years_vg$species_sites) 
+sppModelSumDF[17, 5] <- (results_2kmgrid_date_10years_vg$species_sites) 
 # n species observations
-speciesResultsDF[17, 6] <- (results_2kmgrid_date_10years_vg$species_observations) 
+sppModelSumDF[17, 6] <- (results_2kmgrid_date_10years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_10years_vg$BUGSoutput$summary)
-speciesResultsDF[17, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[17, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[17, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[17, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[17, 9] <-(results_2kmgrid_date_10years_vg$BUGSoutput$DIC) 
+sppModelSumDF[17, 9] <-(results_2kmgrid_date_10years_vg$BUGSoutput$DIC) 
 
 ```
 
@@ -947,7 +964,7 @@ speciesResultsDF[17, 9] <-(results_2kmgrid_date_10years_vg$BUGSoutput$DIC)
 
 
 
-### Model 6c: Vespa crabro
+#### Model 6c: Vespa crabro
 ```{r model6c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_2kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -959,29 +976,25 @@ results_2kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro"
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_2kmgrid_date_10years_vc, "../data/modelResults/results_2kmgrid_date_10years_vc.rds")
+#saveRDS(results_2kmgrid_date_10years_vc, "../outputs/modelOutputs/results_2kmgrid_date_10years_vc.rds")
 ```
 
 
-```{r model6c-plot, echo=FALSE, cache=TRUE}
-results_2kmgrid_date_10years_vc <- readRDS("../data/modelResults/results_2kmgrid_date_10years_vc.rds")
-plot.occDet.wasp10yrs(results_2kmgrid_date_10years_vc)
-```
-
-```{r model6c-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model6c-results, cache=TRUE}
+#Load Model output
+results_2kmgrid_date_10years_vc <- readRDS("../outputs/modelOutputs/results_2kmgrid_date_10years_vc.rds")
 # n species sites
-speciesResultsDF[18, 5] <- (results_2kmgrid_date_10years_vc$species_sites) 
+sppModelSumDF[18, 5] <- (results_2kmgrid_date_10years_vc$species_sites) 
 # n species observations
-speciesResultsDF[18, 6] <- (results_2kmgrid_date_10years_vc$species_observations) 
+sppModelSumDF[18, 6] <- (results_2kmgrid_date_10years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_2kmgrid_date_10years_vc$BUGSoutput$summary)
-speciesResultsDF[18, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[18, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[18, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[18, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[18, 9] <-(results_2kmgrid_date_10years_vc$BUGSoutput$DIC) 
+sppModelSumDF[18, 9] <-(results_2kmgrid_date_10years_vc$BUGSoutput$DIC) 
 ```
 
 
@@ -989,9 +1002,9 @@ speciesResultsDF[18, 9] <-(results_2kmgrid_date_10years_vc$BUGSoutput$DIC)
 ## Model 7 (1 yr + 5km^^2)
 ##### Survey: date (dd/mm/yyyy)
 ##### Closure period: one year
-##### Grid cell: 5 km{2}
+##### Grid cell: 5x5 km
 
-#### Format 
+### Format 
 ```{r model7-format, echo=TRUE, message=FALSE, warning=FALSE}
 ######### Format the NHM data #########
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
@@ -1021,12 +1034,12 @@ spp_vis_merged_5kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formatte
 Load the formatted data
 ```{r load-model7-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_5kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_5kmgrid_date_year <- read.csv('../outputs/formattedData/occDetdata_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_5kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_5kmgrid_date_year <- read.csv('../outputs/formattedData/spp_vis_merged_5kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 7a: Vespula vulgaris
+#### Model 7a: Vespula vulgaris
 ```{r model7a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -1038,37 +1051,37 @@ results_5kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_5kmgrid_date_year_vv, "../data/modelResults/results_5kmgrid_date_year_vv.rds")
+#saveRDS(results_5kmgrid_date_year_vv, "../outputs/modelOutputs/results_5kmgrid_date_year_vv.rds")
 ```
 
 
 ```{r model7a-results, cache=TRUE}
-results_5kmgrid_date_year_vv <- readRDS("../data/modelResults/results_5kmgrid_date_year_vv.rds")
+results_5kmgrid_date_year_vv <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_year_vv.rds")
 # n Closure periods
-modelResultsDF[7, 4] <-(results_5kmgrid_date_year_vv$max_year)
+modelSumDF[7, 4] <-(results_5kmgrid_date_year_vv$max_year)
 # n Visits
-modelResultsDF[7, 5] <-(results_5kmgrid_date_year_vv$nvisits)
+modelSumDF[7, 5] <-(results_5kmgrid_date_year_vv$nvisits)
 # n Sites
-modelResultsDF[7, 6] <-(results_5kmgrid_date_year_vv$nsites)
+modelSumDF[7, 6] <-(results_5kmgrid_date_year_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[19, 5] <- (results_5kmgrid_date_year_vv$species_sites) 
+sppModelSumDF[19, 5] <- (results_5kmgrid_date_year_vv$species_sites) 
 # n species observations
-speciesResultsDF[19, 6] <- (results_5kmgrid_date_year_vv$species_observations) 
+sppModelSumDF[19, 6] <- (results_5kmgrid_date_year_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_year_vv$BUGSoutput$summary)
-speciesResultsDF[19, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[19, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[19, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[19, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[19, 9] <-(results_5kmgrid_date_year_vv$BUGSoutput$DIC) 
+sppModelSumDF[19, 9] <-(results_5kmgrid_date_year_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 7b: Vespula germanica
+#### Model 7b: Vespula germanica
 ```{r model7b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1080,28 +1093,28 @@ results_5kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanic
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_5kmgrid_date_year_vg, "../data/modelResults/results_5kmgrid_date_year_vg.rds")
+#saveRDS(results_5kmgrid_date_year_vg, "../outputs/modelOutputs/results_5kmgrid_date_year_vg.rds")
 ```
 
 
 ```{r model7b-results, cache=TRUE}
-results_5kmgrid_date_year_vg <- readRDS("../data/modelResults/results_5kmgrid_date_year_vg.rds")
+results_5kmgrid_date_year_vg <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_year_vg.rds")
 # n species sites
-speciesResultsDF[20, 5] <- (results_5kmgrid_date_year_vg$species_sites) 
+sppModelSumDF[20, 5] <- (results_5kmgrid_date_year_vg$species_sites) 
 # n species observations
-speciesResultsDF[20, 6] <- (results_5kmgrid_date_year_vg$species_observations) 
+sppModelSumDF[20, 6] <- (results_5kmgrid_date_year_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_year_vg$BUGSoutput$summary)
-speciesResultsDF[20, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[20, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[20, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[20, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[20, 9] <-(results_5kmgrid_date_year_vg$BUGSoutput$DIC) 
+sppModelSumDF[20, 9] <-(results_5kmgrid_date_year_vg$BUGSoutput$DIC) 
 ```
 
 
-### Model 7c: Vespa crabro
+#### Model 7c: Vespa crabro
 ```{r model7c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1113,40 +1126,67 @@ results_5kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_5kmgrid_date_year_vc, "../data/modelResults/results_5kmgrid_date_year_vc.rds")
+#saveRDS(results_5kmgrid_date_year_vc, "../outputs/modelOutputs/results_5kmgrid_date_year_vc.rds")
 ```
 
 
-```{r model7c-results, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_year_vc <- readRDS("../data/modelResults/results_5kmgrid_date_year_vc.rds")
+```{r model7c-results, echo=TRUE, cache=TRUE}
+results_5kmgrid_date_year_vc <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_year_vc.rds")
 # n species sites
-speciesResultsDF[21, 5] <- (results_5kmgrid_date_year_vc$species_sites) 
+sppModelSumDF[21, 5] <- (results_5kmgrid_date_year_vc$species_sites) 
 # n species observations
-speciesResultsDF[21, 6] <- (results_5kmgrid_date_year_vc$species_observations) 
+sppModelSumDF[21, 6] <- (results_5kmgrid_date_year_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_year_vc$BUGSoutput$summary)
-speciesResultsDF[21, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[21, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[21, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[21, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[21, 9] <-(results_5kmgrid_date_year_vc$BUGSoutput$DIC) 
+sppModelSumDF[21, 9] <-(results_5kmgrid_date_year_vc$BUGSoutput$DIC) 
 ```
 
 
 ## Model 8 (5 yrs + 5km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: Five years
-#### Grid cell: 5 km{2}
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: Five years
+##### Grid cell: 5x5 km
+### Format 
+```{r model8-format, echo=TRUE, message=FALSE, warning=FALSE}
+######### Format the NHM data #########
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km5grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),       
+                                              closure_period = NHMdat$tp5)
+
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km5grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp5)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_5kmgrid_date_5years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_5kmgrid_date_5years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+
+#Save files
+#write.csv(occDetdata_merged_5kmgrid_date_5years, '../outputs/formattedData/occDetdata_merged_5kmgrid_date_5years.csv')
+#write.csv(spp_vis_merged_5kmgrid_date_5years, '../outputs/formattedData/spp_vis_merged_5kmgrid_date_5years.csv')
+```
+
+### Model
 Load the formatted data
 ```{r load-model8-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_5kmgrid_date_5years <- read.csv('../data/modelData/occDetdata_merged_5kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_5kmgrid_date_5years <- read.csv('../outputs/formattedData/occDetdata_merged_5kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_5kmgrid_date_5years <- read.csv('../data/modelData/spp_vis_merged_5kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_5kmgrid_date_5years <- read.csv('../outputs/formattedData/spp_vis_merged_5kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 8a: Vespula vulgaris
+#### Model 8a: Vespula vulgaris
 ```{r model8a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -1158,43 +1198,40 @@ results_5kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgar
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_5years_vv, "../data/modelResults/results_5kmgrid_date_5years_vv.rds")
+#saveRDS(results_5kmgrid_date_5years_vv, "../outputs/modelOutputs/results_5kmgrid_date_5years_vv.rds")
 ```
 
 
-```{r model8a-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_5years_vv <- readRDS("../data/modelResults/results_5kmgrid_date_5years_vv.rds")
-plot.occDet.wasp5yrs(results_5kmgrid_date_5years_vv)
-```
 
+```{r model8a-results, echo=TRUE, cache=TRUE}
+# Load model output
+results_5kmgrid_date_5years_vv <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_5years_vv.rds")
 
-```{r model8a-results, echo=FALSE, cache=TRUE}
-### Model results (modelResultsDF)
 # n Closure periods
-modelResultsDF[8, 4] <-(results_5kmgrid_date_5years_vv$max_year)
+modelSumDF[8, 4] <-(results_5kmgrid_date_5years_vv$max_year)
 # n Visits
-modelResultsDF[8, 5] <-(results_5kmgrid_date_5years_vv$nvisits)
+modelSumDF[8, 5] <-(results_5kmgrid_date_5years_vv$nvisits)
 # n Sites
-modelResultsDF[8, 6] <-(results_5kmgrid_date_5years_vv$nsites)
+modelSumDF[8, 6] <-(results_5kmgrid_date_5years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[22, 5] <- (results_5kmgrid_date_5years_vv$species_sites) 
+sppModelSumDF[22, 5] <- (results_5kmgrid_date_5years_vv$species_sites) 
 # n species observations
-speciesResultsDF[22, 6] <- (results_5kmgrid_date_5years_vv$species_observations) 
+sppModelSumDF[22, 6] <- (results_5kmgrid_date_5years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_5years_vv$BUGSoutput$summary)
-speciesResultsDF[22, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[22, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[22, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[22, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[22, 9] <-(results_5kmgrid_date_5years_vv$BUGSoutput$DIC) 
+sppModelSumDF[22, 9] <-(results_5kmgrid_date_5years_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 8b: Vespula germanica
+#### Model 8b: Vespula germanica
 ```{r model8b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1206,32 +1243,28 @@ results_5kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.german
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_5years_vg, "../data/modelResults/results_5kmgrid_date_5years_vg.rds")
+#saveRDS(results_5kmgrid_date_5years_vg, "../outputs/modelOutputs/results_5kmgrid_date_5years_vg.rds")
 ```
 
-```{r model8b-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_5years_vg <- readRDS("../data/modelResults/results_5kmgrid_date_5years_vg.rds")
-plot.occDet.wasp5yrs(results_5kmgrid_date_5years_vg)
-```
-
-```{r model8b-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model8b-results, cache=TRUE}
+#Load model output
+results_5kmgrid_date_5years_vg <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_5years_vg.rds")
 # n species sites
-speciesResultsDF[23, 5] <- (results_5kmgrid_date_5years_vg$species_sites) 
+sppModelSumDF[23, 5] <- (results_5kmgrid_date_5years_vg$species_sites) 
 # n species observations
-speciesResultsDF[23, 6] <- (results_5kmgrid_date_5years_vg$species_observations) 
+sppModelSumDF[23, 6] <- (results_5kmgrid_date_5years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_5years_vg$BUGSoutput$summary)
-speciesResultsDF[23, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[23, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[23, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[23, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[23, 9] <-(results_5kmgrid_date_5years_vg$BUGSoutput$DIC) 
+sppModelSumDF[23, 9] <-(results_5kmgrid_date_5years_vg$BUGSoutput$DIC) 
 ```
 
 
-### Model 8c: Vespa crabro
+#### Model 8c: Vespa crabro
 ```{r model8c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1243,49 +1276,72 @@ results_5kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_5years_vc, "../data/modelResults/results_5kmgrid_date_5years_vc.rds")
+#saveRDS(results_5kmgrid_date_5years_vc, "../outputs/modelOutputs/results_5kmgrid_date_5years_vc.rds")
 ```
 
 
-```{r model8c-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_5years_vc <- readRDS("../data/modelResults/results_5kmgrid_date_5years_vc.rds")
-plot.occDet.wasp5yrs(results_5kmgrid_date_5years_vc)
-```
+```{r model8c-results, cache=TRUE}
+#Load Model output
+results_5kmgrid_date_5years_vc <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_5years_vc.rds")
 
-```{r model8c-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
 # n species sites
-speciesResultsDF[24, 5] <- (results_5kmgrid_date_5years_vc$species_sites) 
+sppModelSumDF[24, 5] <- (results_5kmgrid_date_5years_vc$species_sites) 
 # n species observations
-speciesResultsDF[24, 6] <- (results_5kmgrid_date_5years_vc$species_observations) 
+sppModelSumDF[24, 6] <- (results_5kmgrid_date_5years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_5years_vc$BUGSoutput$summary)
-speciesResultsDF[24, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[24, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[24, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[24, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[24, 9] <-(results_5kmgrid_date_5years_vc$BUGSoutput$DIC) 
+sppModelSumDF[24, 9] <-(results_5kmgrid_date_5years_vc$BUGSoutput$DIC) 
 ```
 
 
 
 
 ## Model 9 (10 yrs + 5km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: ten years
-#### Grid cell: 5 km{2}
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: ten years
+##### Grid cell: 5x5 km
 
+### Format 
+```{r model9-format, echo=TRUE, message=FALSE, warning=FALSE}
+######### Format the NHM data #########
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km5grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),       
+                                              closure_period = NHMdat$tp10)
 
+######### Format the BWARS data #########
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km5grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp10)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_5kmgrid_date_10years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_5kmgrid_date_10years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+
+#Save files
+#write.csv(occDetdata_merged_5kmgrid_date_10years, '../outputs/formattedData/occDetdata_merged_5kmgrid_date_10years.csv')
+#write.csv(spp_vis_merged_5kmgrid_date_10years, '../outputs/formattedData/spp_vis_merged_5kmgrid_date_10years.csv')
+```
+
+### Model
 Load the formatted data
 ```{r load-model9-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_5kmgrid_date_10years <- read.csv('../data/modelData/occDetdata_merged_5kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_5kmgrid_date_10years <- read.csv('../outputs/formattedData/occDetdata_merged_5kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_5kmgrid_date_10years <- read.csv('../data/modelData/spp_vis_merged_5kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_5kmgrid_date_10years <- read.csv('../outputs/formattedData/spp_vis_merged_5kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 9a: Vespula vulgaris
+#### Model 9a: Vespula vulgaris
 ```{r model9a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -1297,59 +1353,41 @@ results_5kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulga
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_10years_vv, "../data/modelResults/results_5kmgrid_date_10years_vv.rds")
+#saveRDS(results_5kmgrid_date_10years_vv, "../outputs/modelOutputs/results_5kmgrid_date_10years_vv.rds")
 ```
 
 
-```{r model9a-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_10years_vv <- readRDS("../data/modelResults/results_5kmgrid_date_10years_vv.rds")
-plot.occDet.wasp10yrs(results_5kmgrid_date_10years_vv)
-```
 
+```{r model9a-results, cache=TRUE}
+#Load model output
+results_5kmgrid_date_10years_vv <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_10years_vv.rds")
 
-```{r model9a-results, echo=FALSE, cache=TRUE}
-### Model results (modelResultsDF)
 # n Closure periods
-modelResultsDF[9, 4] <-(results_5kmgrid_date_10years_vv$max_year)
+modelSumDF[9, 4] <-(results_5kmgrid_date_10years_vv$max_year)
 # n Visits
-modelResultsDF[9, 5] <-(results_5kmgrid_date_10years_vv$nvisits)
+modelSumDF[9, 5] <-(results_5kmgrid_date_10years_vv$nvisits)
 # n Sites
-modelResultsDF[9, 6] <-(results_5kmgrid_date_10years_vv$nsites)
+modelSumDF[9, 6] <-(results_5kmgrid_date_10years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[25, 5] <- (results_5kmgrid_date_10years_vv$species_sites) 
+sppModelSumDF[25, 5] <- (results_5kmgrid_date_10years_vv$species_sites) 
 # n species observations
-speciesResultsDF[25, 6] <- (results_5kmgrid_date_10years_vv$species_observations) 
+sppModelSumDF[25, 6] <- (results_5kmgrid_date_10years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_10years_vv$BUGSoutput$summary)
-speciesResultsDF[25, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[25, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[25, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[25, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[25, 9] <-(results_5kmgrid_date_10years_vv$BUGSoutput$DIC) 
-
-
-#mean(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#sd(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])/sqrt(length(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")]))
-#max(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#min(x[grepl(pattern="psi.fs\\[", x=dimnames(x)[[1]]), c("mean")])
-#(x[grepl(pattern="psi.fs\\[12", x=dimnames(x)[[1]]), c("mean")])
-#(x[grepl(pattern="psi.fs\\[1]", x=dimnames(x)[[1]]), c("mean")])
-
-
-
-#Change <- sparta::occurrenceChange(first=1, last=7, results_10kmgrid_date_10years_vv, change = "growthrate")
-
-
-#Change <- sparta::occurrenceChange(first=9, last=12, results_10kmgrid_date_10years_vv, change = "growthrate")
+sppModelSumDF[25, 9] <-(results_5kmgrid_date_10years_vv$BUGSoutput$DIC) 
 ```
 
 
 
-### Model 9b: Vespula germanica
+#### Model 9b: Vespula germanica
 ```{r model9b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1361,35 +1399,33 @@ results_5kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germa
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_10years_vg, "../data/modelResults/results_5kmgrid_date_10years_vg.rds")
+#saveRDS(results_5kmgrid_date_10years_vg, "../outputs/modelOutputs/results_5kmgrid_date_10years_vg.rds")
 ```
 
-```{r model9b-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_10years_vg <- readRDS("../data/modelResults/results_5kmgrid_date_10years_vg.rds")
-plot.occDet.wasp10yrs(results_5kmgrid_date_10years_vg)
-```
 
-```{r model9b-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model9b-results, cache=TRUE}
+#Load model output
+results_5kmgrid_date_10years_vg <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_10years_vg.rds")
+
 # n species sites
-speciesResultsDF[26, 5] <- (results_5kmgrid_date_10years_vg$species_sites) 
+sppModelSumDF[26, 5] <- (results_5kmgrid_date_10years_vg$species_sites) 
 # n species observations
-speciesResultsDF[26, 6] <- (results_5kmgrid_date_10years_vg$species_observations) 
+sppModelSumDF[26, 6] <- (results_5kmgrid_date_10years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_10years_vg$BUGSoutput$summary)
-speciesResultsDF[26, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[26, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[26, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[26, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[26, 9] <-(results_5kmgrid_date_10years_vg$BUGSoutput$DIC) 
+sppModelSumDF[26, 9] <-(results_5kmgrid_date_10years_vg$BUGSoutput$DIC) 
 ```
 
 
 
 
 
-### Model 9c: Vespa crabro
+#### Model 9c: Vespa crabro
 ```{r model9c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_5kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1401,41 +1437,39 @@ results_5kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro"
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_5kmgrid_date_10years_vc, "../data/modelResults/results_5kmgrid_date_10years_vc.rds")
+#saveRDS(results_5kmgrid_date_10years_vc, "../outputs/modelOutputs/results_5kmgrid_date_10years_vc.rds")
 ```
 
 
-```{r model9c-plot, echo=FALSE, cache=TRUE}
-results_5kmgrid_date_10years_vc <- readRDS("../data/modelResults/results_5kmgrid_date_10years_vc.rds")
-plot.occDet.wasp10yrs(results_5kmgrid_date_10years_vc)
-```
 
-```{r model9c-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model9c-results, cache=TRUE}
+#Load model output
+results_5kmgrid_date_10years_vc <- readRDS("../outputs/modelOutputs/results_5kmgrid_date_10years_vc.rds")
+
 # n species sites
-speciesResultsDF[27, 5] <- (results_5kmgrid_date_10years_vc$species_sites) 
+sppModelSumDF[27, 5] <- (results_5kmgrid_date_10years_vc$species_sites) 
 # n species observations
-speciesResultsDF[27, 6] <- (results_5kmgrid_date_10years_vc$species_observations) 
+sppModelSumDF[27, 6] <- (results_5kmgrid_date_10years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_5kmgrid_date_10years_vc$BUGSoutput$summary)
-speciesResultsDF[27, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[27, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[27, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[27, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[27, 9] <-(results_5kmgrid_date_10years_vc$BUGSoutput$DIC) 
+sppModelSumDF[27, 9] <-(results_5kmgrid_date_10years_vc$BUGSoutput$DIC) 
 ```
 
 
 
 
 ## Model 10 (1 yr + 10km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: One year
-#### Grid cell: 10x10 km
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: One year
+##### Grid cell: 10x10 km
 
 ### Format
-```{r model10-format, echo=TRUE, message=FALSE, warning=FALSE}
+```{r model10-format, message=FALSE, warning=FALSE}
 ############# Format the NHM data #############
 formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
                                               site = NHMdat$km10grid, 
@@ -1461,11 +1495,13 @@ spp_vis_merged_10kmgrid_date_year <- rbind(formattedOccData_NHM$spp_vis, formatt
 #write.csv(spp_vis_merged_10kmgrid_date_year, '../outputs/formattedData/spp_vis_merged_5kmgrid_date_year.csv')
 ```
 
+
+### Model
 Load the formatted data
 ```{r load-model10-data, cache=TRUE, message=FALSE}
-occDetdata_merged_10kmgrid_date_year <- read.csv('../data/modelData/occDetdata_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_10kmgrid_date_year <- read.csv('../outputs/formattedData/occDetdata_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_10kmgrid_date_year <- read.csv('../data/modelData/spp_vis_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_10kmgrid_date_year <- read.csv('../outputs/formattedData/spp_vis_merged_10kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 ```
 
 ### Model 10a: Vespula vulgaris
@@ -1480,40 +1516,40 @@ results_10kmgrid_date_year_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgari
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_10kmgrid_date_year_vv, "../data/modelResults/results_10kmgrid_date_year_vv.rds")
+#saveRDS(results_10kmgrid_date_year_vv, "../outputs/modelOutputs/results_10kmgrid_date_year_vv.rds")
 ```
 
 
 ```{r model10a-results, cache=TRUE}
 # Load data
-results_10kmgrid_date_year_vv <- readRDS("../data/modelResults/results_10kmgrid_date_year_vv.rds")
+results_10kmgrid_date_year_vv <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_year_vv.rds")
 
 # n Closure periods
-modelResultsDF[10, 4] <-(results_10kmgrid_date_year_vv$max_year)
+modelSumDF[10, 4] <-(results_10kmgrid_date_year_vv$max_year)
 # n Visits
-modelResultsDF[10, 5] <-(results_10kmgrid_date_year_vv$nvisits)
+modelSumDF[10, 5] <-(results_10kmgrid_date_year_vv$nvisits)
 # n Sites
-modelResultsDF[10, 6] <-(results_10kmgrid_date_year_vv$nsites)
+modelSumDF[10, 6] <-(results_10kmgrid_date_year_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[28, 5] <- (results_10kmgrid_date_year_vv$species_sites) 
+sppModelSumDF[28, 5] <- (results_10kmgrid_date_year_vv$species_sites) 
 # n species observations
-speciesResultsDF[28, 6] <- (results_10kmgrid_date_year_vv$species_observations) 
+sppModelSumDF[28, 6] <- (results_10kmgrid_date_year_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_year_vv$BUGSoutput$summary)
-speciesResultsDF[28, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[28, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[28, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[28, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[28, 9] <-(results_10kmgrid_date_year_vv$BUGSoutput$DIC) 
+sppModelSumDF[28, 9] <-(results_10kmgrid_date_year_vv$BUGSoutput$DIC) 
 
 ```
 
 
-### Model 10b: Vespula germanica
+#### Model 10b: Vespula germanica
 ```{r model10b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1525,28 +1561,28 @@ results_10kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germani
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_10kmgrid_date_year_vg, "../data/modelResults/results_10kmgrid_date_year_vg.rds")
+#saveRDS(results_10kmgrid_date_year_vg, "../outputs/modelOutputs/results_10kmgrid_date_year_vg.rds")
 ```
 
 
-```{r model10b-results, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_year_vg <- readRDS("../data/modelResults/results_10kmgrid_date_year_vg.rds")
+```{r model10b-results, cache=TRUE}
+results_10kmgrid_date_year_vg <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_year_vg.rds")
 # n species sites
-speciesResultsDF[29, 5] <- (results_10kmgrid_date_year_vg$species_sites) 
+sppModelSumDF[29, 5] <- (results_10kmgrid_date_year_vg$species_sites) 
 # n species observations
-speciesResultsDF[29, 6] <- (results_10kmgrid_date_year_vg$species_observations) 
+sppModelSumDF[29, 6] <- (results_10kmgrid_date_year_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_year_vg$BUGSoutput$summary)
-speciesResultsDF[29, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[29, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[29, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[29, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[29, 9] <-(results_10kmgrid_date_year_vg$BUGSoutput$DIC) 
+sppModelSumDF[29, 9] <-(results_10kmgrid_date_year_vg$BUGSoutput$DIC) 
 ```
 
 
-### Model 10c: Vespa crabro
+#### Model 10c: Vespa crabro
 ```{r model10c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1558,42 +1594,71 @@ results_10kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
                       write_results = FALSE)
 
 # Save results file as an rds file
-#saveRDS(results_10kmgrid_date_year_vc, "../data/modelResults/results_10kmgrid_date_year_vc.rds")
+#saveRDS(results_10kmgrid_date_year_vc, "../outputs/modelOutputs/results_10kmgrid_date_year_vc.rds")
 ```
 
 
 
 ```{r model10c-results, cache=TRUE}
-results_10kmgrid_date_year_vc <- readRDS("../data/modelResults/results_10kmgrid_date_year_vc.rds")
+results_10kmgrid_date_year_vc <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_year_vc.rds")
 # n species sites
-speciesResultsDF[30, 5] <- (results_10kmgrid_date_year_vc$species_sites) 
+sppModelSumDF[30, 5] <- (results_10kmgrid_date_year_vc$species_sites) 
 # n species observations
-speciesResultsDF[30, 6] <- (results_10kmgrid_date_year_vc$species_observations) 
+sppModelSumDF[30, 6] <- (results_10kmgrid_date_year_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_year_vc$BUGSoutput$summary)
-speciesResultsDF[30, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[30, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[30, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[30, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[30, 9] <-(results_10kmgrid_date_year_vc$BUGSoutput$DIC) 
+sppModelSumDF[30, 9] <-(results_10kmgrid_date_year_vc$BUGSoutput$DIC) 
 ```
 
 
 
 ## Model 11 (5 yr + 10km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: Five years
-#### Grid cell: 10 km{2}
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: Five years
+##### Grid cell: 10x10 km
+
+### Format
+```{r model11-format, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km10grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),                                 
+                                              closure_period = NHMdat$tp5)
+
+############# Format the BWARS data #############
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km10grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp5)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_10kmgrid_date_5years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_10kmgrid_date_5years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+
+#Save files
+#write.csv(occDetdata_merged_10kmgrid_date_5years, '../outputs/formattedData/occDetdata_merged_10kmgrid_date_5years.csv')
+#write.csv(spp_vis_merged_10kmgrid_date_5years, '../outputs/formattedData/spp_vis_merged_10kmgrid_date_5years.csv')
+```
+
+### Model
 Load the formatted data
 ```{r load-model11-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_10kmgrid_date_5years <- read.csv('../data/modelData/occDetdata_merged_10kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_10kmgrid_date_5years <- read.csv('../outputs/formattedData/occDetdata_merged_10kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_10kmgrid_date_5years <- read.csv('../data/modelData/spp_vis_merged_10kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_10kmgrid_date_5years <- read.csv('../outputs/formattedData/spp_vis_merged_10kmgrid_date_5years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 11a: Vespula vulgaris
+#### Model 11a: Vespula vulgaris
 ```{r model11a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -1605,43 +1670,40 @@ results_10kmgrid_date_5years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulga
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_5years_vv, "../data/modelResults/results_10kmgrid_date_5years_vv.rds")
+#saveRDS(results_10kmgrid_date_5years_vv, "../outputs/modelOutputs/results_10kmgrid_date_5years_vv.rds")
 ```
 
 
-```{r model11a-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_5years_vv <- readRDS("../data/modelResults/results_10kmgrid_date_5years_vv.rds")
-plot.occDet.wasp5yrs(results_10kmgrid_date_5years_vv)
-```
 
+```{r model11a-results, cache=TRUE}
+#Load model output
+results_10kmgrid_date_5years_vv <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_5years_vv.rds")
 
-```{r model11a-results, echo=FALSE, cache=TRUE}
-### Model results (modelResultsDF)
 # n Closure periods
-modelResultsDF[11, 4] <-(results_10kmgrid_date_5years_vv$max_year)
+modelSumDF[11, 4] <-(results_10kmgrid_date_5years_vv$max_year)
 # n Visits
-modelResultsDF[11, 5] <-(results_10kmgrid_date_5years_vv$nvisits)
+modelSumDF[11, 5] <-(results_10kmgrid_date_5years_vv$nvisits)
 # n Sites
-modelResultsDF[11, 6] <-(results_10kmgrid_date_5years_vv$nsites)
+modelSumDF[11, 6] <-(results_10kmgrid_date_5years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[31, 5] <- (results_10kmgrid_date_5years_vv$species_sites) 
+sppModelSumDF[31, 5] <- (results_10kmgrid_date_5years_vv$species_sites) 
 # n species observations
-speciesResultsDF[31, 6] <- (results_10kmgrid_date_5years_vv$species_observations) 
+sppModelSumDF[31, 6] <- (results_10kmgrid_date_5years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_5years_vv$BUGSoutput$summary)
-speciesResultsDF[31, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[31, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[31, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[31, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[31, 9] <-(results_10kmgrid_date_5years_vv$BUGSoutput$DIC) 
+sppModelSumDF[31, 9] <-(results_10kmgrid_date_5years_vv$BUGSoutput$DIC) 
 ```
 
 
-### Model 11b: Vespula germanica
+#### Model 11b: Vespula germanica
 ```{r model11b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1653,33 +1715,31 @@ results_10kmgrid_date_5years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germa
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_5years_vg, "../data/modelResults/results_10kmgrid_date_5years_vg.rds")
+#saveRDS(results_10kmgrid_date_5years_vg, "../outputs/modelOutputs/results_10kmgrid_date_5years_vg.rds")
 ```
 
-```{r model11b-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_5years_vg <- readRDS("../data/modelResults/results_10kmgrid_date_5years_vg.rds")
-plot.occDet.wasp5yrs(results_10kmgrid_date_5years_vg)
-```
 
-```{r model11b-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model11b-results, cache=TRUE}
+#Load model output
+results_10kmgrid_date_5years_vg <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_5years_vg.rds")
+
 # n species sites
-speciesResultsDF[32, 5] <- (results_10kmgrid_date_5years_vg$species_sites) 
+sppModelSumDF[32, 5] <- (results_10kmgrid_date_5years_vg$species_sites) 
 # n species observations
-speciesResultsDF[32, 6] <- (results_10kmgrid_date_5years_vg$species_observations) 
+sppModelSumDF[32, 6] <- (results_10kmgrid_date_5years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_5years_vg$BUGSoutput$summary)
-speciesResultsDF[32, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[32, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[32, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[32, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[32, 9] <-(results_10kmgrid_date_5years_vg$BUGSoutput$DIC) 
+sppModelSumDF[32, 9] <-(results_10kmgrid_date_5years_vg$BUGSoutput$DIC) 
 
 ```
 
 
-### Model 11c: Vespa crabro
+#### Model 11c: Vespa crabro
 ```{r model11c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1691,49 +1751,76 @@ results_10kmgrid_date_5years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro"
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_5years_vc, "../data/modelResults/results_10kmgrid_date_5years_vc.rds")
+#saveRDS(results_10kmgrid_date_5years_vc, "../outputs/modelOutputs/results_10kmgrid_date_5years_vc.rds")
 ```
 
 
-```{r model11c-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_5years_vc <- readRDS("../data/modelResults/results_10kmgrid_date_5years_vc.rds")
-plot.occDet.wasp5yrs(results_10kmgrid_date_5years_vc)
-```
 
-```{r model11c-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model11c-results, cache=TRUE}
+#Load model output
+results_10kmgrid_date_5years_vc <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_5years_vc.rds")
+
 # n species sites
-speciesResultsDF[33, 5] <- (results_10kmgrid_date_5years_vc$species_sites) 
+sppModelSumDF[33, 5] <- (results_10kmgrid_date_5years_vc$species_sites) 
 # n species observations
-speciesResultsDF[33, 6] <- (results_10kmgrid_date_5years_vc$species_observations) 
+sppModelSumDF[33, 6] <- (results_10kmgrid_date_5years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_5years_vc$BUGSoutput$summary)
-speciesResultsDF[33, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[33, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[33, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[33, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[33, 9] <-(results_10kmgrid_date_5years_vc$BUGSoutput$DIC) 
+sppModelSumDF[33, 9] <-(results_10kmgrid_date_5years_vc$BUGSoutput$DIC) 
 
 ```
 
 
 
 ## Model 12 (10 yr + 10km^^2)
-#### Survey: date (dd/mm/yyyy)
-#### Closure period: ten years
-#### Grid cell: 10 km{2}
+##### Survey: date (dd/mm/yyyy)
+##### Closure period: ten years
+##### Grid cell: 10x10 km
 
 
+### Format
+```{r model12-format, echo=TRUE, message=FALSE, warning=FALSE}
+############# Format the NHM data #############
+formattedOccData_NHM <- sparta::formatOccData(taxa = NHMdat$species, 
+                                              site = NHMdat$km10grid, 
+                                              survey= paste(NHMdat$km1grid,NHMdat$date),                                 
+                                              closure_period = NHMdat$tp10)
+
+############# Format the BWARS data #############
+formattedOccData_BWARS <- sparta::formatOccData(taxa = BWARSdat$species, 
+                                                site = BWARSdat$km10grid, 
+                                                survey= paste(BWARSdat$km1grid,BWARSdat$date),
+                                                closure_period = BWARSdat$tp10)
+
+# Change the list length of the formatted NHM data bu assigning all values less than 4 (every value because the maximum list length is 3) a value of 10.
+formattedOccData_NHM$occDetdata$L[formattedOccData_NHM$occDetdata$L<4] <- 10
+
+
+# Merge the formated NHM data with the formatted BWARS data. Each contains two list and I will merge the two lists of the two datasets separately. 
+occDetdata_merged_10kmgrid_date_10years <- rbind(formattedOccData_NHM$occDetdata, formattedOccData_BWARS$occDetdata)
+spp_vis_merged_10kmgrid_date_10years <- rbind(formattedOccData_NHM$spp_vis, formattedOccData_BWARS$spp_vis)
+
+#Save files
+#write.csv(occDetdata_merged_10kmgrid_date_10years, '../outputs/formattedData/occDetdata_merged_10kmgrid_date_10years.csv')
+#write.csv(spp_vis_merged_10kmgrid_date_10years, '../outputs/formattedData/spp_vis_merged_10kmgrid_date_10years.csv')
+```
+
+
+### Model
 Load the formatted data
 ```{r load-model12-data, cache=TRUE, message=FALSE}
 # Load data
-occDetdata_merged_10kmgrid_date_10years <- read.csv('../data/modelData/occDetdata_merged_10kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+occDetdata_merged_10kmgrid_date_10years <- read.csv('../outputs/formattedData/occDetdata_merged_10kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 
-spp_vis_merged_10kmgrid_date_10years <- read.csv('../data/modelData/spp_vis_merged_10kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
+spp_vis_merged_10kmgrid_date_10years <- read.csv('../outputs/formattedData/spp_vis_merged_10kmgrid_date_10years.csv', header=T, na.strings=c("","NA"))
 ```
 
-### Model 12a: Vespula vulgaris
+#### Model 12a: Vespula vulgaris
 ```{r model12a-vulgaris, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulgaris",
@@ -1745,45 +1832,42 @@ results_10kmgrid_date_10years_vv <- sparta::occDetFunc(taxa_name = "Vespula.vulg
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_10years_vv, "../data/modelResults/results_10kmgrid_date_10years_vv.rds")
+#saveRDS(results_10kmgrid_date_10years_vv, "../outputs/modelOutputs/results_10kmgrid_date_10years_vv.rds")
 ```
 
 
-```{r model12a-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_10years_vv <- readRDS("../data/modelResults/results_10kmgrid_date_10years_vv.rds")
-plot.occDet.wasp10yrs(results_10kmgrid_date_10years_vv)
-```
 
+```{r model12a-results, echo=TRUE, cache=TRUE}
+# Load model outputs
+results_10kmgrid_date_10years_vv <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_10years_vv.rds")
 
-```{r model12a-results, echo=FALSE, cache=TRUE}
-### Model results (modelResultsDF)
 # n Closure periods
-modelResultsDF[12, 4] <-(results_10kmgrid_date_10years_vv$max_year)
+modelSumDF[12, 4] <-(results_10kmgrid_date_10years_vv$max_year)
 # n Visits
-modelResultsDF[12, 5] <-(results_10kmgrid_date_10years_vv$nvisits)
+modelSumDF[12, 5] <-(results_10kmgrid_date_10years_vv$nvisits)
 # n Sites
-modelResultsDF[12, 6] <-(results_10kmgrid_date_10years_vv$nsites)
+modelSumDF[12, 6] <-(results_10kmgrid_date_10years_vv$nsites)
 
 
-### Species results (speciesResultsDF)
+### Species results (sppModelSumDF)
 # n species sites
-speciesResultsDF[34, 5] <- (results_10kmgrid_date_10years_vv$species_sites) 
+sppModelSumDF[34, 5] <- (results_10kmgrid_date_10years_vv$species_sites) 
 # n species observations
-speciesResultsDF[34, 6] <- (results_10kmgrid_date_10years_vv$species_observations) 
+sppModelSumDF[34, 6] <- (results_10kmgrid_date_10years_vv$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_10years_vv$BUGSoutput$summary)
-speciesResultsDF[34, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
+sppModelSumDF[34, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 1.528821
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[34, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
+sppModelSumDF[34, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2) # 7.961708
 #DIC
-speciesResultsDF[34, 9] <-(results_10kmgrid_date_10years_vv$BUGSoutput$DIC) 
+sppModelSumDF[34, 9] <-(results_10kmgrid_date_10years_vv$BUGSoutput$DIC) 
 
 ```
 
 
 
-### Model 12b: Vespula germanica
+#### Model 12b: Vespula germanica
 ```{r model12b-germanica, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
@@ -1795,35 +1879,33 @@ results_10kmgrid_date_10years_vg <- sparta::occDetFunc(taxa_name = "Vespula.germ
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_10years_vg, "../data/modelResults/results_10kmgrid_date_10years_vg.rds")
+#saveRDS(results_10kmgrid_date_10years_vg, "../outputs/modelOutputs/results_10kmgrid_date_10years_vg.rds")
 ```
 
-```{r model12b-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_10years_vg <- readRDS("../data/modelResults/results_10kmgrid_date_10years_vg.rds")
-plot.occDet.wasp10yrs(results_10kmgrid_date_10years_vg)
-```
 
-```{r model12b-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
+```{r model12b-results, echo=TRUE, cache=TRUE}
+# Load model outputs
+results_10kmgrid_date_10years_vg <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_10years_vg.rds")
+
 # n species sites
-speciesResultsDF[35, 5] <- (results_10kmgrid_date_10years_vg$species_sites) 
+sppModelSumDF[35, 5] <- (results_10kmgrid_date_10years_vg$species_sites) 
 # n species observations
-speciesResultsDF[35, 6] <- (results_10kmgrid_date_10years_vg$species_observations) 
+sppModelSumDF[35, 6] <- (results_10kmgrid_date_10years_vg$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_10years_vg$BUGSoutput$summary)
-speciesResultsDF[35, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[35, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[35, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[35, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[35, 9] <-(results_10kmgrid_date_10years_vg$BUGSoutput$DIC) 
+sppModelSumDF[35, 9] <-(results_10kmgrid_date_10years_vg$BUGSoutput$DIC) 
 ```
 
 
 
 
 
-### Model 12c: Vespa crabro
+#### Model 12c: Vespa crabro
 ```{r model12c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
 # Run model
 results_10kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
@@ -1835,29 +1917,26 @@ results_10kmgrid_date_10years_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro
                       write_results = FALSE)
 
 # Save results file as an rds file
-saveRDS(results_10kmgrid_date_10years_vc, "../data/modelResults/results_10kmgrid_date_10years_vc.rds")
+#saveRDS(results_10kmgrid_date_10years_vc, "../outputs/modelOutputs/results_10kmgrid_date_10years_vc.rds")
 ```
 
 
-```{r model12c-plot, echo=FALSE, cache=TRUE}
-results_10kmgrid_date_10years_vc <- readRDS("../data/modelResults/results_10kmgrid_date_10years_vc.rds")
-plot.occDet.wasp10yrs(results_10kmgrid_date_10years_vc)
-```
+```{r model12c-results, echo=TRUE, cache=TRUE}
+# Load model outputs
+results_10kmgrid_date_10years_vc <- readRDS("../outputs/modelOutputs/results_10kmgrid_date_10years_vc.rds")
 
-```{r model12c-results, echo=FALSE, cache=TRUE}
-### Species results (speciesResultsDF)
 # n species sites
-speciesResultsDF[36, 5] <- (results_10kmgrid_date_10years_vc$species_sites) 
+sppModelSumDF[36, 5] <- (results_10kmgrid_date_10years_vc$species_sites) 
 # n species observations
-speciesResultsDF[36, 6] <- (results_10kmgrid_date_10years_vc$species_observations) 
+sppModelSumDF[36, 6] <- (results_10kmgrid_date_10years_vc$species_observations) 
 # Average alpha precision across years (probability that site i is occupied in year t)
 library("boot")
 x <- inv.logit(results_10kmgrid_date_10years_vc$BUGSoutput$summary)
-speciesResultsDF[36, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
+sppModelSumDF[36, 7] <- mean(1/(x[grepl(pattern="a\\[", x=dimnames(x)[[1]]), c("sd")])^2) 
 # Average alpha.p precision across years (probability of detection at site i in year t on visit v, conditional on that the species true presnece of absence)
-speciesResultsDF[36, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
+sppModelSumDF[36, 8] <- mean(1/(x[grepl(pattern="alpha.p\\[", x=dimnames(x)[[1]]), c("sd")])^2)
 #DIC
-speciesResultsDF[36, 9] <-(results_10kmgrid_date_10years_vc$BUGSoutput$DIC) 
+sppModelSumDF[36, 9] <-(results_10kmgrid_date_10years_vc$BUGSoutput$DIC) 
 ```
 
 
@@ -1865,48 +1944,16 @@ speciesResultsDF[36, 9] <-(results_10kmgrid_date_10years_vc$BUGSoutput$DIC)
 
 
 
+Finally, I save the tables summarising sample sizes
+```{r save-tables, cache=TRUE, message=FALSE}
+# First, inverse logit alphaPrec and alphaPPrec
+sppModelSumDF$alphaPrec <- inv.logit(sppModelSumDF$alphaPrec)
+sppModelSumDF$alphaPPrec <- inv.logit(sppModelSumDF$alphaPPrec)
 
+# Save modelSumDF
+#write.csv(modelSumDF, '../outputs/SummaryTables/modelSummary.csv')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#############################################################
-### Model 1b: Vespula germaica
-```{r model1b-germanica, cache=TRUE, results="hide", eval=FALSE}
-# Run model
-results_1kmgrid_date_year_vg <- sparta::occDetFunc(taxa_name = "Vespula.germanica",
-                      n_iterations = 50000,
-                      burnin = 25000, 
-                      occDetdata = occDetdata_merged_1kmgrid_date_year,
-                      spp_vis = spp_vis_merged_1kmgrid_date_year,
-                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
-                      write_results = FALSE)
+# Save sppModelSumDF
+#write.csv(sppModelSumDF, '../outputs/SummaryTables/sppLevelSummary.csv')
 ```
-
-
-### Model 1c: Vespa crabro
-```{r model1c-crabro, cache=TRUE, message=FALSE, results='hide', eval=FALSE}
-# Run model
-results_1kmgrid_date_year_vc <- sparta::occDetFunc(taxa_name = "Vespa.crabro",
-                      n_iterations = 50000,
-                      burnin = 25000, 
-                      occDetdata = occDetdata_merged_1kmgrid_date_year,
-                      spp_vis = spp_vis_merged_1kmgrid_date_year,
-                      modeltype = c('ranwalk', 'halfcauchy', 'catlistlength'),
-                      write_results = FALSE)
-```
-
-
-
 

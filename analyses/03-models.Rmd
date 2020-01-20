@@ -1,6 +1,0 @@
----
-title: "Bayesian Occupancy Models"
-author: "Galina M. Jönsson"
-date: "17/01/2020"
-output: html_document
----
