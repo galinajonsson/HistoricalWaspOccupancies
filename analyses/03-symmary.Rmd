@@ -2,7 +2,11 @@
 title: "Bayesian Occupancy Models"
 author: "Galina M. Jönsson"
 date: "17/01/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 
@@ -10,7 +14,7 @@ output: html_document
 
 ### Rhat
 First I test whether all models' occupancy estimates have converged (Rhat<1.1) using the function summarise_Rhat (see function description in function-summarise_Rhat.R for details).
-```{r summary-rhat, cache=TRUE, message=FALSE}
+```{r summary-rhat, message=FALSE}
 # Load packages
 library(knitr)
 library(kableExtra)
@@ -25,29 +29,26 @@ RhatSum <- summarise_Rhat("../outputs/modelOutputs")
 kable(RhatSum) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
+The table shows that all V. germanica (file names ending with "_vg.rds") at 1 year temporal resolutions (file names ending with "year_vg.rds") have not converged. 
 
-
-Load the tables summarising sample sizes below
+### Sample sizes
+Load the tables summarising sample sizes, remove V. germanica ouputs at 1 year temporal resolutions and show the tables
 ```{r summary-tables, cache=TRUE, message=FALSE}
 # Load packages
-library(knitr)
-library(kableExtra)
 library("boot")
 
-# First, inverse logit alphaPrec and alphaPPrec
-sppModelSumDF$alphaPrec <- inv.logit(sppModelSumDF$alphaPrec)
-sppModelSumDF$alphaPPrec <- inv.logit(sppModelSumDF$alphaPPrec)
+# Load summary tables
+modelSummary <- read.csv("../outputs/SummaryTables/modelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
+sppLevelSummary <- read.csv("../outputs/SummaryTables/sppLevelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
 
-# Save modelSumDF
-#write.csv(modelSumDF, '../outputs/SummaryTables/modelSummary.csv')
-
-# Save sppModelSumDF
-#write.csv(sppModelSumDF, '../outputs/SummaryTables/sppLevelSummary.csv')
+# Remove V. germanica ouputs at 1 year temporal resolutions
+sppLevelSummary <- sppLevelSummary  %>% 
+  filter(!(Species=="Vespula germanica" & closurePer=="1yr"))
 
 # Show summary tables
-kable(sppModelSumDF) %>%
+kable(sppLevelSummary) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
-kable(modelSumDF) %>%
+kable(modelSummary) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
