@@ -10,7 +10,7 @@ analyses/BRCmap
 outputs/formattedData/*.csv
 
 # .DS_Store
-**.DS_Store
+.DS_Store
 
 # .rds files (data output files)
 *.rds
