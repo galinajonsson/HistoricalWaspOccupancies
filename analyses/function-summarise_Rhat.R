@@ -53,7 +53,7 @@ summarise_Rhat <-  function(input_dir, verbose = TRUE) {
         if (i == max(rows)) 
           {convergenceYN <- "Y"}
       }
-      summary_out <- data.frame(species_name = out$SPP_NAME,
+      summary_out <- data.frame(file_name = gsub("../outputs/modelOutputs/","",file),
                                 converged = convergenceYN)
     return(summary_out)
   }

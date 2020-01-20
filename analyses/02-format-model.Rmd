@@ -1951,9 +1951,9 @@ sppModelSumDF$alphaPrec <- inv.logit(sppModelSumDF$alphaPrec)
 sppModelSumDF$alphaPPrec <- inv.logit(sppModelSumDF$alphaPPrec)
 
 # Save modelSumDF
-#write.csv(modelSumDF, '../outputs/SummaryTables/modelSummary.csv')
+#write.csv(modelSumDF, '../outputs/SummaryTables/modelSummary.csv', row.names=FALSE)
 
 # Save sppModelSumDF
-#write.csv(sppModelSumDF, '../outputs/SummaryTables/sppLevelSummary.csv')
+#write.csv(sppModelSumDF, '../outputs/SummaryTables/sppLevelSummary.csv', row.names=FALSE)
 ```
 

@@ -1,13 +1,13 @@
-"","model","closurePer","spatialRes","nClosurePer","nVisits","nsites"
-"1","Model 1","1yr","1x1km",117,3639,604
-"2","Model 2","5yrs","1x1km",24,3639,604
-"3","Model 3","10yrs","1x1km",12,3639,604
-"4","Model 4","1yr","2x2km",117,3639,539
-"5","Model 5","5yrs","2x2km",24,3639,539
-"6","Model 6","10yrs","2x2km",12,3639,539
-"7","Model 7","1yr","5x5km",117,3639,417
-"8","Model 8","5yrs","5x5km",24,3639,417
-"9","Model 9","10yrs","5x5km",12,3639,417
-"10","Model 10","1yr","10x10km",117,3639,282
-"11","Model 11","5yrs","10x10km",24,3639,282
-"12","Model 12","10yrs","10x10km",12,3639,282
+"model","closurePer","spatialRes","nClosurePer","nVisits","nsites"
+"Model 1","1yr","1x1km",117,3639,604
+"Model 2","5yrs","1x1km",24,3639,604
+"Model 3","10yrs","1x1km",12,3639,604
+"Model 4","1yr","2x2km",117,3639,539
+"Model 5","5yrs","2x2km",24,3639,539
+"Model 6","10yrs","2x2km",12,3639,539
+"Model 7","1yr","5x5km",117,3639,417
+"Model 8","5yrs","5x5km",24,3639,417
+"Model 9","10yrs","5x5km",12,3639,417
+"Model 10","1yr","10x10km",117,3639,282
+"Model 11","5yrs","10x10km",24,3639,282
+"Model 12","10yrs","10x10km",12,3639,282
