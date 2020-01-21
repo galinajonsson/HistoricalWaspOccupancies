@@ -221,7 +221,7 @@ kable(RhatSum) %>%
 The table shows that all V. germanica (file names ending with "_vg.rds") at 1 year temporal resolutions (file names ending with "year_vg.rds") have not converged. 
 
 ### Sample sizes
-Load the tables summarising sample sizes, remove V. germanica ouputs at 1 year temporal resolutions and show the tables
+Load the tables summarising sample sizes, remove __V. germanica__ ouputs at 1 year temporal resolutions and show the tables. 
 ```{r summary-tables, cache=TRUE, message=FALSE}
 # Load packages
 library("boot")
