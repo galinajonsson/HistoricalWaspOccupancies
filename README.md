@@ -18,41 +18,49 @@ Email: support@nbn.org.uk
 
 For reproducibility purposes, download this and place it into the `data/rawdata/` folder to rerun our analyses. 
 
-The full NHM dataset is available via the [NHM data portal](https://data.nhm.ac.uk/doi/10.5519/qd.tdi9zagc). If you use it, please cite as folows: 
-> Natural History Museum (2019). Data Portal query on 1 resources created at 2019-12-20 14:28:57.870572 PID https://doi.org/10.5519/qd.tdi9zagc
+The georeferenced NHM dataset is available via the [NHM data portal](https://data.nhm.ac.uk/dataset/georeferenced-uk-social-wasps). If you use it, please cite as folows: 
+> Galina M. Jönsson (2020). Dataset: Georeferenced UK social wasps. Natural History Museum Data Portal (data.nhm.ac.uk). https://doi.org/10.5519/0082541
 
-In this repository, we have uploaded the raw NHM data for all *Vespula vulgaris*, *Vespula germanica* and *Vespa crabro* specimens in the folder `/data/rawData`, as well as the cleaned NHM data in the folder `/data/cleanData`, and auxiliary data in the folder `/data/auxiliaryData`.
+In this repository, we have uploaded the georeferenced NHM data for all *Vespula vulgaris*, *Vespula germanica* and *Vespa crabro* specimens in the folder `/data/rawData`, as well as the cleaned NHM data in the folder `/data/cleanData`, and auxiliary data in the folder `/data/auxiliaryData`.
 
-We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. These files will be made available on Dryad if the manuscript is accepted for publication. For reproducibility purposes, download these and place it into the `/output/formattedData` and `/output/modelOutput` folders as appropriate to rerun our analyses. 
+We were unable to upload the formatted date files and the model output files to GitHub because the files are too large. For reproducibility purposes, format the raw data according to the code in `/analyses/02-format-data.Rdm` and place into the `/output/formattedData`. All model outputs are available via the [NHM data portal](https://data.nhm.ac.uk/dataset/historical-wasp-occupancies-model-outputs). If you use it, please cite as folows: 
+> Galina M. Jönsson (2020). Dataset: Historical wasp occupancies: model outputs. Natural History Museum Data Portal (data.nhm.ac.uk). https://doi.org/10.5519/0055095
+
+For reproducibility purposes, download it and place it into the `/output/modelOutput` folder to rerun our analyses. 
 
 ## Analyses
-The analyses code is divided into .Rmd files that run the analyses and plot the figures for each section of the manuscript/supplementary materials, and more detailed scripts for the figures found in the paper and called by the .Rmd files.
+The analyses code is divided into .Rmd files that run the analyses for each section of the manuscript/supplementary materials, more detailed scripts for some functions used in analyses and called by the .Rmd files, and scripts for the figures found in the manuscript.
 
-Note that throughout I've commented out `write.csv` and `saveRDS` commands in order to not clog up your machine. For code chunks that run he mhodels, I've set evat to FALSE, again, to not clog up your macine as the analyses are computationally expensive and were run on high performance machines.
+Note that throughout I've commented out `write.csv` and `saveRDS` commands in order to not clog up your machine. For code chunks that run the models, I've set `eval` to FALSE, again, to not clog up your macine as the analyses are computationally expensive and were run on high performance machines.
 
-* __01-data-cleaning-Rdm__
-* __02-format-data.Rdm__
-* __03-models__
-* __04-summary-stats.Rmd__
-* __05-summary-plots.Rmd__
+* __01-data-cleaning-Rdm__ cleans and standardises the georeferenced data.
+* __02-format-model.Rdm__ formats the clean data and runs the models.
+* __03-summaries.Rmd__ summarises the data used in models and model outputs.
 
 ##### Code for figures
 
-* __figure-bla__
-* __figure-bla__
-* __figure-bla__
+* __figure-record_numbers.R__
+* __figure-spatial_cover.R__
+* __figure-XXXX__
+* __figure-XXXX__
+* __figure-DIC.R__
+* __figure-spatial_species.R__
+* __figure-pD.R__
+* __figure-deviance.R__
+
 
 
 ##### Code for functions
 
-* __function-bla__
-* __figure-bla__
+* __function-readRDS_multi.R__
+* __function-summarise_Rhat.R__
 
 
 ## Other folders
 
-* `/figs` contains the figures
-* `/output` contains the formatted data and model outputs. For reproducibility purposes download these files from Dryad and place into this folder to rerun our analyses.
+* `/figs` contains the figures with file names matching those of the manuscript
+* `/output` contains the empty subfolders `/output/formattedData` and `/output/modelOutputs`, as well as the subfolder `/output/summaryTables` that contains tables summarising both the data used in models and model outputs. For reproducibility purposes, format the raw data according to the code in `/analyses/02-format-data.Rdm` and place into `/output/formattedData`, and download the model outputs and place into `/output/modelOutputs`. All model outputs are available via the [NHM data portal](https://data.nhm.ac.uk/dataset/historical-wasp-occupancies-model-outputs). 
+
 
 ## Session Info
-
+``
