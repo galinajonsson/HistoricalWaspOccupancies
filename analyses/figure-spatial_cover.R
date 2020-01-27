@@ -72,7 +72,7 @@ plot_GIS(UK$britain, main = "", xlab = NA, ylab = NA,
 BRCmap::plotUK_gr_cats(gridref = spp_vis_10km_grids$grid10km, 
                        att = spp_vis_10km_grids$nSpecies, 
                        att_col = c("#FDE725FF", "#21908CFF","#440154FF"),
-                       border = FALSE, legend= FALSE)
+                       border = "white", legend= FALSE)
 legend("topright", legend = c("1", "2", "3"),
        fill = c("#FDE725FF", "#21908CFF","#440154FF"),
        title = "Species")
@@ -89,7 +89,7 @@ BRCmap::plotUK_gr_cats(gridref = spp_vis_10km_grids$grid10km,
                        att = spp_vis_10km_grids$nVisitsCat, 
                        att_col = c("#FDE725FF","#7AD151FF","#22A884FF", "#2A788EFF", 
                                    "#414487FF","#440154FF"),
-                       border = FALSE, legend= FALSE)
+                       border = "white", legend= FALSE)
 legend("topright", legend = c("2", "3-5", "6-10", "11-20", "21-50", "51-190"),
          fill = c("#FDE725FF","#7AD151FF","#22A884FF", "#2A788EFF", "#414487FF","#440154FF"),
          title = "Records")
