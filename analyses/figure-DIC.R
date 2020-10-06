@@ -69,9 +69,11 @@ DICResults_all$Species <- revalue(DICResults_all$Species, c("Vespa crabro"="V. c
 DICResults_all$Species = factor(DICResults_all$Species, levels=c("V. vulgaris", "V. germanica", "V. crabro"))
 
 DIC_fig <- ggplot(data = DICResults_all , aes(closurePer, DIC, color=Species)) + 
-  theme_bw() + 
   geom_point(aes(shape = Species)) + facet_grid( Species ~ spatialRes, scales = "free_y") + 
-  theme_bw(base_size = 10) + xlab("Temporal resolution") + ylab(" \n DIC") + 
+  scale_color_manual(values=viridis(3)) +
+  theme_bw(base_size = 10, ) + xlab("Temporal resolution") + ylab(" \n DIC") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
   theme(legend.text = element_text(face = "italic")) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   theme(strip.text.y = element_text(face = "italic")) + 

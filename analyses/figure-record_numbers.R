@@ -64,7 +64,9 @@ p <- ggplot(spp_vis, aes(x=year, fill=Source, color=Source)) +
   scale_color_manual(values = c("#999999", viridis(1))) +
   facet_grid(~ speciesOrdered, labeller=label_parsed) + # facet grid by species
   geom_bar(position="identity", alpha=0.5) + labs(y="Number of Records", x = "Year") +
-  theme_classic() +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
   scale_y_sqrt() +
   theme(text = element_text(size=18),
         axis.text.x = element_text(angle=90, hjust=1))
