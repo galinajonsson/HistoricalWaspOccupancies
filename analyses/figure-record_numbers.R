@@ -60,11 +60,11 @@ spp_vis$year <- spp_vis$TP+1899
 
 # Plot
 p <- ggplot(spp_vis, aes(x=year, fill=Source, color=Source)) + 
-  scale_fill_manual(values = c("#999999", "#D55E00")) +
-  scale_color_manual(values = c("#999999", "#D55E00")) +
+  scale_fill_manual(values = c("#999999", viridis(1))) +
+  scale_color_manual(values = c("#999999", viridis(1))) +
   facet_grid(~ speciesOrdered, labeller=label_parsed) + # facet grid by species
   geom_bar(position="identity", alpha=0.5) + labs(y="Number of Records", x = "Year") +
-  theme_bw() +
+  theme_classic() +
   scale_y_sqrt() +
   theme(text = element_text(size=18),
         axis.text.x = element_text(angle=90, hjust=1))
