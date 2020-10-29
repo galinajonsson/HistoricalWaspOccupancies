@@ -82,5 +82,5 @@ pD_fig <-ggdraw() + draw_plot(pD_fig, x = 0, y = 0, width = 1, height = 0.9) +
   draw_plot_label(label = c("(a)", "(b)", "(c)"), size = 10,
                   x = c(0, 0, 0), y = c(0.83, 0.61, 0.40))
 
-ggsave(filename = "Figure_S2_3.pdf", plot = pD_fig, width = 120, height = 90, 
+ggsave(filename = "Figure_S2_4.pdf", plot = pD_fig, width = 120, height = 90, 
        dpi = 600, units = "mm", device='pdf', path = "./figs")
