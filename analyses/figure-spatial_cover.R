@@ -65,7 +65,7 @@ data(UK)
 
 ### Plot spatial distribution of wasp records at 10 km2 by number of species and save
 dpi = 600
-pdf(file="./figs/Figure_3a.pdf",width=6.68*dpi,height=3.94*dpi)
+pdf(file="./figs/Figure_S1_3d.pdf",width=6.68*dpi,height=3.94*dpi)
 plot_GIS(UK$britain, main = "", xlab = NA, ylab = NA, 
          xlim = c(100000,700000), ylim = c(0,700000), 
          new.window = TRUE, show.grid = FALSE, show.axis = FALSE)
@@ -81,7 +81,7 @@ dev.off()
 
 ### Plot spatial distribution of wasp records at 10 km2 by number of visits and save
 dpi = 600
-pdf(file="./figs/Figure_3b.pdf",width=6.68*dpi,height=3.94*dpi)
+pdf(file="./figs/Figure_S1_3e.pdf",width=6.68*dpi,height=3.94*dpi)
 plot_GIS(UK$britain, main = "", xlab = NA, ylab = NA, 
          xlim = c(100000,700000), ylim = c(0,700000), 
          new.window = TRUE, show.grid = FALSE, show.axis = FALSE)

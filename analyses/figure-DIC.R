@@ -70,7 +70,7 @@ DICResults_all$Species = factor(DICResults_all$Species, levels=c("V. vulgaris", 
 
 DIC_fig <- ggplot(data = DICResults_all , aes(closurePer, DIC, color=Species)) + 
   geom_point(aes(shape = Species)) + facet_grid( Species ~ spatialRes, scales = "free_y") + 
-  scale_color_manual(values=viridis(3)) +
+  scale_color_manual(values=c("black", "black", "black")) +
   theme_bw(base_size = 10, ) + xlab("Temporal resolution") + ylab(" \n DIC") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank()) +
@@ -84,5 +84,5 @@ DIC_fig <-ggdraw() + draw_plot(DIC_fig, x = 0, y = 0, width = 1, height = 0.9) +
   draw_plot_label(label = c("(a)", "(b)", "(c)"), size = 10,
                   x = c(0, 0, 0), y = c(0.83, 0.61, 0.40))
 
-ggsave(filename = "Figure_6.pdf", plot = DIC_fig, width = 120, height = 90, 
+ggsave(filename = "Figure_4.pdf", plot = DIC_fig, width = 120, height = 90, 
        dpi = 600, units = "mm", device='pdf', path = "./figs")
