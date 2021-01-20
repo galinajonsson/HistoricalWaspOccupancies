@@ -49,3 +49,26 @@ kable(sppLevelSummary) %>%
 kable(modelSummary) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
+
+
+### Sample sizes
+Load the tables summarising sample sizes, remove __V. germanica__ ouputs at 1 year temporal resolutions and show the tables. 
+```{r summary-tables, cache=TRUE, message=FALSE}
+# Load packages
+library("boot")
+
+# Load summary tables
+modelSummary <- read.csv("../outputs/SummaryTables/modelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
+sppLevelSummary <- read.csv("../outputs/SummaryTables/sppLevelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
+
+# Remove V. germanica ouputs at 1 year temporal resolutions
+sppLevelSummary <- sppLevelSummary  %>% 
+  filter(!(Species=="Vespula germanica" & closurePer=="1yr"))
+
+# Show summary tables
+kable(sppLevelSummary) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+kable(modelSummary) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
