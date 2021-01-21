@@ -51,24 +51,47 @@ kable(modelSummary) %>%
 ```
 
 
-### Sample sizes
-Load the tables summarising sample sizes, remove __V. germanica__ ouputs at 1 year temporal resolutions and show the tables. 
+### Annual most northerly grid cells
+Here, we summarise the 10 most northerly grid cells recorded each year per species and plot the annual range of these grid cells' latitude. 
+
+
+Could easily take the 10 most northerly grid cells recorded each year and plot over time. Acknowledging that it’s biased, it would still provide supporting evidence.
+
+//
+
+Insert supp material with something sime like 10th percentile of records per decade on maps or so
+
 ```{r summary-tables, cache=TRUE, message=FALSE}
 # Load packages
-library("boot")
+library("sparta")
 
-# Load summary tables
-modelSummary <- read.csv("../outputs/SummaryTables/modelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
-sppLevelSummary <- read.csv("../outputs/SummaryTables/sppLevelSummary.csv", header=T, as.is = TRUE, na.strings=c("","NA")) 
 
-# Remove V. germanica ouputs at 1 year temporal resolutions
-sppLevelSummary <- sppLevelSummary  %>% 
-  filter(!(Species=="Vespula germanica" & closurePer=="1yr"))
 
-# Show summary tables
-kable(sppLevelSummary) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+# Load the formatted data used in analyses
+spp_vis <- read.csv('../outputs/formattedData/spp_vis_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 
-kable(modelSummary) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+# Subset each species into separate data frames
+spp_vis_crabro <- subset(spp_vis, Vespa.crabro == "TRUE")
+spp_vis_crabro$species <- c("Vespa crabro")
+spp_vis_germanica <- subset(spp_vis, Vespula.germanica == "TRUE")
+spp_vis_germanica$species <- c("Vespula germanica")
+spp_vis_vulgaris <- subset(spp_vis, Vespula.vulgaris == "TRUE")
+spp_vis_vulgaris$species <- c("Vespula vulgaris")
+
+# Subset the first six characters of the "visit" column, which corresponds to the grid cell
+spp_vis_crabro$gridcell <- substr(spp_vis_crabro$visit, start = 1, stop = 6)
+
+# Subset the first six characters of the "visit" colunm, which corresponds to the grid cell
+spp_vis_crabro$year <- substr(spp_vis_crabro$visit, start = 14, stop = 17)
+
+x <- spp_vis_crabro
+x$latitude <- as.numeric(NA)
+nrow <- nrow(x)
+
+for(i in 1:nrow){
+  x[i, "latitude"] <- (gr2gps_latlon(x[i, "gridcell"]))$LATITUDE
+}
+
+
+
 ```
