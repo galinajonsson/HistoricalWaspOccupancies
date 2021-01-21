@@ -81,16 +81,21 @@ spp_vis_vulgaris$species <- c("Vespula vulgaris")
 # Subset the first six characters of the "visit" column, which corresponds to the grid cell
 spp_vis_crabro$gridcell <- substr(spp_vis_crabro$visit, start = 1, stop = 6)
 
-# Subset the first six characters of the "visit" colunm, which corresponds to the grid cell
-spp_vis_crabro$year <- substr(spp_vis_crabro$visit, start = 14, stop = 17)
+# Subset the first six characters of the "visit" column, which corresponds to the grid cell
+spp_vis_crabro$year <- as.factor(substr(spp_vis_crabro$visit, start = 14, stop = 17))
 
 x <- spp_vis_crabro
 x$latitude <- as.numeric(NA)
 nrow <- nrow(x)
+years <- unique(x$year)
 
 for(i in 1:nrow){
   x[i, "latitude"] <- (gr2gps_latlon(x[i, "gridcell"]))$LATITUDE
 }
+
+df.max <- ddply(x, c("year"), subset, order(latitude,decreasing=TRUE) <= 1)
+
+plot(as.numeric(as.character(df.max$year)), df.max$latitude, xlab = "Year", ylab="Latitude")
 
 
 
