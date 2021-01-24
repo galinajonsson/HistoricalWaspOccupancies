@@ -1,0 +1,209 @@
+#' Calculate detection probability/year effect change between two years using Bayesian output
+#' 
+#' Using the data returned from occDetModel/occDetFunc this function models a 
+#' trend between two years for each iteration of the models. Several options are
+#' available for the method used to calculate the trend. This distribution of the results is used to
+#' calculate the mean estimate and the 95% credibale intervals. 
+#'
+#' @param bayesOut occDet object as returned from occDetModel or occDetFunc. 
+#' @param firstYear numeric, the first year over which the change is to be estimated. Defaults to the final year in the dataset
+#' @param lastYear numeric, the last year over which the change is to be estimated. Defaults to the first year in the dataset
+#' @param change A character string that specifies the type of change to be calculated, the default
+#' is annual growth rate.  See details for options.
+#' @param region A character string specifying the region name if change is to be determined regional estimates of detection probability.
+#' Region names must match those in the model output.
+#' @param rawData logical, specifying whether or not to return the raw data from the detection probability estimations.
+#' Default is TRUE (return the raw data).
+#' 
+#' 
+#' @details \code{change} is used to specify which change measure to be calculated.
+#' There are four options to choose from: difference, percentdif, growthrate and
+#' lineargrowth.
+#' 
+#' \code{difference} calculates the simple difference between the first and last year.
+#' 
+#' \code{percentdif} calculates the percentage difference between the first and last year.
+#' 
+#' \code{growthrate} calculates the annual growth rate across years.
+#' 
+#' \code{lineargrowth} calculates the linear growth rate from a linear model.
+#' 
+#' @return A list giving the mean, median, credible intervals and raw data from the
+#' estimations.
+#' @examples
+#' \dontrun{
+#' 
+#' #' # Create data
+#' n <- 15000 #size of dataset
+#' nyr <- 20 # number of years in data
+#' nSamples <- 100 # set number of dates
+#' nSites <- 50 # set number of sites
+#' 
+#' # Create somes dates
+#' first <- as.Date(strptime("1980/01/01", "%Y/%m/%d")) 
+#' last <- as.Date(strptime(paste(1980+(nyr-1),"/12/31", sep=''), "%Y/%m/%d")) 
+#' dt <- last-first 
+#' rDates <- first + (runif(nSamples)*dt)
+#' 
+#' # taxa are set as random letters
+#' taxa <- sample(letters, size = n, TRUE)
+#' 
+#' # three sites are visited randomly
+#' site <- sample(paste('A', 1:nSites, sep=''), size = n, TRUE)
+#' 
+#' # the date of visit is selected at random from those created earlier
+#' survey <- sample(rDates, size = n, TRUE)
+#'
+#' # run the model with these data for one species
+#' results <- occDetModel(taxa = taxa,
+#'                        site = site,
+#'                        survey = survey,
+#'                        species_list = c('a','m','g'),
+#'                        write_results = FALSE,
+#'                        n_iterations = 1000,
+#'                        burnin = 10,
+#'                        thinning = 2)
+#'
+#'  # estimate the change for one species      
+#'  change <- detProbChange(firstYear = 1990,
+#'                             lastYear = 1999,
+#'                             bayesOut = results$a)   
+#' }                   
+#' @export
+#' @importFrom boot inv.logit
+
+
+detProbChange <- function(bayesOut, firstYear=NULL, lastYear=NULL, change = 'growthrate', region = NULL, rawData = TRUE){
+  
+  # error checks for years (or set to defaults)
+  if(is.null(firstYear)) 
+    firstYear <- bayesOut$min_year
+  else
+    if(!firstYear %in% bayesOut$min_year:bayesOut$max_year) stop('firstYear must be in the year range of the data')
+  
+  if(is.null(lastYear))  
+    lastYear <- bayesOut$max_year
+  else  
+    if(!lastYear %in% bayesOut$min_year:bayesOut$max_year) stop('lastYear must be in the year range of the data')
+  
+  # error checks for change
+  if(!class(change) == 'character') stop('Change must be a character string identifying the change metric.  Either: difference, percentdif, growthrate or lineargrowth')
+  if(!change %in% c('difference', 'percentdif', 'growthrate', 'lineargrowth')) stop('The change metric must be one of the following: difference, percentdif, growthrate or lineargrowth')
+  
+  # error check for region
+  if(!is.null(region)){
+    if(!class(region) == 'character') stop('region must be a character string identifying the regional estimates that change is to be calculated for.')
+    if(!region %in% bayesOut$regions) stop('region must match that used in the model output file, check spelling.')
+  }
+  
+  # error checks for rawData
+  if(!class(rawData) == 'logical'){
+    stop('rawData must be logical identifying whether to return the raw data (TRUE or T; default) or not (FALSE or F).')}
+
+  
+  # extract the sims list, if there is a region code, use the psi.fs for that region
+  if(!is.null(region)){
+    reg_code <- paste("alpha.p.r_", region, sep = "")
+    
+    detProb_it <- inv.logit(bayesOut$BUGSoutput$sims.list)
+    detProb_it <- detProb_it[[grep(reg_code, names(detProb_it))]]
+    
+  }else{
+    
+    detProb_it <- inv.logit(bayesOut$BUGSoutput$sims.list$alpha.p)
+    
+  }
+  
+  
+  colnames(detProb_it) <- bayesOut$min_year:bayesOut$max_year
+  years <- firstYear:lastYear
+  
+  ## edit values that are 0 or 1 to prevent estimates of inf later on
+  #detProb_it[detProb_it == 0] <- 0.0001
+  #detProb_it[detProb_it == 1] <- 0.9999
+  
+  
+  ### loops depend on which change metric has been specified
+  
+  if(change == 'lineargrowth'){
+    prediction <- function(years, series){
+      
+      # cut data
+      data_table <- data.frame(detProb = series[as.character(years)], year = (years - min(years) + 1))
+      
+      # run model
+      model <- glm(detProb ~ year, data = data_table, family = 'quasibinomial')
+      
+      # create predicted values
+      predicted <- plogis(predict(model))
+      names(predicted) <- years
+      
+      # build results
+      results <- data.frame(predicted[1], predicted[length(predicted)], row.names = NULL)
+      colnames(results) <- as.character(c(min(years), max(years)))
+      results$change = (results[,2] - results[,1]) / results[,1]
+      
+      return(results)
+      
+    }
+    
+    res_tab <- do.call(rbind, apply(X = detProb_it, MARGIN = 1, years = years, FUN = prediction))
+    
+  } # end of loop for linear growth rate
+  
+  
+  if(change == 'difference'){
+    first <- years[1]
+    last <- years[length(years)]
+    res_tab <- data.frame(detProb_it[, colnames(detProb_it) == first],
+                          detProb_it[, colnames(detProb_it) == last],
+                          row.names = NULL)
+    colnames(res_tab) <- as.character(c(min(years), max(years)))
+    res_tab$change = res_tab[,2] - res_tab[,1]
+  } # end of loop for simple difference
+  
+  
+  if(change == 'percentdif'){
+    first <- years[1]
+    last <- years[length(years)]
+    res_tab <- data.frame(detProb_it[, colnames(detProb_it) == first],
+                          detProb_it[, colnames(detProb_it) == last],
+                          row.names = NULL)
+    
+    ## edit 0 in the first year with some small value to prevent Infinite trends
+    res_tab[,1][res_tab[,1] == 0] <- 0.0000001
+    
+    colnames(res_tab) <- as.character(c(min(years), max(years)))
+    res_tab$change = ((res_tab[,2] - res_tab[,1])/res_tab[,1])*100
+  } # end of loop for percentage difference
+  
+  
+  if(change == 'growthrate'){
+    nyr <- length(years)
+    first <- years[1]
+    last <- years[length(years)]
+    res_tab <- data.frame(detProb_it[, colnames(detProb_it) == first],
+                          detProb_it[, colnames(detProb_it) == last],
+                          row.names = NULL)
+    
+    ## edit 0 in the first year with some small value to prevent Infinite trends
+    res_tab[,1][res_tab[,1] == 0] <- 0.0000001
+    
+    colnames(res_tab) <- as.character(c(min(years), max(years)))
+    res_tab$change = (((res_tab[,2]/res_tab[,1])^(1/nyr))-1)*100
+  } # end of loop for growth rate
+  
+  # return the mean, quantiles, and the data (if argument rawData = TRUE)
+  if(isTRUE(rawData)){
+  return(list(mean = mean(res_tab$change),
+              median = median(res_tab$change),
+              CIs = quantile(res_tab$change, probs = c(0.025, 0.975)),
+              data = res_tab))}
+  
+  # return the mean and quantiles (if argument rawData = FALSE)
+  else if(isFALSE(rawData)){
+    return(list(mean = mean(res_tab$change),
+                median = median(res_tab$change),
+                CIs = quantile(res_tab$change, probs = c(0.025, 0.975))))}
+  
+}
