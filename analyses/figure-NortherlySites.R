@@ -16,7 +16,7 @@ readRDS_multi("./outputs/modelOutputs")
 
 
 # Load the formatted data used in analyses
-spp_vis <- read.csv('../outputs/formattedData/spp_vis_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
+spp_vis <- read.csv('./outputs/formattedData/spp_vis_merged_1kmgrid_date_year.csv', header=T, na.strings=c("","NA"))
 
 
 # Subset each species into separate data frames
@@ -54,9 +54,25 @@ for(i in 1:nrow){
 # Subset the five most northerly grid cells 
 df.max <- ddply(x, c("year"), subset, order(latitude,decreasing=TRUE) <= 5)
 
-#df.max <- df.max[-22,]
-#df.max <- df.max[-66,]
+df.max <- df.max[-2,]
+df.max <- df.max[-21,]
+df.max <- df.max[-92,]
 
 
-# Plot
-plot(as.numeric(as.character(df.max$year)), df.max$latitude, xlab = "Year", ylab="Latitude (degrees)", ylim = c(50,55))
+df.max$Year <- as.numeric(as.character(df.max$year))
+
+df.max$Latitude <- df.max$latitude
+
+df.max$year <- as.factor(df.max$year)
+
+y <- aggregate(df.max[, 8], list(df.max$year), mean)
+
+y$Year <- as.numeric(as.character(y$Group.1))
+
+y$Latitude <- y$x
+
+ggplot(df.max, aes(Year, Latitude)) + 
+  geom_point(data = y, stat = "identity") +
+  geom_smooth(method = "loess", se = TRUE, span=1, level = 0.95) +
+  scale_y_continuous(name="Latitude (degrees)", limits=c(50,55)) +
+  theme(text = element_text(size=15))
