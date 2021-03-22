@@ -4,7 +4,7 @@ Author(s): [Galina M. Jönsson](https://github.com/galinajonsson)
 
 This repository contains all the code and some data for:
 
->Jönsson, G. M., Broad, G. R., Sumner, S. and Isaac, N. J. B. (2020). A century of social wasp occupancy trends from natural history collections: spatiotemporal resolutions have little effect on model performance.  Unpublished manucript. 
+>Jönsson, G. M., Broad, G. R., Sumner, S. and Isaac, N. J. B. (in press.). A century of social wasp occupancy trends from natural history collections: spatiotemporal resolutions have little effect on model performance. *Insect Conservation and Diversity*. doi:10.1111/icad.12494.
 
 
 ## Data
