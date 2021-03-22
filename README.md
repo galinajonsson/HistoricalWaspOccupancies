@@ -41,12 +41,15 @@ Note that throughout I've commented out `write.csv` and `saveRDS` commands in or
 
 * __figure-record_numbers.R__
 * __figure-spatial_cover.R__
+* __figure-spatial_species.R__
 * __figure-occupancy_estimates.R__
 * __figure-detectionProbability_estimates.R__
 * __figure-DIC.R__
 * __figure-spatial_species.R__
 * __figure-pD.R__
 * __figure-deviance.R__
+* __figure-NortherlySites.R__
+* __figure-graphical_abstract.R__
 
 
 
@@ -54,6 +57,7 @@ Note that throughout I've commented out `write.csv` and `saveRDS` commands in or
 
 * __function-readRDS_multi.R__
 * __function-summarise_Rhat.R__
+* __function-detProbChange.R__
 
 
 ## Other folders
